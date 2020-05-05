@@ -13,3 +13,17 @@ body {
      font-size: 4rem;
      font-weight: 700;
  }
+
+ .navbar.navbar-expand-lg{
+     background-color: #000;
+     margin-bottom: 2rem;
+}
+
+
+ .nav-item .nav-link {
+    color: #00cc00;
+ }
+
+ .navbar-brand {
+     color: #00cc00;
+ }
