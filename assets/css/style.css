@@ -1,4 +1,10 @@
 body {
     background-color: #252525;
     font-family: 'Fira Code', monospace;
+    color: #00cc00;
+}
+
+.hero {
+    width: 70%;
+    background-color: #000;
 }
