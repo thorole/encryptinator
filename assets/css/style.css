@@ -27,3 +27,7 @@ body {
  .navbar-brand {
      color: #00cc00;
  }
+
+ button {
+     border: 1px solid #000;
+ }
