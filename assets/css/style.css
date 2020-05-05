@@ -2,9 +2,14 @@ body {
     background-color: #252525;
     font-family: 'Fira Code', monospace;
     color: #00cc00;
+    font-size: 1.25rem;
 }
 
 .hero {
     width: 70%;
     background-color: #000;
 }
+ .hero h1 {
+     font-size: 4rem;
+     font-weight: 700;
+ }
