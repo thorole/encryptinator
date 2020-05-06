@@ -34,3 +34,12 @@ body {
  .hidden {
      display: none;
  }
+
+ .form-section {
+    background-color: #000;
+    margin-top: 2rem;
+ }
+
+ .encrypt-btn {
+     display: inline;
+ }

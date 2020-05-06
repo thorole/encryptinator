@@ -13,25 +13,27 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
 
-      </ul>
-    </div>
-  </nav>
+        </ul>
+      </div>
+    </nav>
+  </header>
   <div class="container">
     <div class="row">
       <div class="col-12 hero">
@@ -82,12 +84,21 @@
         </div>
       </div>
     </section>
-    <div class="form-section">
-      <form action="">
-        <input type="text">
-        <p class="output-field"></p>
-        <button id="cesar-btn" class="encrypt-btn">Encrypt!</button>
-      </form>
+    <div class="row form-section">
+      <div class="col-md-6">
+        <form action="">
+          <input type="text">
+          <button id="cesar-btn" class="encrypt-btn">Encrypt!</button>
+          <p class="output-field"></p>
+        </form>
+      </div class="col-md-6">
+      <div class="col-md-6">
+        <form action="">
+          <input type="text">
+          <button id="cesar-btn" class="encrypt-btn">Encrypt!</button>
+          <p class="output-field"></p>
+        </form>
+      </div class="col-md-6">
     </div>
   </div>
 
