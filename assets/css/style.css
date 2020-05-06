@@ -40,10 +40,18 @@ body {
  .form-section {
     background-color: #000;
     margin-top: 2rem;
+    padding-top: 1.5rem;
  }
 
  .encrypt-btn {
      display: inline;
+ }
+
+ .output-field {
+     background-color: #252525;
+     min-height: 5rem;
+     width: 100%;
+     margin-top: 1.5rem;
  }
 
  @media only screen and (max-width: 600px) {
