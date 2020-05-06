@@ -46,7 +46,7 @@ alphabetReversed = alphabet.reverse();
 }
 */
 
-iterateString();
+$("#cesar-btn").click(iterateString);
 //iterateString("abcdefghijklmnopqrstuvwxyzæøå");
 console.log(cesarString);
 //decipher(cesarString);
