@@ -1,14 +1,14 @@
 alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
-    "r", "s", "t", "u", "v", "w", "x", "y", "z", "æ", "ø", "å", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
-    "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "æ", "ø", "å"];
+    "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
+    "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 let cesarDeciphered = "";
 let cesarString = "";
 let shift = 13;
-function iterateString() {
+let decryptedMsg = "";
+function iterateString() {    //Encrypts whatever message is entered into the input field
     encryptedParagraph = document.getElementById("encrypted");
     cesarString = "";
-    encryptedParagraph.innerHTML = "";
     inputText = document.getElementById("inputText").value;
     inputText = inputText.toLowerCase();
     for (let i = 0; i < inputText.length; i++) {
@@ -17,7 +17,7 @@ function iterateString() {
                 cesarString += alphabet[j + shift];
                 j = alphabet.length;
             }
-            if ((!/^[a-zA-Z]/.test(inputText[i]))) {
+            if ((!/^[a-z]/.test(inputText[i]))) {
                 cesarString += inputText[i];
                 j = alphabet.length;
             }
@@ -25,31 +25,27 @@ function iterateString() {
     }
     encryptedParagraph.innerHTML = cesarString;
 }
-alphabetReversed = alphabet.reverse();
-/*function decipher(messageToDecrypt) {
-    let inputTextTwo = messageToDecrypt;
-    for (let i = 0; i < inputTextTwo.length; i++) {
-        for (let j = 0; j < alphabet.length; j++) {
-            if (inputTextTwo[i] == " ") {
-                cesarDeciphered += " ";
-                break;
+
+function decipher() {     //Deciphers whatever message is entered in the input field
+    alphabetReversed = alphabet.reverse();
+    decryptedMsg = "";
+    decryptedParagraph = document.getElementById("decrypted");
+    inputText = document.getElementById("textToDecrypt").value;
+    inputText = inputText.toLowerCase();
+    for (let i = 0; i < inputText.length; i++) {
+        for (let j = 0; j < alphabetReversed.length; j++) {
+            if (inputText[i] == alphabetReversed[j]) {
+                decryptedMsg += alphabetReversed[j + shift];
+                j = alphabet.length;
             }
-            else if (inputTextTwo[i] == alphabet[j] && j < 13) {
-                cesarDeciphered += alphabet[j + 16];
-            }
-            else if (inputTextTwo[i] == alphabet[j]) {
-                cesarDeciphered += alphabet[j - 13];
-            }
-            else {
-                continue;
+            if ((!/^[a-z]/.test(inputText[i]))) {
+                decryptedMsg += inputText[i];
+                j = alphabetReversed.length;
             }
         }
     }
+    decryptedParagraph.innerHTML = decryptedMsg;
 }
-*/
 
 $("#cesar-btn").click(iterateString);
-//iterateString("abcdefghijklmnopqrstuvwxyzæøå");
-console.log(cesarString);
-//decipher(cesarString);
-console.log(cesarDeciphered);
+$("#cesar-decipher-btn").click(decipher);
