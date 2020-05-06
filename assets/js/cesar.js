@@ -7,6 +7,8 @@ let cesarString = "";
 let shift = 13;
 function iterateString() {
     encryptedParagraph = document.getElementById("encrypted");
+    cesarString = "";
+    encryptedParagraph.innerHTML = "";
     inputText = document.getElementById("inputText").value;
     inputText = inputText.toLowerCase();
     for (let i = 0; i < inputText.length; i++) {
