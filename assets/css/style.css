@@ -8,11 +8,11 @@ body {
 .hero {
     background-color: #000;
 }
- .hero h1 {
+.hero h1 {
      font-size: 4rem;
      font-weight: 700;
  }
-
+ 
  .navbar.navbar-expand-lg{
      background-color: #000;
      margin-bottom: 2rem;
@@ -45,3 +45,16 @@ body {
  .encrypt-btn {
      display: inline;
  }
+
+ @media only screen and (max-width: 600px) {
+    body {
+      font-size: 1rem;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+
+  }
