@@ -28,7 +28,9 @@ body {
  }
 
  button {
-     border: 1px solid #000;
+     border: 1px solid #00cc00;
+     background-color: #252525;
+     color: #00cc00;
  }
 
  .hidden {
