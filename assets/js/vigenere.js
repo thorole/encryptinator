@@ -3,10 +3,9 @@ $(document).ready(function () {
     let alphabetOriginal = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
         "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
         "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
+    let userString;
     let alphabet = alphabetOriginal.slice();
     let inputKey;
-    //let cesarString = "";
     //let userString = "jeg møter deg bak stortinget med konvolutten!";
     let key = [];
     function getKey(userKey) {
@@ -23,26 +22,34 @@ $(document).ready(function () {
         console.log("Userkey is: " + key);
     }
 
-    /*function encryptText() {
+    function iterateVigenereString(vigenereString, outputParagraph) {
+        let vigenereText = "";
+        getKey("vigenere-key");
+        userString = document.getElementById(vigenereString).value;
+        console.log("userstring is: " + userString);
+        cryptedParagraph = document.getElementById(outputParagraph);
         for (let i = 0, g = 0; i < userString.length; i++, g++) {
             if (g == key.length) {
                 g = 0;
             }
             for (let j = 0; j < alphabet.length; j++) {
                 if (userString[i] == alphabet[j]) {
-                    cesarString += alphabet[j + key[g]];
+                    vigenereText += alphabet[j + key[g]];
                     j = alphabet.length;
+                    console.log("encryptedmsginloopis: " + vigenereText);
                 }
                 if ((!/^[a-ø]/.test(userString[i]))) {
-                    cesarString += userString[i];
+                    vigenereText += userString[i];
                     j = alphabet.length;
                 }
             }
         }
+        console.log("Encryptedtextis: " + vigenereText);
+        cryptedParagraph.innerHTML = vigenereText;
     }
-    */
+
     $("#vigenere-btn").click(function () {
-        getKey("vigenere-key");
+        iterateVigenereString("vigenere-input", "vigenere-output");
     })
     /*
     encryptText();
