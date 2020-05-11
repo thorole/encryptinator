@@ -11,6 +11,7 @@ $(document).ready(function () {
         key = [];
         console.log("userKey is: " + typeof userKey);
         inputKey = document.getElementById(userKey).value;
+        inputKey = inputKey.toLowerCase();
         for (let i = 0; i < inputKey.length; i++) {
             for (k = 0; k < alphabet.length; k++) {
                 if (inputKey[i] == alphabet[k]) {
@@ -26,6 +27,7 @@ $(document).ready(function () {
         let vigenereText = "";
         getKey("vigenere-key");
         userString = document.getElementById(vigenereString).value;
+        userString = userString.toLowerCase();
         console.log("userstring is: " + userString);
         cryptedParagraph = document.getElementById(outputParagraph);
         for (let i = 0, g = 0; i < userString.length; i++, g++) {
