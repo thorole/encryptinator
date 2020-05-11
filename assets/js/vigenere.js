@@ -6,8 +6,6 @@ $(document).ready(function () {
     let userString;
     let alphabet = alphabetOriginal.slice();
     let inputKey;
-    let letters = /^[A-Za-z]+$/;
-    //let userString = "jeg møter deg bak stortinget med konvolutten!";
     let key = [];
     function getKey(userKey) {
         key = [];
