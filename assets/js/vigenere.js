@@ -6,9 +6,11 @@ $(document).ready(function () {
     let userString;
     let alphabet = alphabetOriginal.slice();
     let inputKey;
+    let letters = /^[A-Za-z]+$/;
     //let userString = "jeg møter deg bak stortinget med konvolutten!";
     let key = [];
     function getKey(userKey) {
+        key = [];
         console.log("userKey is: " + typeof userKey);
         inputKey = document.getElementById(userKey).value;
         for (let i = 0; i < inputKey.length; i++) {
