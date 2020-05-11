@@ -6,13 +6,17 @@ $(document).ready(function () {
     let userString;
     let alphabet = alphabetOriginal.slice();
     let inputKey;
-    let key = [];
+    let key;
     function getKey(userKey) {
         key = [];
-        console.log("userKey is: " + typeof userKey);
         console.log(alphabetOriginal);
         inputKey = document.getElementById(userKey).value;
         inputKey = inputKey.toLowerCase();
+        if (inputKey == "") {
+            inputKey = "thisisthekey"
+            document.getElementById(userKey).value = inputKey;
+            console.log("userKey is: " + typeof userKey);
+        }
         for (let i = 0; i < inputKey.length; i++) {
             for (k = 0; k < alphabetOriginal.length; k++) {
                 if (inputKey[i] == alphabetOriginal[k]) {
@@ -23,6 +27,7 @@ $(document).ready(function () {
         }
         console.log("Userkey is: " + key);
     }
+
 
     function iterateVigenereString(vigenereString, outputParagraph, keyField, reverse) {
         alphabet = alphabetOriginal.slice();
@@ -61,32 +66,4 @@ $(document).ready(function () {
     $("#vigenere-decrypt-btn").click(function () {
         iterateVigenereString("vigenere-to-decrypt", "vigenere-decrypt-output", "vigenere-key-decrypt", true);
     })
-    /*
-    encryptText();
-    console.log(cesarString);
-    
-    let reversedAlphabet = alphabet.reverse();
-    let decrypted = "";
-    
-    function decryptText() {
-        for (let i = 0, g = 0; i < cesarString.length; i++, g++) {
-            if (g == key.length) {
-                g = 0;
-            }
-            for (let j = 0; j < reversedAlphabet.length; j++) {
-                if (cesarString[i] == alphabet[j]) {
-                    decrypted += reversedAlphabet[j + key[g]];
-                    j = reversedAlphabet.length;
-                }
-                if ((!/^[a-ø]/.test(cesarString[i]))) {
-                    decrypted += cesarString[i];
-                    j = reversedAlphabet.length;
-                }
-            }
-        }
-    }
-    decryptText();
-    console.log(decrypted);
-    */
-
 });
