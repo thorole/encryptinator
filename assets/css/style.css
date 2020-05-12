@@ -66,3 +66,22 @@ body {
     }
 
   }
+
+  .start-button {
+      position: absolute;
+      top: 40%;
+      left: 30%;
+      right: 30%;
+      width: 40%;
+      height: 4rem;
+      padding-top: 1rem;
+      border: 1px solid #00cc00;
+      text-align: center;
+  }
+
+  .game-box {
+      position: relative;
+      margin-top: 2rem;
+      border: 3px solid #00cc00;
+      height: 10rem;
+  }
