@@ -79,6 +79,10 @@ body {
       text-align: center;
   }
 
+  .start-button:hover {
+      cursor: pointer;
+  }
+
   .game-box {
       position: relative;
       width: 85%;
