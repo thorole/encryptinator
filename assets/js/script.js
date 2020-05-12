@@ -33,3 +33,14 @@ $("button").hover(function(){
   }, function(){
   $(this).css("background-color", "#252525");
 });
+
+function blinkingText() {
+  if ($("#start-game-btn").hasClass("dark-green")) {
+    $("#start-game-btn").removeClass("dark-green").addClass("light-green");
+  }
+  else {
+      $("#start-game-btn").removeClass("light-green").addClass("dark-green");
+  }
+}
+
+setInterval(blinkingText, 500);
