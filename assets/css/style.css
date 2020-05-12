@@ -4,6 +4,13 @@ body {
     color: #00cc00;
     font-size: 1.25rem;
 }
+ .light-green {
+     color: #f1f7f1;
+ }
+
+.dark-green {
+    color: #00cc00;
+}
 
 .hero {
     background-color: #000;
