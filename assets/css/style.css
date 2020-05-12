@@ -81,7 +81,8 @@ body {
 
   .game-box {
       position: relative;
-      margin-top: 2rem;
+      width: 85%;
+      margin: 2rem auto 12rem auto;
       border: 3px solid #00cc00;
       height: 10rem;
   }
