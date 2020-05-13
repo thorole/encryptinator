@@ -42,4 +42,20 @@ $(document).ready(function () {
         $("#game-word").text(cesarString);
     }
 
+    function checkWord () {
+        let userWord = document.getElementById("user-word").value;
+        $("#result").text("");
+        if (userWord == gameWord) {
+            $("#result").removeClass("hidden");
+            $("#result").text("Correct");
+        }
+        else {
+            $("#result").text("Incorrect");
+        }
+    }
+
+    $("#check-result-btn").click(function () {
+        checkWord();
+    });
+
 });
