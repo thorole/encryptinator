@@ -44,14 +44,17 @@ $(document).ready(function () {
 
     function checkWord () {
         let userWord = document.getElementById("user-word").value;
-        $("#result").text("");
-        if (userWord == gameWord) {
-            $("#result").removeClass("hidden");
+        $("#result").text("").removeClass("hidden");
+        if (userWord == "") {
+            $("#result").text("Please insert a word.");
+        }
+        else if (userWord == gameWord) {
             $("#result").text("Correct");
         }
         else {
             $("#result").text("Incorrect");
         }
+        console.log(typeof userWord);
     }
 
     $("#check-result-btn").click(function () {
