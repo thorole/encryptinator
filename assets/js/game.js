@@ -12,6 +12,8 @@ $(document).ready(function () {
     $("#start-game-btn").click(function () {
         $("#start-game-btn").addClass("hidden");
         $(".game-element").removeClass("hidden");
+        getWord(stageOne);
+        writeEncryptedWord();
     });
 
     let gameWord;
@@ -35,7 +37,11 @@ $(document).ready(function () {
         }
     }
 
-    getWord(stageOne);
-    console.log("Gameword: " + gameWord);
+    function writeEncryptedWord () {
+        $("#game-word").text(gameWord);
+    }
+
+    //getWord(stageOne);
+    //console.log("Gameword: " + gameWord);
 
 });
