@@ -13,6 +13,7 @@ $(document).ready(function () {
         $("#start-game-btn").addClass("hidden");
         $(".game-element").removeClass("hidden");
         getWord(stageOne);
+        encryptGameWord(gameWord);
         writeEncryptedWord();
     });
 
@@ -24,9 +25,9 @@ $(document).ready(function () {
     let cesarString = "";
     let shift = 13;
     function encryptGameWord(word) {
-        alphabet = alphabetOriginal;
+        let alphabet = alphabetOriginal;
         cesarString = "";
-        inputText = inputText.toLowerCase();
+        let inputText = word.toLowerCase();
         for (let i = 0; i < inputText.length; i++) {
             for (let j = 0; j < alphabet.length; j++) {
                 if (inputText[i] == alphabet[j]) {
@@ -38,10 +39,7 @@ $(document).ready(function () {
     }
 
     function writeEncryptedWord () {
-        $("#game-word").text(gameWord);
+        $("#game-word").text(cesarString);
     }
-
-    //getWord(stageOne);
-    //console.log("Gameword: " + gameWord);
 
 });
