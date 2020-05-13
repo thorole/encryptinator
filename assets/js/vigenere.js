@@ -40,7 +40,7 @@ $(document).ready(function () {
         userString = userString.toLowerCase();
         console.log("userstring is: " + userString);
         cryptedParagraph = document.getElementById(outputParagraph);
-        for (let i = 0, g = 0; i < userString.length; i++, g++) {
+        for (let i = 0, g = 0; i < userString.length; i++) {
             if (g == key.length) {
                 g = 0;
             }
@@ -48,6 +48,7 @@ $(document).ready(function () {
                 if (userString[i] == alphabet[j]) {
                     vigenereText += alphabet[j + key[g]];
                     j = alphabet.length;
+                    g++;
                     console.log("encryptedmsginloopis: " + vigenereText);
                 }
                 if ((!/^[a-ø]/.test(userString[i]))) {
