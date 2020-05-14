@@ -8,6 +8,8 @@ $(document).ready(function () {
     let stageOne = ["car", "cow", "too"];
     let stageTwo = ["milk", "call", "core"];
     let stageThree = ["ready", "sauce", "cream"];
+    let level;
+    let nextLevel;
 
     $("#start-game-btn").click(function () {
         $("#start-game-btn").addClass("hidden");
@@ -63,5 +65,15 @@ $(document).ready(function () {
     $("#check-result-btn").click(function () {
         checkWord();
     });
+
+    function nextStage() {
+        if (level < 5) {
+            level++;
+        }
+        nextLevel = "stage" + level.toString();
+        //getWord()
+    }
+
+    nextStage();
 
 });
