@@ -5,32 +5,44 @@ $(document).ready(function () {
         "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
         "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-    let stage1 = ["car", "cow", "too"];
-    let stage2 = ["milk", "call", "core"];
-    let stage3 = ["ready", "sauce", "cream"];
+    let stages = [
+        ["car", "cow", "too"],
+        ["milk", "call", "core"],
+        ["ready", "sauce", "cream"]
+    ];
     let level;
     let nextLevel;
 
     $("#start-game-btn").click(function () {
         initiateGame();
         $("#start-game-btn").addClass("hidden");
+        //nextStage();
         displayNextLevel();
+        console.log(level);
     });
 
-    function displayNextLevel () {
-        getWord(nextLevel);
+    $("#next-stage-btn").click(function () {
+        nextStage();
+        displayNextLevel();
+        
+    });
+
+    function displayNextLevel() {
+        getWord(level);
+        console.log(gameWord);
         encryptGameWord(gameWord);
-        writeEncryptedWord();
         $(".game-element").removeClass("hidden");
-    } 
+        writeEncryptedWord();
+    }
 
     function initiateGame() {
-        level = 1;
+        level = 0;
     }
 
     let gameWord;
-    function getWord(level) {
-        gameWord = level[0];
+    function getWord(stageNumber) {
+        gameWord = stages[stageNumber][0];
+        console.log(gameWord);
     }
 
     let cesarString = "";
@@ -49,11 +61,11 @@ $(document).ready(function () {
         }
     }
 
-    function writeEncryptedWord () {
+    function writeEncryptedWord() {
         $("#game-word").text(cesarString);
     }
 
-    function checkWord () {
+    function checkWord() {
         let userWord = document.getElementById("user-word").value;
         $("#result").text("").removeClass("hidden");
         if (userWord == "") {
@@ -79,10 +91,8 @@ $(document).ready(function () {
         if (level < 3) {
             level++;
         }
-        nextLevel = "stage" + level.toString();
         $("#next-stage-btn")
+        $(".game-element").removeClass("hidden");
+        $("#correct-elements").addClass("hidden");
     }
-
-    nextStage();
-
 });
