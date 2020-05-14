@@ -5,9 +5,9 @@ $(document).ready(function () {
         "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
         "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-    let stageOne = ["car", "cow", "too"];
-    let stageTwo = ["milk", "call", "core"];
-    let stageThree = ["ready", "sauce", "cream"];
+    let stage1 = ["car", "cow", "too"];
+    let stage2 = ["milk", "call", "core"];
+    let stage3 = ["ready", "sauce", "cream"];
     let level;
     let nextLevel;
 
@@ -18,6 +18,11 @@ $(document).ready(function () {
         encryptGameWord(gameWord);
         writeEncryptedWord();
     });
+
+    function initiateGame() {
+        level = 1;
+        
+    }
 
     let gameWord;
     function getWord(level) {
