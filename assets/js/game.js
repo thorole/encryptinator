@@ -49,7 +49,10 @@ $(document).ready(function () {
             $("#result").text("Please insert a word.");
         }
         else if (userWord == gameWord) {
-            $("#result").text("Correct");
+            $(".game-element").addClass("hidden");
+            $("#correct-elements").removeClass("hidden");
+            $(".correct-message").text("Correct!");
+
         }
         else {
             $("#result").text("Incorrect");
