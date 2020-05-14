@@ -12,16 +12,20 @@ $(document).ready(function () {
     let nextLevel;
 
     $("#start-game-btn").click(function () {
+        initiateGame();
         $("#start-game-btn").addClass("hidden");
-        $(".game-element").removeClass("hidden");
-        getWord(stageOne);
+        displayNextLevel();
+    });
+
+    function displayNextLevel () {
+        getWord(nextLevel);
         encryptGameWord(gameWord);
         writeEncryptedWord();
-    });
+        $(".game-element").removeClass("hidden");
+    } 
 
     function initiateGame() {
         level = 1;
-        
     }
 
     let gameWord;
@@ -72,11 +76,11 @@ $(document).ready(function () {
     });
 
     function nextStage() {
-        if (level < 5) {
+        if (level < 3) {
             level++;
         }
         nextLevel = "stage" + level.toString();
-        //getWord()
+        $("#next-stage-btn")
     }
 
     nextStage();
