@@ -31,7 +31,6 @@ $(document).ready(function () {
         $("#reset-btn").addClass("hidden");
         $("#correct-elements").addClass("hidden");
         $("#start-game-btn").removeClass("hidden");
-        
     });
 
     function displayNextLevel() {
@@ -39,6 +38,7 @@ $(document).ready(function () {
         console.log(gameWord);
         encryptGameWord(gameWord);
         $(".game-element").removeClass("hidden");
+        $("#timer").removeClass("hidden");
         writeEncryptedWord();
         startTimer(5);
     }
@@ -86,6 +86,8 @@ $(document).ready(function () {
             clearInterval(timer);
             displayMessage();
             $(".correct-message").text("Correct!");
+            $("#next-stage-btn").removeClass("hidden");
+            $("#timer").addClass("hidden");
 
         }
         else {
@@ -107,7 +109,6 @@ $(document).ready(function () {
         if (level < 3) {
             level++;
         }
-        $("#next-stage-btn")
         $(".game-element").removeClass("hidden");
         $("#correct-elements").addClass("hidden");
     }
