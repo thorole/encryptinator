@@ -28,7 +28,12 @@ $(document).ready(function () {
     $("#next-stage-btn").click(function () {
         nextStage();
         displayNextLevel();
+    });
 
+    $("#reset-btn").click(function () {
+        $("#reset").addClass("hidden");
+        nextStage();
+        displayNextLevel();
     });
 
     function displayNextLevel() {
