@@ -24,7 +24,7 @@ $(document).ready(function () {
     $("#next-stage-btn").click(function () {
         nextStage();
         displayNextLevel();
-        
+
     });
 
     function displayNextLevel() {
@@ -33,6 +33,7 @@ $(document).ready(function () {
         encryptGameWord(gameWord);
         $(".game-element").removeClass("hidden");
         writeEncryptedWord();
+        startTimer();
     }
 
     function initiateGame() {
@@ -95,4 +96,23 @@ $(document).ready(function () {
         $(".game-element").removeClass("hidden");
         $("#correct-elements").addClass("hidden");
     }
+
+    let score;
+    let timer;
+    let seconds = 10;
+    function startTimer() {
+        timer = setInterval(countDown, 1000)
+        function countDown() {
+            if (seconds < 0) {
+                score += 0;
+                clearInterval(timer);
+            }
+            else {
+                $("#timer").text(seconds);
+                seconds--;
+            }
+        }
+    }
+
+
 });
