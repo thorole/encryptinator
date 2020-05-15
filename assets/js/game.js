@@ -33,11 +33,12 @@ $(document).ready(function () {
         encryptGameWord(gameWord);
         $(".game-element").removeClass("hidden");
         writeEncryptedWord();
-        startTimer(5);
+        startTimer(15);
     }
 
     function initiateGame() {
         level = 0;
+        score = 0;
     }
 
     let gameWord;
@@ -73,6 +74,8 @@ $(document).ready(function () {
             $("#result").text("Please insert a word.");
         }
         else if (userWord == gameWord) {
+            score += seconds;
+            console.log(score);
             clearInterval(timer);
             displayMessage();
             $(".correct-message").text("Correct!");
@@ -110,11 +113,12 @@ $(document).ready(function () {
         timer = setInterval(countDown, 1000)
         function countDown() {
             if (seconds < 0) {
-                score += 0;
                 clearInterval(timer);
                 displayMessage();
                 $("#next-stage-btn").addClass("hidden");
+                $("#timer").addClass("hidden");
                 $(".correct-message").text("Time's up! GAME OVER");
+                $("#final-score").text("Your score: " + score);
 
             }
             else {
