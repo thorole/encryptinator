@@ -33,7 +33,7 @@ $(document).ready(function () {
         encryptGameWord(gameWord);
         $(".game-element").removeClass("hidden");
         writeEncryptedWord();
-        startTimer();
+        startTimer(15);
     }
 
     function initiateGame() {
@@ -99,8 +99,9 @@ $(document).ready(function () {
 
     let score;
     let timer;
-    let seconds = 10;
-    function startTimer() {
+    let seconds;
+    function startTimer(timeInseconds) {
+        seconds = timeInseconds;
         timer = setInterval(countDown, 1000)
         function countDown() {
             if (seconds < 0) {
