@@ -13,12 +13,16 @@ $(document).ready(function () {
     let level;
     let nextLevel;
 
-    $("#start-game-btn").click(function () {
+
+    function startGame() {
         initiateGame();
         $("#start-game-btn").addClass("hidden");
-        //nextStage();
         displayNextLevel();
         console.log(level);
+    }
+
+    $("#start-game-btn").click(function () {
+        startGame();
     });
 
     $("#next-stage-btn").click(function () {
@@ -33,7 +37,7 @@ $(document).ready(function () {
         encryptGameWord(gameWord);
         $(".game-element").removeClass("hidden");
         writeEncryptedWord();
-        startTimer(15);
+        startTimer(5);
     }
 
     function initiateGame() {
@@ -119,6 +123,7 @@ $(document).ready(function () {
                 $("#timer").addClass("hidden");
                 $(".correct-message").text("Time's up! GAME OVER");
                 $("#final-score").text("Your score: " + score);
+                $("#reset-btn").removeClass("hidden");
 
             }
             else {
