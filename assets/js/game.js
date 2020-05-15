@@ -14,15 +14,12 @@ $(document).ready(function () {
     let nextLevel;
 
 
-    function startGame() {
+
+    $("#start-game-btn").click(function () {
         initiateGame();
         $("#start-game-btn").addClass("hidden");
         displayNextLevel();
         console.log(level);
-    }
-
-    $("#start-game-btn").click(function () {
-        startGame();
     });
 
     $("#next-stage-btn").click(function () {
@@ -31,9 +28,10 @@ $(document).ready(function () {
     });
 
     $("#reset-btn").click(function () {
-        $("#reset").addClass("hidden");
-        nextStage();
-        displayNextLevel();
+        $("#reset-btn").addClass("hidden");
+        $("#correct-elements").addClass("hidden");
+        $("#start-game-btn").removeClass("hidden");
+        
     });
 
     function displayNextLevel() {
