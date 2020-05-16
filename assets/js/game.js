@@ -8,7 +8,9 @@ $(document).ready(function () {
     let stages = [
         ["car", "cow", "too"],
         ["milk", "call", "core"],
-        ["ready", "sauce", "cream"]
+        ["ready", "sauce", "cream"],
+        ["archer", "kitten", "signal"],
+        ["cruches", "eyeball", "physics"] 
     ];
     let level;
     let nextLevel;
@@ -123,7 +125,7 @@ $(document).ready(function () {
     }
 
     function nextStage() {
-        if (level < 3) {
+        if (level < 5) {
             level++;
         }
         toggleNextStageBox();
