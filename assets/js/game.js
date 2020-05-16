@@ -80,7 +80,7 @@ $(document).ready(function () {
             $("#result").text("Please insert a word.");
         }
         else if (userWord == gameWord) {
-            score += seconds;
+            score += seconds + 1;
             console.log(score);
             clearInterval(timer);
             $(".message-box").text("Correct!");
