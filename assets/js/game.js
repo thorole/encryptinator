@@ -100,9 +100,31 @@ $(document).ready(function () {
         checkWord();
     });
 
-    function displayMessage() {
-        $(".game-element").addClass("hidden");
-        $("#correct-elements").removeClass("hidden");
+    function toggleGameOverBox () {
+       if ($(".game-over").hasClass("hidden")) {
+        $(".game-over").removeClass("hidden");
+       }
+       else {
+        $(".game-over").addClass("hidden")
+       }
+    }
+
+    function toggleNextStageBox () {
+        if ($(".next-lvl").hasClass("hidden")) {
+            $(".next-lvl").removeClass("hidden");
+        }
+        else {
+            $(".next-lvl").addClass("hidden")
+        }
+    }
+
+    function toggleGameElements () {
+        if ($(".game-element").hasClass("hidden")) {
+            $(".game-element").removeClass("hidden");
+        }
+        else {
+            $(".game-element").addClass("hidden")
+        }
     }
 
     function nextStage() {
