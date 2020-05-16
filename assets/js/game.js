@@ -50,7 +50,7 @@ $(document).ready(function () {
 
     let gameWord;
     function getWord(stageNumber) {
-        gameWord = stages[stageNumber][0];
+        gameWord = stages[stageNumber][[Math.floor(Math.random() * stages[stageNumber].length)]];
         console.log(gameWord);
     }
 
