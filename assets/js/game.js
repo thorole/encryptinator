@@ -36,8 +36,8 @@ $(document).ready(function () {
         getWord(level);
         console.log(gameWord);
         encryptGameWord(gameWord);
-        $(".game-element").removeClass("hidden");
         writeEncryptedWord();
+        toggleGameElements();
         startTimer(5);
     }
 
@@ -84,7 +84,6 @@ $(document).ready(function () {
             $(".message-box").text("Correct!");
             toggleNextStageBox();
             toggleGameElements();
-
         }
         else {
             $("#result").text("Incorrect");
@@ -127,7 +126,6 @@ $(document).ready(function () {
         if (level < 3) {
             level++;
         }
-        toggleGameElements();
         toggleNextStageBox();
     }
 
@@ -142,6 +140,7 @@ $(document).ready(function () {
                 clearInterval(timer);
                 toggleGameElements();
                 toggleGameOverBox();
+                $(".message-box").text("Game Over");
             }
             else {
                 $("#timer").text(seconds);
