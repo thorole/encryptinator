@@ -28,8 +28,7 @@ $(document).ready(function () {
     });
 
     $("#reset-btn").click(function () {
-        $("#reset-btn").addClass("hidden");
-        $("#correct-elements").addClass("hidden");
+        toggleGameOverBox();
         $("#start-game-btn").removeClass("hidden");
     });
 
@@ -38,7 +37,6 @@ $(document).ready(function () {
         console.log(gameWord);
         encryptGameWord(gameWord);
         $(".game-element").removeClass("hidden");
-        $("#timer").removeClass("hidden");
         writeEncryptedWord();
         startTimer(5);
     }
@@ -130,8 +128,8 @@ $(document).ready(function () {
         if (level < 3) {
             level++;
         }
-        $(".game-element").removeClass("hidden");
-        $("#correct-elements").addClass("hidden");
+        toggleGameElements();
+        toggleNextStageBox();
     }
 
     let score;
