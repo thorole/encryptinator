@@ -76,7 +76,7 @@ $(document).ready(function () {
 
     function checkWord() {
         let userWord = document.getElementById("user-word").value;
-        $("#result").text("").removeClass("hidden");
+        //$("#result").text("").removeClass("hidden");
         if (userWord == "") {
             $("#result").text("Please insert a word.");
         }
@@ -84,8 +84,7 @@ $(document).ready(function () {
             score += seconds;
             console.log(score);
             clearInterval(timer);
-            displayMessage();
-            $(".correct-message").text("Correct!");
+            $(".message-box").text("Correct!");
             $("#next-stage-btn").removeClass("hidden");
             $("#timer").addClass("hidden");
 
