@@ -74,7 +74,6 @@ $(document).ready(function () {
 
     function checkWord() {
         let userWord = document.getElementById("user-word").value;
-        //$("#result").text("").removeClass("hidden");
         if (userWord == "") {
             $("#result").text("Please insert a word.");
         }
@@ -83,8 +82,8 @@ $(document).ready(function () {
             console.log(score);
             clearInterval(timer);
             $(".message-box").text("Correct!");
-            $("#next-stage-btn").removeClass("hidden");
-            $("#timer").addClass("hidden");
+            toggleNextStageBox();
+            toggleGameElements();
 
         }
         else {
@@ -141,13 +140,8 @@ $(document).ready(function () {
         function countDown() {
             if (seconds < 0) {
                 clearInterval(timer);
-                displayMessage();
-                $("#next-stage-btn").addClass("hidden");
-                $("#timer").addClass("hidden");
-                $(".correct-message").text("Time's up! GAME OVER");
-                $("#final-score").text("Your score: " + score);
-                $("#reset-btn").removeClass("hidden");
-
+                toggleGameElements();
+                toggleGameOverBox();
             }
             else {
                 $("#timer").text(seconds);
