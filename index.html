@@ -114,17 +114,15 @@
       <div class="col-12">
         <div class="game-box">
           <div id="start-game-btn" class="start-button center-content dark-green">Start Game</div>
-          <div id="correct-elements" class="correct-box hidden">
-            <div class="correct-message"></div>
-            <div id="final-score"></div>
-            <button id="reset-btn" class="hidden">Back to start</button>
-            <button id="next-stage-btn">Next stage</button>
-          </div>
+          <div class="message-box game-over next-lvl hidden"></div>
+          <div id="final-score" class="game-over hidden"></div>
+          <button id="reset-btn" class="game-over hidden">Back to start</button>
+          <button id="next-stage-btn" class="next-lvl hidden">Next stage</button>
           <div id="game-word" class="game-word-box hidden game-element"></div>
           <input id="user-word" class="game-user-input hidden game-element" type="text">
           <button id="check-result-btn" class="check-button hidden game-element">Check</button>
-          <div id="result" class="check-result hidden"></div>
-          <div id="timer"></div>
+          <div id="result" class="check-result game-element hidden"></div>
+          <div id="timer" class="game-element"></div>
         </div>
       </div>
     </div>
