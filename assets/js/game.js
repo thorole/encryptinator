@@ -141,6 +141,7 @@ $(document).ready(function () {
                 toggleGameElements();
                 toggleGameOverBox();
                 $(".message-box").text("Game Over");
+                $("#final-score").text("Final score: " + score);
             }
             else {
                 $("#timer").text(seconds);
