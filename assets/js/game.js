@@ -6,11 +6,11 @@ $(document).ready(function () {
         "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
     let stages = [
-        ["car", "cow", "too"],
-        ["milk", "call", "core"],
-        ["ready", "sauce", "cream"],
-        ["archer", "kitten", "signal"],
-        ["cruches", "eyeball", "physics"] 
+        ["car", "cow", "too", "far", "see", "sea", "all", "say"],
+        ["milk", "call", "core", "fish", "must", "mill", "mark", "quit"],
+        ["ready", "sauce", "cream", "spoke", "tired", "dirty", "crutch", "alias"],
+        ["archer", "kitten", "signal", "psycho", "charger", "candle", "gloves", "finger"],
+        ["cruches", "eyeball", "physics", "lunatic", "battery", "flowers", "handbag", "sixpack"] 
     ];
     let level;
     let nextLevel;
