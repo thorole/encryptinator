@@ -40,12 +40,13 @@ $(document).ready(function () {
         encryptGameWord(gameWord);
         writeEncryptedWord();
         toggleGameElements();
-        startTimer(5);
+        startTimer();
     }
 
     function initiateGame() {
         level = 0;
         score = 0;
+        seconds = 15;
     }
 
     let gameWord;
@@ -86,6 +87,7 @@ $(document).ready(function () {
             $(".message-box").text("Correct!");
             toggleNextStageBox();
             toggleGameElements();
+            $("#user-word:text").val("");
         }
         else {
             $("#result").text("Incorrect");
@@ -135,7 +137,7 @@ $(document).ready(function () {
     let timer;
     let seconds;
     function startTimer(timeInseconds) {
-        seconds = timeInseconds;
+        seconds = 15
         timer = setInterval(countDown, 1000)
         function countDown() {
             if (seconds < 0) {
