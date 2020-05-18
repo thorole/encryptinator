@@ -1,12 +1,18 @@
 $(document).ready(function () {
-
+    
     let alphabetOriginal = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
-        "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
-        "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
+    "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     let userString;
     let alphabet = alphabetOriginal.slice();
     let inputKey;
     let key;
+    let vigenereText;
+    
+    function getUserText(vigenereUserText) {
+        userString = document.getElementById(vigenereUserText).value;
+        userString = userString.toLowerCase();
+    }
 
     function getUserKey(userKey) {
         inputKey = document.getElementById(userKey).value;
@@ -14,14 +20,17 @@ $(document).ready(function () {
         inputKey = inputKey.toLowerCase();
     }
 
-    function convertKeyToNumbers(textKey) {
-        key = [];
-        console.log(alphabetOriginal);
-        if (textKey == "") {
-            textKey = "thisisthekey"
-            document.getElementById(textKey).value = inputKey;
+    function writeDefaultKey(keyField) {
+        if (inputKey == "") {
+            inputKey = "thisisthekey";
+            document.getElementById(keyField).value = inputKey;
             console.log("userKey is: " + typeof userKey);
         }
+    }
+
+    function convertKeyToNumbers() {
+        key = [];
+        console.log(alphabetOriginal);
         for (let i = 0; i < inputKey.length; i++) {
             for (k = 0; k < alphabetOriginal.length; k++) {
                 if (inputKey[i] == alphabetOriginal[k]) {
@@ -33,15 +42,12 @@ $(document).ready(function () {
         console.log("Userkey is: " + key);
     }
 
-    let vigenereText;
-    function iterateVigenereString(vigenereString, keyField, reverse) {
+    function iterateVigenereString(reverse) {
         alphabet = alphabetOriginal.slice();
+        vigenereText = "";
         if (reverse === true) {
             alphabet = alphabet.reverse();
         }
-        vigenereText = "";
-        userString = document.getElementById(vigenereString).value;
-        userString = userString.toLowerCase();
         console.log("userstring is: " + userString);
         for (let i = 0, g = 0; i < userString.length; i++) {
             if (g == key.length) {
@@ -62,19 +68,26 @@ $(document).ready(function () {
         }
     }
 
-    function writeVigenereText (outputParagraph) {
+    function writeVigenereText(outputParagraph) {
         cryptedParagraph = document.getElementById(outputParagraph);
         console.log("Encryptedtextis: " + vigenereText);
         cryptedParagraph.innerHTML = vigenereText;
     }
 
     $("#vigenere-btn").click(function () {
+        getUserText("vigenere-input");
         getUserKey("vigenere-key");
-        convertKeyToNumbers(inputKey);
+        writeDefaultKey("vigenere-key");
+        convertKeyToNumbers();
         iterateVigenereString("vigenere-input", "vigenere-key", false);
         writeVigenereText("vigenere-output");
     })
     $("#vigenere-decrypt-btn").click(function () {
-        iterateVigenereString("vigenere-to-decrypt", "vigenere-decrypt-output", "vigenere-key-decrypt", true);
+        getUserText("vigenere-to-decrypt");
+        getUserKey("vigenere-key-decrypt");
+        writeDefaultKey("vigenere-key-decrypt");
+        convertKeyToNumbers();
+        iterateVigenereString(true);
+        writeVigenereText("vigenere-decrypt-output");
     })
 });
