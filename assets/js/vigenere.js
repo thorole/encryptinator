@@ -9,17 +9,20 @@ $(document).ready(function () {
     let key;
     let vigenereText;
     
+    // Assigns user input to userString
     function getUserText(vigenereUserText) {
         userString = document.getElementById(vigenereUserText).value;
         userString = userString.toLowerCase();
     }
-
+    
+    // Assigns user key to inputKey
     function getUserKey(userKey) {
         inputKey = document.getElementById(userKey).value;
         console.log(inputKey);
         inputKey = inputKey.toLowerCase();
     }
 
+    // Sets inputKey to default key
     function writeDefaultKey(keyField) {
         if (inputKey == "") {
             inputKey = "thisisthekey";
@@ -27,7 +30,8 @@ $(document).ready(function () {
             console.log("userKey is: " + typeof userKey);
         }
     }
-
+    
+    // Loops through each letter in the key and gets its index. Assigns index numbers to key
     function convertKeyToNumbers() {
         key = [];
         console.log(alphabetOriginal);
@@ -42,6 +46,10 @@ $(document).ready(function () {
         console.log("Userkey is: " + key);
     }
 
+    /*Loops through each letter in the userString and each number in key synchronically. userString[i] 
+    is compared to alphabet[j], which is looped through for each letter in userString. When matched,
+    alphabet[j + key[g]] is added to vigenereText. Reverse parameter is used to check if the function
+    is called for encryption or decryption.*/ 
     function iterateVigenereString(reverse) {
         alphabet = alphabetOriginal.slice();
         vigenereText = "";
@@ -60,14 +68,15 @@ $(document).ready(function () {
                     g++;
                     console.log("encryptedmsginloopis: " + vigenereText);
                 }
-                if ((!/^[a-z]/.test(userString[i]))) {
+                if ((!/^[a-z]/.test(userString[i]))) {    //Makes sure characters not in the range of a-z is printed
                     vigenereText += userString[i];
                     j = alphabet.length;
                 }
             }
         }
     }
-
+    
+    //Prints vigenereText to html element.
     function writeVigenereText(outputParagraph) {
         cryptedParagraph = document.getElementById(outputParagraph);
         console.log("Encryptedtextis: " + vigenereText);
