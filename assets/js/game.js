@@ -46,6 +46,7 @@ $(document).ready(function () {
     function initiateGame() {
         level = 0;
         score = 0;
+        $("#current-score").text("Score: 0");
     }
 
     let gameWord;
