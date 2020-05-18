@@ -137,10 +137,16 @@ body {
       position: absolute;
       border: 1px dotted #00cc00;
       width: 50%;
-      top: 4rem;
+      top: 2rem;
       left: 25%;
       text-align: center;
       padding: 1rem;
+  }
+
+  .message {
+      font-size: 3rem;
+      font-weight: 700;
+      text-transform: uppercase;
   }
 
   
