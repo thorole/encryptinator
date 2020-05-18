@@ -12,6 +12,10 @@ body {
     color: #00cc00;
 }
 
+.center {
+    margin: 0 auto;
+}
+
 .hero {
     background-color: #000;
 }
@@ -127,6 +131,13 @@ body {
       position: absolute;
       top: 12rem;
       left: 15%;
+  }
+
+  .message-box {
+      position: absolute;
+      border: 1px dotted #00cc00;
+      width: 50%;
+      left: 25%;
   }
 
   
