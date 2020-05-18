@@ -51,7 +51,7 @@ $(document).ready(function () {
                     g++;
                     console.log("encryptedmsginloopis: " + vigenereText);
                 }
-                if ((!/^[a-ø]/.test(userString[i]))) {
+                if ((!/^[a-z]/.test(userString[i]))) {
                     vigenereText += userString[i];
                     j = alphabet.length;
                 }
