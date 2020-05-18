@@ -137,7 +137,10 @@ body {
       position: absolute;
       border: 1px dotted #00cc00;
       width: 50%;
+      top: 4rem;
       left: 25%;
+      text-align: center;
+      padding: 1rem;
   }
 
   

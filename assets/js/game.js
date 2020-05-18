@@ -40,7 +40,7 @@ $(document).ready(function () {
         encryptGameWord(gameWord);
         writeEncryptedWord();
         toggleGameElements();
-        startTimer(10);
+        startTimer(5);
     }
 
     function initiateGame() {
