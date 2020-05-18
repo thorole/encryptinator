@@ -7,14 +7,19 @@ $(document).ready(function () {
     let alphabet = alphabetOriginal.slice();
     let inputKey;
     let key;
-    function getKey(userKey) {
+
+    function getUserKey(userKey) {
+        inputKey = document.getElementById(userKey).value;
+        console.log(inputKey);
+        inputKey = inputKey.toLowerCase();
+    }
+
+    function convertKeyToNumbers(textKey) {
         key = [];
         console.log(alphabetOriginal);
-        inputKey = document.getElementById(userKey).value;
-        inputKey = inputKey.toLowerCase();
-        if (inputKey == "") {
-            inputKey = "thisisthekey"
-            document.getElementById(userKey).value = inputKey;
+        if (textKey == "") {
+            textKey = "thisisthekey"
+            document.getElementById(textKey).value = inputKey;
             console.log("userKey is: " + typeof userKey);
         }
         for (let i = 0; i < inputKey.length; i++) {
@@ -34,7 +39,6 @@ $(document).ready(function () {
         if (reverse === true) {
             alphabet = alphabet.reverse();
         }
-        getKey(keyField);
         vigenereText = "";
         userString = document.getElementById(vigenereString).value;
         userString = userString.toLowerCase();
@@ -65,6 +69,8 @@ $(document).ready(function () {
     }
 
     $("#vigenere-btn").click(function () {
+        getUserKey("vigenere-key");
+        convertKeyToNumbers(inputKey);
         iterateVigenereString("vigenere-input", "vigenere-key", false);
         writeVigenereText("vigenere-output");
     })
