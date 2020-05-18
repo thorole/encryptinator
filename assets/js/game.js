@@ -82,6 +82,7 @@ $(document).ready(function () {
         else if (userWord == gameWord) {
             score += seconds + 1;
             console.log(score);
+            $("#current-score").text("Score: " + score)
             clearInterval(timer);
             $("#success-message").text("Correct!");
             toggleNextStageBox();
