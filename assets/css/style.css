@@ -99,7 +99,7 @@ body {
       width: 85%;
       margin: 2rem auto 12rem auto;
       border: 3px solid #00cc00;
-      height: 17rem;
+      height: 20rem;
       background-color: #000;
   }
 
@@ -158,9 +158,12 @@ body {
 
   .time-remaining {
     position: absolute;
-    width: 50%;
+    width: 10%;
     top: 0.5rem;
-    left: 25%;
+    left: 45%;
+    border: 1px dotted #00cc00;
+    padding: 0.25rem;
+    font-size: 1.5rem;
     text-align: center; 
   }
 
