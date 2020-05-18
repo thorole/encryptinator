@@ -28,18 +28,17 @@ $(document).ready(function () {
         console.log("Userkey is: " + key);
     }
 
-
-    function iterateVigenereString(vigenereString, outputParagraph, keyField, reverse) {
+    let vigenereText;
+    function iterateVigenereString(vigenereString, keyField, reverse) {
         alphabet = alphabetOriginal.slice();
         if (reverse === true) {
             alphabet = alphabet.reverse();
         }
         getKey(keyField);
-        let vigenereText = "";
+        vigenereText = "";
         userString = document.getElementById(vigenereString).value;
         userString = userString.toLowerCase();
         console.log("userstring is: " + userString);
-        cryptedParagraph = document.getElementById(outputParagraph);
         for (let i = 0, g = 0; i < userString.length; i++) {
             if (g == key.length) {
                 g = 0;
@@ -57,12 +56,17 @@ $(document).ready(function () {
                 }
             }
         }
+    }
+
+    function writeVigenereText (outputParagraph) {
+        cryptedParagraph = document.getElementById(outputParagraph);
         console.log("Encryptedtextis: " + vigenereText);
         cryptedParagraph.innerHTML = vigenereText;
     }
 
     $("#vigenere-btn").click(function () {
-        iterateVigenereString("vigenere-input", "vigenere-output", "vigenere-key", false);
+        iterateVigenereString("vigenere-input", "vigenere-key", false);
+        writeVigenereText("vigenere-output");
     })
     $("#vigenere-decrypt-btn").click(function () {
         iterateVigenereString("vigenere-to-decrypt", "vigenere-decrypt-output", "vigenere-key-decrypt", true);
