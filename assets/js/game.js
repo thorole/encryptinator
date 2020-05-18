@@ -40,7 +40,7 @@ $(document).ready(function () {
         encryptGameWord(gameWord);
         writeEncryptedWord();
         toggleGameElements();
-        startTimer(0);
+        startTimer(10);
     }
 
     function initiateGame() {
@@ -83,7 +83,7 @@ $(document).ready(function () {
             score += seconds + 1;
             console.log(score);
             clearInterval(timer);
-            $(".message-box").text("Correct!");
+            $("#success-message").text("Correct!");
             toggleNextStageBox();
             toggleGameElements();
             $("#user-word:text").val("");
@@ -99,20 +99,20 @@ $(document).ready(function () {
     });
 
     function toggleGameOverBox () {
-       if ($(".game-over").hasClass("hidden")) {
-        $(".game-over").removeClass("hidden");
+       if ($("#game-over-box").hasClass("hidden")) {
+        $("#game-over-box").removeClass("hidden");
        }
        else {
-        $(".game-over").addClass("hidden")
+        $("#game-over-box").addClass("hidden")
        }
     }
 
     function toggleNextStageBox () {
-        if ($(".next-lvl").hasClass("hidden")) {
-            $(".next-lvl").removeClass("hidden");
+        if ($("#next-lvl-box").hasClass("hidden")) {
+            $("#next-lvl-box").removeClass("hidden");
         }
         else {
-            $(".next-lvl").addClass("hidden")
+            $("#next-lvl-box").addClass("hidden")
         }
     }
 
@@ -146,7 +146,7 @@ $(document).ready(function () {
             clearInterval(timer);
             toggleGameElements();
             toggleGameOverBox();
-            $(".message-box").text("Game Over");
+            $("#game-over-message").text("Game Over");
             $("#final-score").text("Final score: " + score);
         }
         else {
