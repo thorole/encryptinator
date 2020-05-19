@@ -157,5 +157,5 @@ $(document).ready(function () {
         }
     }
 
-
+writeMessage("decrypted");
 });
