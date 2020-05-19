@@ -33,7 +33,7 @@ $(document).ready(function () {
         let checkShift = document.getElementById(shiftField).value;
         if (checkShift < 1 || checkShift > 25 || checkShift == isNaN(shift)) {
             shift = 13;
-            document.getElementById(shiftField).value = "13";
+            document.getElementById(shiftField).value = shift;
         }
         else {
             shift = Number(document.getElementById(shiftField).value);
