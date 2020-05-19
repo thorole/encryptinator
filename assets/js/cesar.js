@@ -52,7 +52,7 @@ $(document).ready(function () {
         writeMessage('encrypted')
     })
     $("#cesar-decipher-btn").click(function () {
-        getShift();
+        getShift("output-shift");
         iterateString('text-to-decrypt', 'decrypted', true);
         writeMessage('decrypted')
     })
