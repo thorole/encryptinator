@@ -57,6 +57,10 @@ body {
  .encrypt-btn {
      display: inline;
  }
+ 
+ input {
+     display: block;
+ }
 
  .output-field {
      background-color: #252525;
