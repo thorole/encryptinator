@@ -6,12 +6,13 @@ let alphabetOriginal = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "
 
 let alphabet = alphabetOriginal.slice()
 let cesarString = "";
-let shift = 13;
+let shift;
 function iterateString(message, reversed) {
     alphabet = alphabetOriginal.slice();
     if (reversed == true) {
         alphabet = alphabet.reverse();
     }  
+    console.log("shift is: " + typeof shift);
     cesarString = "";
     inputText = document.getElementById(message).value;
     inputText = inputText.toLowerCase();
@@ -19,6 +20,7 @@ function iterateString(message, reversed) {
         for (let j = 0; j < alphabet.length; j++) {
             if (inputText[i] == alphabet[j]) {
                 cesarString += alphabet[j + shift];
+                console.log(j, typeof shift)
                 j = alphabet.length;
             }
             if ((!/^[a-z]/.test(inputText[i]))) {
@@ -29,6 +31,11 @@ function iterateString(message, reversed) {
     }
 }
 
+function getShift() {
+    shift = Number(document.getElementById("input-shift").value);
+    console.log("shift is: " + shift);
+}
+
 function writeMessage (outputParagraph) {
     encryptedParagraph = document.getElementById(outputParagraph);
     console.log("alphabetOriginal: " + alphabetOriginal);
@@ -36,10 +43,12 @@ function writeMessage (outputParagraph) {
 }
 
 $("#cesar-btn").click(function() {
+    getShift();
     iterateString('input-text', false);
     writeMessage('encrypted')
 })
 $("#cesar-decipher-btn").click(function() {
+    getShift();
     iterateString('text-to-decrypt', 'decrypted', true);
     writeMessage('decrypted')
 })
