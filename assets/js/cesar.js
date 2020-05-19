@@ -28,14 +28,15 @@ $(document).ready(function () {
             }
         }
     }
-
-    function getShift() {
-        if (shift < 1 || shift > 25 || shift == isNaN(shift)) {
+    
+    function getShift(shiftField) {
+        let checkShift = document.getElementById(shiftField).value;
+        if (checkShift < 1 || checkShift > 25 || checkShift == isNaN(shift)) {
             shift = 13;
-            $("#input-shift").val(shift);
+            document.getElementById(shiftField).value = "13";
         }
         else {
-            shift = Number(document.getElementById("input-shift").value);
+            shift = Number(document.getElementById(shiftField).value);
         }
     }
 
@@ -46,7 +47,7 @@ $(document).ready(function () {
     }
 
     $("#cesar-btn").click(function () {
-        getShift();
+        getShift("input-shift");
         iterateString('input-text', false);
         writeMessage('encrypted')
     })
