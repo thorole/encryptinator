@@ -7,13 +7,20 @@ $(document).ready(function () {
     let alphabet = alphabetOriginal.slice()
     let cesarString = "";
     let shift;
-    function iterateString(message, reversed) {
+    let cesarUserText;
+
+    function getText (message) {
+        cesarUserText = "";
+        cesarUserText = document.getElementById(message).value;
+    }
+
+    function iterateString(text, reversed) {
         alphabet = alphabetOriginal.slice();
         if (reversed == true) {
             alphabet = alphabet.reverse();
         }
         cesarString = "";
-        inputText = document.getElementById(message).value;
+        inputText = text;
         inputText = inputText.toLowerCase();
         for (let i = 0; i < inputText.length; i++) {
             for (let j = 0; j < alphabet.length; j++) {
@@ -47,14 +54,16 @@ $(document).ready(function () {
     }
 
     $("#cesar-btn").click(function () {
+        getText("input-text");
         getShift("input-shift");
-        iterateString('input-text', false);
-        writeMessage('encrypted')
+        iterateString(cesarUserText, false);
+        writeMessage('encrypted');
     })
     $("#cesar-decipher-btn").click(function () {
+        getText("text-to-decrypt");
         getShift("output-shift");
-        iterateString('text-to-decrypt', 'decrypted', true);
-        writeMessage('decrypted')
+        iterateString(cesarUserText, true);
+        writeMessage('decrypted');
     })
     //$("#cesar-btn").click(iterateString('input-text', 'encrypted'));
     //$("#cesar-decipher-btn").click(decipher);
