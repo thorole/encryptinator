@@ -156,6 +156,4 @@ $(document).ready(function () {
             seconds--;
         }
     }
-
-writeMessage("decrypted");
 });
