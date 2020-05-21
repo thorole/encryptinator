@@ -5,7 +5,7 @@ let alphabetOriginal = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "
 //===================== Cesar cipher logic =======================
 
 let alphabet = alphabetOriginal.slice()
-let cesarString = "";
+//let cesarString = "";
 let shift = 13;
 let cesarUserText;
 
@@ -34,6 +34,7 @@ function iterateString(text, reversed) {
             }
         }
     }
+    return cesarString;
 }
 
 function getShift(shiftField) {
@@ -141,7 +142,7 @@ $(document).ready(function () {
     $("#cesar-btn").click(function () {
         getText("input-text");
         getShift("input-shift");
-        iterateString(cesarUserText, false);
+        let cesarString = iterateString(cesarUserText, false);
         writeMessage('encrypted');
     })
     $("#cesar-decipher-btn").click(function () {

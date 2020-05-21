@@ -68,7 +68,7 @@ $(document).ready(function () {
             $("#success-message").text("Correct!");
             toggleNextStageBox();
             toggleGameElements();
-            $("#user-word:text").val("");
+            $("#user-word").val("");
         }
         else {
             $("#result").text("Incorrect");
