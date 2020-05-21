@@ -1,9 +1,9 @@
 
 $(document).ready(function () {
 
-    let alphabetOriginal = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
+    /*let alphabetOriginal = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
         "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
-        "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];*/
 
     let stages = [
         ["car", "cow", "too", "far", "see", "sea", "all", "say"],
@@ -37,7 +37,7 @@ $(document).ready(function () {
     function displayNextLevel() {
         getWord(level);
         console.log(gameWord);
-        encryptGameWord(gameWord);
+        iterateString(gameWord, false);
         writeEncryptedWord();
         toggleGameElements();
         startTimer(60);
@@ -53,22 +53,6 @@ $(document).ready(function () {
     function getWord(stageNumber) {
         gameWord = stages[stageNumber][[Math.floor(Math.random() * stages[stageNumber].length)]];
         console.log(gameWord);
-    }
-
-    let cesarString = "";
-    let shift = 13;
-    function encryptGameWord(word) {
-        let alphabet = alphabetOriginal;
-        cesarString = "";
-        let inputText = word.toLowerCase();
-        for (let i = 0; i < inputText.length; i++) {
-            for (let j = 0; j < alphabet.length; j++) {
-                if (inputText[i] == alphabet[j]) {
-                    cesarString += alphabet[j + shift];
-                    j = alphabet.length;
-                }
-            }
-        }
     }
 
     function writeEncryptedWord() {

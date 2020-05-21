@@ -6,7 +6,7 @@ let alphabetOriginal = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "
 
 let alphabet = alphabetOriginal.slice()
 let cesarString = "";
-let shift;
+let shift = 13;
 let cesarUserText;
 
 function getText(message) {
