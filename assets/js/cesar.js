@@ -1,10 +1,7 @@
-$(document).ready(function () {
-
-    let alphabetOriginal = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
-        "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
-        "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-    let alphabet = alphabetOriginal.slice()
+let alphabetOriginal = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
+    "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
+    "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+let alphabet = alphabetOriginal.slice()
     let cesarString = "";
     let shift;
     let cesarUserText;
@@ -53,18 +50,21 @@ $(document).ready(function () {
         encryptedParagraph.innerHTML = cesarString;
     }
 
-    $("#cesar-btn").click(function () {
-        getText("input-text");
-        getShift("input-shift");
-        iterateString(cesarUserText, false);
-        writeMessage('encrypted');
-    })
-    $("#cesar-decipher-btn").click(function () {
-        getText("text-to-decrypt");
-        getShift("output-shift");
-        iterateString(cesarUserText, true);
-        writeMessage('decrypted');
-    })
-    //$("#cesar-btn").click(iterateString('input-text', 'encrypted'));
-    //$("#cesar-decipher-btn").click(decipher);
+$(document).ready(function () {
+
+
+        $("#cesar-btn").click(function () {
+            getText("input-text");
+            getShift("input-shift");
+            iterateString(cesarUserText, false);
+            writeMessage('encrypted');
+        })
+        $("#cesar-decipher-btn").click(function () {
+            getText("text-to-decrypt");
+            getShift("output-shift");
+            iterateString(cesarUserText, true);
+            writeMessage('decrypted');
+        })
+
+    
 });
