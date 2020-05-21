@@ -56,7 +56,6 @@ function writeMessage(outputParagraph) {
 //========================== Vignere Cipher logic =============================
 
 let userString;
-let alphabet = alphabetOriginal.slice();
 let inputKey;
 let key;
 let vigenereText;
