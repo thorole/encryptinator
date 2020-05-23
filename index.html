@@ -29,7 +29,7 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
-          
+
         </ul>
       </div>
     </nav>
@@ -48,7 +48,8 @@
       <h2 id="about-encryption">A brief introduction to encryption</h2>
       <div class="row">
         <div class="col-lg-4">
-          <p id="encryption-info-one">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rhoncus ultrices risus,
+          <p id="encryption-info-one">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rhoncus ultrices
+            risus,
             vitae vestibulum dolor imperdiet eu. Cras bibendum, neque ut lacinia dignissim, augue nisl
             dignissim
             urna, et pretium massa sem eu massa.<span class="hidden" id="intro-more-one"> Proin at sodales quam. Ut
@@ -60,7 +61,8 @@
           <button id="intro-button-one">Read more</button>
         </div>
         <div class="col-lg-4">
-          <p id="encryption-info-two">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rhoncus ultrices risus,
+          <p id="encryption-info-two">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rhoncus ultrices
+            risus,
             vitae vestibulum dolor imperdiet eu. Cras bibendum, neque ut lacinia dignissim, augue nisl
             dignissim
             urna, et pretium massa sem eu massa.<span class="hidden" id="intro-more-two"> Proin at sodales quam. Ut
@@ -72,7 +74,8 @@
           <button id="intro-button-two">Read more</button>
         </div>
         <div class="col-lg-4">
-          <p id="encryption-info-three">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rhoncus ultrices risus,
+          <p id="encryption-info-three">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rhoncus ultrices
+            risus,
             vitae vestibulum dolor imperdiet eu. Cras bibendum, neque ut lacinia dignissim, augue nisl
             dignissim
             urna, et pretium massa sem eu massa.<span class="hidden" id="intro-more-three"> Proin at sodales quam. Ut
@@ -87,40 +90,48 @@
     </section>
     <div class="row form-section">
       <div class="col-md-6">
-        <h3 id="cesar-heading">Cesar Cipher</h3>
-        <div class="bar"></div>
-        <!--Cesar encrypt fields-->
-        <p class="input-info">Enter plain text:</p>
-        <textarea id="input-text" class="input-element"></textarea>
-        <p class="input-info">Enter shift 1-25:</p>
-        <input id="input-shift" class="input-element" type="number" min="1" max="25">
-        <button id="cesar-btn" class="encrypt-btn">Encrypt!</button>
-        <p id="encrypted" class="output-field"></p>
-        <!-- Cesar decryption fields -->
-        <p class="input-info">Enter encrypted text:</p>
-        <textarea id="text-to-decrypt" class="input-element"></textarea>
-        <p class="input-info">Enter shift 1-25:</p>
-        <input id="output-shift" class="input-element" type="number" min="1" max="25">
-        <button id="cesar-decipher-btn" class="encrypt-btn">Decrypt!</button>
-        <p id="decrypted" class="output-field"></p>
+        <div class="input-container">
+          <div class="input-elements">
+            <h3 id="cesar-heading">Cesar Cipher</h3>
+            <div class="bar"></div>
+            <!--Cesar encrypt fields-->
+            <p class="input-info">Enter plain text:</p>
+            <textarea id="input-text" class="input-element"></textarea>
+            <p class="input-info">Enter shift 1-25:</p>
+            <input id="input-shift" class="input-element" type="number" min="1" max="25">
+            <button id="cesar-btn" class="encrypt-btn">Encrypt!</button>
+            <p id="encrypted" class="output-field"></p>
+            <!-- Cesar decryption fields -->
+            <p class="input-info">Enter encrypted text:</p>
+            <textarea id="text-to-decrypt" class="input-element"></textarea>
+            <p class="input-info">Enter shift 1-25:</p>
+            <input id="output-shift" class="input-element" type="number" min="1" max="25">
+            <button id="cesar-decipher-btn" class="encrypt-btn">Decrypt!</button>
+            <p id="decrypted" class="output-field"></p>
+          </div>
+        </div>
       </div>
       <div class="col-md-6">
-        <h3 id="vigenere-heading">Vigenere Cipher</h3>
-        <div class="bar"></div>
-        <!--Vigenere encrypt fields-->
-        <p class="input-info">Enter plain text:</p>
-        <textarea id="vigenere-input" class="input-element"></textarea>
-        <p class="input-info">Enter key (letters only - no spaces):</p>
-        <input id="vigenere-key" class="input-element" type="text">
-        <button id="vigenere-btn" class="encrypt-btn">Encrypt!</button>
-        <p id="vigenere-output" class="output-field"></p>
-        <!--Vigenere decrypt fields-->
-        <p class="input-info">Enter encrypted text:</p>
-        <textarea id="vigenere-to-decrypt" class="input-element" type="text"></textarea>
-        <p class="input-info">Enter key (letters only - no spaces):</p>
-        <input id="vigenere-key-decrypt" class="input-element" type="text">
-        <button id="vigenere-decrypt-btn" class="encrypt-btn">Decrypt!</button>
-        <p id="vigenere-decrypt-output" class="output-field"></p>
+        <div class="input-container">
+          <div class="input-elements">
+            <h3 id="vigenere-heading">Vigenere Cipher</h3>
+            <div class="bar"></div>
+            <!--Vigenere encrypt fields-->
+            <p class="input-info">Enter plain text:</p>
+            <textarea id="vigenere-input" class="input-element"></textarea>
+            <p class="input-info">Enter key (letters only - no spaces):</p>
+            <input id="vigenere-key" class="input-element" type="text">
+            <button id="vigenere-btn" class="encrypt-btn">Encrypt!</button>
+            <p id="vigenere-output" class="output-field"></p>
+            <!--Vigenere decrypt fields-->
+            <p class="input-info">Enter encrypted text:</p>
+            <textarea id="vigenere-to-decrypt" class="input-element" type="text"></textarea>
+            <p class="input-info">Enter key (letters only - no spaces):</p>
+            <input id="vigenere-key-decrypt" class="input-element" type="text">
+            <button id="vigenere-decrypt-btn" class="encrypt-btn">Decrypt!</button>
+            <p id="vigenere-decrypt-output" class="output-field"></p>
+          </div>
+        </div>
       </div>
     </div>
     <!--======================================================================-->
@@ -148,7 +159,7 @@
           <div id="result" class="check-result game-element hidden"></div>
           <div id="timer" class="time-remaining game-element hidden"></div>
           <div id="current-score" class="score game-element hidden"></div>
-          <div id="shift-value" class="game-element hidden" ></div>
+          <div id="shift-value" class="game-element hidden"></div>
           <div id="alphabet-helper" class="alphabet-tool game-element hidden">a b c d e f g h i j k l m n o p q r s t u
             v w x y z</div>
         </div>
