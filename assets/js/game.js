@@ -2,8 +2,8 @@
 $(document).ready(function () {
 
     let elements = ["heading", "sub-heading-one", "sub-heading-two", "sub-heading-three", "about-encryption",
-"encryption-info-one", "encryption-info-two", "encryption-info-three", "intro-button-one", "intro-button-two",
-"intro-button-three", "cesar-heading", "vigenere-heading"];
+        "encryption-info-one", "encryption-info-two", "encryption-info-three", "intro-button-one", "intro-button-two",
+        "intro-button-three", "cesar-heading", "vigenere-heading"];
 
     let stages = [
         ["car", "cow", "too", "far", "see", "sea", "all", "say"],
@@ -174,12 +174,23 @@ $(document).ready(function () {
             clearInterval(timer);
             toggleGameElements();
             toggleGameOverBox();
-            $("#game-over-message").text("Game Over");
-            $("#final-score").text("Final score: " + score);
+            setGameOverText();
         }
         else {
             $("#timer").text(seconds);
             seconds--;
+        }
+    }
+
+    function setGameOverText() {
+        if (level < 5) {
+            $("#game-over-message").text("Game Over");
+            $("#final-score").text("Final score: " + score);
+        }
+        else {
+            $("#game-over-message").text("Game Over");
+            $("#final-score").text("Website destroyed. Thanks for trying!");
+            encryptElements();
         }
     }
 
@@ -191,5 +202,4 @@ $(document).ready(function () {
             document.getElementById(elements[i]).innerHTML = cesarString;
         }
     }
-    encryptElements();
 });
