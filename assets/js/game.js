@@ -34,8 +34,14 @@ $(document).ready(function () {
     });
 
     $("#reset-btn").click(function () {
-        toggleGameOverBox();
-        $("#start-game-btn").removeClass("hidden");
+        if (level < 5) {
+            toggleGameOverBox();
+            $("#start-game-btn").removeClass("hidden");
+        }
+        else {
+            toggleGameOverBox();
+        }
+        console.log("level is: " + level);
     });
 
     function displayNextLevel() {
@@ -44,7 +50,7 @@ $(document).ready(function () {
         encryptGameWord();
         writeEncryptedWord();
         toggleGameElements();
-        startTimer(60);
+        startTimer(15);
     }
 
     function encryptGameWord() {
@@ -201,5 +207,6 @@ $(document).ready(function () {
             console.log(cesarString);
             document.getElementById(elements[i]).innerHTML = cesarString;
         }
+        $("#start-game-btn").addClass("hidden");
     }
 });
