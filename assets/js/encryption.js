@@ -20,7 +20,7 @@ function iterateString(text, shiftNumber, reversed) {
     }
     shift = shiftNumber;
     cesarString = "";
-    inputText = text;
+    let inputText = text;
     inputText = inputText.toLowerCase();
     for (let i = 0; i < inputText.length; i++) {
         for (let j = 0; j < alphabet.length; j++) {
@@ -103,26 +103,27 @@ function convertKeyToNumbers(userKey) {
 is compared to alphabet[j], which is looped through for each letter in userString. When matched,
 alphabet[j + key[g]] is added to vigenereText. Reverse parameter is used to check if the function
 is called for encryption or decryption.*/
-function iterateVigenereString(reverse) {
+function iterateVigenereString(text, reverse) {
     alphabet = alphabetOriginal.slice();
     vigenereText = "";
     if (reverse === true) {
         alphabet = alphabet.reverse();
     }
+    let inputText = text;
     console.log("userstring is: " + userString);
     for (let i = 0, g = 0; i < userString.length; i++) {
         if (g == key.length) {
             g = 0;
         }
         for (let j = 0; j < alphabet.length; j++) {
-            if (userString[i] == alphabet[j]) {
+            if (inputText[i] == alphabet[j]) {
                 vigenereText += alphabet[j + key[g]];
                 j = alphabet.length;
                 g++;
                 console.log("encryptedmsginloopis: " + vigenereText);
             }
-            if ((!/^[a-z]/.test(userString[i]))) {    //Makes sure characters not in the range of a-z is printed
-                vigenereText += userString[i];
+            if ((!/^[a-z]/.test(inputText[i]))) {    //Makes sure characters not in the range of a-z is printed
+                vigenereText += inputText[i];
                 j = alphabet.length;
             }
         }
@@ -160,7 +161,7 @@ $(document).ready(function () {
         getUserKey("vigenere-key");
         writeDefaultKey("vigenere-key");
         convertKeyToNumbers(inputKey);
-        iterateVigenereString("vigenere-input", "vigenere-key", false);
+        iterateVigenereString(userString, false);
         writeVigenereText("vigenere-output");
     })
     $("#vigenere-decrypt-btn").click(function () {
@@ -168,7 +169,7 @@ $(document).ready(function () {
         getUserKey("vigenere-key-decrypt");
         writeDefaultKey("vigenere-key-decrypt");
         convertKeyToNumbers(inputKey);
-        iterateVigenereString(true);
+        iterateVigenereString(userString, true);
         writeVigenereText("vigenere-decrypt-output");
     })
 
