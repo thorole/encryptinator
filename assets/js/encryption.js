@@ -104,14 +104,15 @@ is compared to alphabet[j], which is looped through for each letter in userStrin
 alphabet[j + key[g]] is added to vigenereText. Reverse parameter is used to check if the function
 is called for encryption or decryption.*/
 function iterateVigenereString(text, reverse) {
+    console.log("text is: " + text);
     alphabet = alphabetOriginal.slice();
     vigenereText = "";
     if (reverse === true) {
         alphabet = alphabet.reverse();
     }
     let inputText = text;
-    console.log("userstring is: " + userString);
-    for (let i = 0, g = 0; i < userString.length; i++) {
+    console.log("userstring is: " + inputText);
+    for (let i = 0, g = 0; i < inputText.length; i++) {
         if (g == key.length) {
             g = 0;
         }

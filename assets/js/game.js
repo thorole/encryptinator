@@ -37,10 +37,21 @@ $(document).ready(function () {
     function displayNextLevel() {
         getWord(level);
         console.log(gameWord);
-        iterateString(gameWord, gameShift, false);
+        encryptGameWord();
         writeEncryptedWord();
         toggleGameElements();
         startTimer(60);
+    }
+
+    function encryptGameWord () {
+        if (level < 5) {
+            iterateString(gameWord, gameShift, false);
+        }
+        else {
+            convertKeyToNumbers(finalStageKeys[0]);
+            iterateVigenereString(gameWord, false);
+
+        }
     }
 
     function getGameShift() {
