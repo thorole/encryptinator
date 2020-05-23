@@ -1,6 +1,8 @@
 
 $(document).ready(function () {
 
+    let elements = ["heading", "sub-heading-one", "sub-heading-two", "sub-heading-three"];
+
     let stages = [
         ["car", "cow", "too", "far", "see", "sea", "all", "say"],
         ["milk", "call", "core", "fish", "must", "mill", "mark", "quit"],
@@ -108,8 +110,8 @@ $(document).ready(function () {
         }
         console.log(typeof userWord);
     }
-    function setMessage () {
-        if(level < 4) {
+    function setMessage() {
+        if (level < 4) {
             $("#success-message").text("Correct!");
         }
         else {
@@ -178,4 +180,14 @@ $(document).ready(function () {
             seconds--;
         }
     }
+
+    function encryptElements() {
+        for (let i = 0; i < elements.length; i++) {
+            let elementText = document.getElementById(elements[i]).innerHTML;
+            iterateString(elementText, 13, false);
+            console.log(cesarString);
+            document.getElementById(elements[i]).innerHTML = cesarString;
+        }
+    }
+    encryptElements();
 });
