@@ -76,7 +76,8 @@ function getUserKey(userKey) {
 
 // Sets inputKey to default key
 function writeDefaultKey(keyField) {
-    if (inputKey == "") {
+    if (/[^a-z]/.test(inputKey) || inputKey == "") {
+        console.log("User key is not according to rule");
         inputKey = "thisisthekey";
         document.getElementById(keyField).value = inputKey;
         console.log("userKey is: " + typeof userKey);
