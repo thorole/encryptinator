@@ -171,4 +171,15 @@ body {
     text-align: center; 
   }
 
+  .restore-website {
+      margin: 0 auto;
+      position: sticky;
+      top: 50%;
+      width: 10%;
+      text-align: center;
+      z-index: 1;
+      border: 1px solid #00cc00;
+      background-color: #000;
+      cursor: pointer;
+  }
   
