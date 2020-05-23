@@ -210,5 +210,24 @@ $(document).ready(function () {
         $("input").prop('disabled', true);
         $("textarea").prop('disabled', true);
         $("number").prop('disabled', true);
+        $("#restore").removeClass("hidden");
     }
+
+    function decryptElements() {
+        for (let i = 0; i < elements.length; i++) {
+            let elementText = document.getElementById(elements[i]).innerHTML;
+            iterateString(elementText, 13, true);
+            console.log(cesarString);
+            document.getElementById(elements[i]).innerHTML = cesarString;
+        }
+        $("#start-game-btn").removeClass("hidden");
+        $("input").prop('disabled', false);
+        $("textarea").prop('disabled', false);
+        $("number").prop('disabled', false);
+        $("#restore").addClass("hidden");
+    }
+
+    $("#restore").click(function () {
+        decryptElements();
+    });
 });
