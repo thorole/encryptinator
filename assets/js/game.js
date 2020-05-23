@@ -13,7 +13,7 @@ $(document).ready(function () {
         ["cruches", "eyeball", "physics", "lunatic", "battery", "flowers", "handbag", "sixpack"],
         ["attackatdawn"]
     ];
-    let finalStageKeys = ["war"]
+    let finalStageKeys = ["ahead"]
     let level;
     let nextLevel;
     let gameShift;
@@ -29,8 +29,8 @@ $(document).ready(function () {
 
     $("#next-stage-btn").click(function () {
         nextStage();
-        getGameShift();
         displayNextLevel();
+        getGameShift();
     });
 
     $("#reset-btn").click(function () {
@@ -66,12 +66,13 @@ $(document).ready(function () {
     function getGameShift() {
         if (level > 0 && level < 5) {
             gameShift += 2;
+            $("#shift-value").text("Shift: " + gameShift);
         }
         else {
             gameShift = finalStageKeys[0];
+            $("#shift-value").text("Shift: " + gameShift + " = " + key);
         }
         console.log("shift is: " + gameShift);
-        $("#shift-value").text("Shift: " + gameShift)
     }
 
     function initiateGame() {
@@ -79,7 +80,7 @@ $(document).ready(function () {
         score = 0;
         gameShift = 3;
         $("#current-score").text("Score: 0");
-        $("#shift-value").text("Shift: " + gameShift)
+        $("#shift-value").text("Shift: " + gameShift);
     }
 
     let gameWord;
