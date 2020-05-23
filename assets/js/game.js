@@ -43,7 +43,7 @@ $(document).ready(function () {
         startTimer(60);
     }
 
-    function encryptGameWord () {
+    function encryptGameWord() {
         if (level < 5) {
             iterateString(gameWord, gameShift, false);
         }
@@ -80,7 +80,12 @@ $(document).ready(function () {
     }
 
     function writeEncryptedWord() {
-        $("#game-word").text(cesarString);
+        if (level < 5) {
+            $("#game-word").text(cesarString);
+        }
+        else {
+            $("#game-word").text(vigenereText);
+        }
     }
 
     function checkWord() {
@@ -93,7 +98,7 @@ $(document).ready(function () {
             console.log(score);
             $("#current-score").text("Score: " + score)
             clearInterval(timer);
-            $("#success-message").text("Correct!");
+            setMessage();
             toggleNextStageBox();
             toggleGameElements();
             $("#user-word").val("");
@@ -102,6 +107,14 @@ $(document).ready(function () {
             $("#result").text("Incorrect");
         }
         console.log(typeof userWord);
+    }
+    function setMessage () {
+        if(level < 4) {
+            $("#success-message").text("Correct!");
+        }
+        else {
+            $("#success-message").text("ERROR!");
+        }
     }
 
     $("#check-result-btn").click(function () {
