@@ -25,6 +25,7 @@ $(document).ready(function () {
 
     $("#next-stage-btn").click(function () {
         nextStage();
+        getGameShift();
         displayNextLevel();
     });
 
@@ -35,7 +36,6 @@ $(document).ready(function () {
 
     function displayNextLevel() {
         getWord(level);
-        getGameShift();
         console.log(gameWord);
         iterateString(gameWord, gameShift, false);
         writeEncryptedWord();
@@ -44,13 +44,14 @@ $(document).ready(function () {
     }
 
     function getGameShift() {
-        if (level < stages.length - 2) {
+        if (level > 0 && level < 5) {
             gameShift += 2;
-            console.log(stages.length)
         }
         else {
             gameShift = finalStageKeys[0];
         }
+        console.log("shift is: " + gameShift);
+        $("#shift-value").text("Shift: " + gameShift)
     }
 
     function initiateGame() {
@@ -80,7 +81,6 @@ $(document).ready(function () {
             score += seconds + 1;
             console.log(score);
             $("#current-score").text("Score: " + score)
-            $("#shift-value").text("Shift: " + gameShift)
             clearInterval(timer);
             $("#success-message").text("Correct!");
             toggleNextStageBox();
@@ -125,7 +125,7 @@ $(document).ready(function () {
     }
 
     function nextStage() {
-        if (level < stages.length) {
+        if (level < 5) {
             level++;
         }
         toggleNextStageBox();
