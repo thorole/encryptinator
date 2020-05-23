@@ -84,12 +84,13 @@ function writeDefaultKey(keyField) {
 }
 
 // Loops through each letter in the key and gets its index. Assigns index numbers to key
-function convertKeyToNumbers() {
+function convertKeyToNumbers(userKey) {
     key = [];
+    let keyToConvert = userKey;
     console.log(alphabetOriginal);
-    for (let i = 0; i < inputKey.length; i++) {
+    for (let i = 0; i < keyToConvert.length; i++) {
         for (k = 0; k < alphabetOriginal.length; k++) {
-            if (inputKey[i] == alphabetOriginal[k]) {
+            if (keyToConvert[i] == alphabetOriginal[k]) {
                 key.push(alphabetOriginal.indexOf(alphabetOriginal[k]));
                 k = alphabetOriginal.length;
             }
@@ -158,7 +159,7 @@ $(document).ready(function () {
         getUserText("vigenere-input");
         getUserKey("vigenere-key");
         writeDefaultKey("vigenere-key");
-        convertKeyToNumbers();
+        convertKeyToNumbers(inputKey);
         iterateVigenereString("vigenere-input", "vigenere-key", false);
         writeVigenereText("vigenere-output");
     })
@@ -166,7 +167,7 @@ $(document).ready(function () {
         getUserText("vigenere-to-decrypt");
         getUserKey("vigenere-key-decrypt");
         writeDefaultKey("vigenere-key-decrypt");
-        convertKeyToNumbers();
+        convertKeyToNumbers(inputKey);
         iterateVigenereString(true);
         writeVigenereText("vigenere-decrypt-output");
     })

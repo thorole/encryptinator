@@ -44,8 +44,9 @@ $(document).ready(function () {
     }
 
     function getGameShift() {
-        if (level < stages.length) {
+        if (level < stages.length - 2) {
             gameShift += 2;
+            console.log(stages.length)
         }
         else {
             gameShift = finalStageKeys[0];
