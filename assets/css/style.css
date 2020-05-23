@@ -85,6 +85,13 @@ body {
     border: 1px solid #252525;
     color: #00cc00;
     font-size: 1rem;
+    transition: ease-in-out, border, 0.35s;
+ }
+
+.input-element:focus {
+    outline: none;
+    border: 1px solid #00cc00;
+    
  }
 
  .input-info {
