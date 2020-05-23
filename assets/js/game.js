@@ -10,6 +10,7 @@ $(document).ready(function () {
     ];
     let level;
     let nextLevel;
+    let gameShift;
 
 
 
@@ -32,6 +33,7 @@ $(document).ready(function () {
 
     function displayNextLevel() {
         getWord(level);
+        getGameShift();
         console.log(gameWord);
         iterateString(gameWord, false);
         writeEncryptedWord();
@@ -39,10 +41,16 @@ $(document).ready(function () {
         startTimer(60);
     }
 
+    function getGameShift () {
+        gameShift += 2; 
+    }
+
     function initiateGame() {
         level = 0;
         score = 0;
+        gameShift = 3;
         $("#current-score").text("Score: 0");
+        $("#shift-value").text("Shift: " + gameShift)
     }
 
     let gameWord;
@@ -64,6 +72,7 @@ $(document).ready(function () {
             score += seconds + 1;
             console.log(score);
             $("#current-score").text("Score: " + score)
+            $("#shift-value").text("Shift: " + gameShift)
             clearInterval(timer);
             $("#success-message").text("Correct!");
             toggleNextStageBox();
