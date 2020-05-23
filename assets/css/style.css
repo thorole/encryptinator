@@ -60,6 +60,23 @@ body {
  
  input {
      display: block;
+     width: 50%;
+     
+ }
+
+ input[type="number"] {
+    width: 10%;
+ }
+
+ textarea {
+     width: 100%;
+    }
+
+ .input-element {
+    background-color: #000;
+    border: 1px solid #252525;
+    color: #00cc00;
+    font-size: 1rem;
  }
 
  .input-info {
