@@ -1,7 +1,9 @@
 
 $(document).ready(function () {
 
-    let elements = ["heading", "sub-heading-one", "sub-heading-two", "sub-heading-three"];
+    let elements = ["heading", "sub-heading-one", "sub-heading-two", "sub-heading-three", "about-encryption",
+"encryption-info-one", "encryption-info-two", "encryption-info-three", "intro-button-one", "intro-button-two",
+"intro-button-three", "cesar-heading", "vigenere-heading"];
 
     let stages = [
         ["car", "cow", "too", "far", "see", "sea", "all", "say"],
