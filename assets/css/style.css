@@ -91,15 +91,17 @@ body {
 
  .input-element {
     background-color: #000;
-    border: 1px solid #252525;
+    border: 1px solid #006400;
     color: #00cc00;
     font-size: 1rem;
-    transition: ease-in-out, border, 0.35s;
+    border-shadow: none;
+    transition: ease-in-out, box-shadow, 0.2s;
  }
 
 .input-element:focus {
     outline: none;
     border: 1px solid #00cc00;
+    box-shadow: 0 0 5px #00cc00;
     
  }
 
@@ -113,6 +115,7 @@ body {
      width: 100%;
      margin-top: 1.5rem;
      color: #f1f7f1;
+     border: 1px solid #252525;
  }
 
  @media only screen and (max-width: 600px) {
