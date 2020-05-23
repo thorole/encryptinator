@@ -35,7 +35,7 @@ $(document).ready(function () {
         getWord(level);
         getGameShift();
         console.log(gameWord);
-        iterateString(gameWord, false);
+        iterateString(gameWord, gameShift, false);
         writeEncryptedWord();
         toggleGameElements();
         startTimer(60);
