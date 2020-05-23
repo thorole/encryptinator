@@ -62,6 +62,11 @@ body {
      display: block;
  }
 
+ .input-info {
+     margin-bottom: 0;
+     font-size: 1rem;
+ }
+
  .output-field {
      background-color: #252525;
      min-height: 5rem;
