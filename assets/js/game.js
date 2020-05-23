@@ -41,7 +41,6 @@ $(document).ready(function () {
         else {
             toggleGameOverBox();
         }
-        console.log("level is: " + level);
     });
 
     function displayNextLevel() {
@@ -208,5 +207,8 @@ $(document).ready(function () {
             document.getElementById(elements[i]).innerHTML = cesarString;
         }
         $("#start-game-btn").addClass("hidden");
+        $("input").prop('disabled', true);
+        $("textarea").prop('disabled', true);
+        $("number").prop('disabled', true);
     }
 });
