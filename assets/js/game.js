@@ -6,8 +6,10 @@ $(document).ready(function () {
         ["milk", "call", "core", "fish", "must", "mill", "mark", "quit"],
         ["ready", "sauce", "cream", "spoke", "tired", "dirty", "crutch", "alias"],
         ["archer", "kitten", "signal", "psycho", "charger", "candle", "gloves", "finger"],
-        ["cruches", "eyeball", "physics", "lunatic", "battery", "flowers", "handbag", "sixpack"] 
+        ["cruches", "eyeball", "physics", "lunatic", "battery", "flowers", "handbag", "sixpack"],
+        ["attackatdawn"]
     ];
+    let finalStageKeys = ["war"]
     let level;
     let nextLevel;
     let gameShift;
@@ -41,8 +43,13 @@ $(document).ready(function () {
         startTimer(60);
     }
 
-    function getGameShift () {
-        gameShift += 2; 
+    function getGameShift() {
+        if (level < stages.length) {
+            gameShift += 2;
+        }
+        else {
+            gameShift = finalStageKeys[0];
+        }
     }
 
     function initiateGame() {
@@ -89,16 +96,16 @@ $(document).ready(function () {
         checkWord();
     });
 
-    function toggleGameOverBox () {
-       if ($("#game-over-box").hasClass("hidden")) {
-        $("#game-over-box").removeClass("hidden");
-       }
-       else {
-        $("#game-over-box").addClass("hidden")
-       }
+    function toggleGameOverBox() {
+        if ($("#game-over-box").hasClass("hidden")) {
+            $("#game-over-box").removeClass("hidden");
+        }
+        else {
+            $("#game-over-box").addClass("hidden")
+        }
     }
 
-    function toggleNextStageBox () {
+    function toggleNextStageBox() {
         if ($("#next-lvl-box").hasClass("hidden")) {
             $("#next-lvl-box").removeClass("hidden");
         }
@@ -107,7 +114,7 @@ $(document).ready(function () {
         }
     }
 
-    function toggleGameElements () {
+    function toggleGameElements() {
         if ($(".game-element").hasClass("hidden")) {
             $(".game-element").removeClass("hidden");
         }
@@ -117,7 +124,7 @@ $(document).ready(function () {
     }
 
     function nextStage() {
-        if (level < 5) {
+        if (level < stages.length) {
             level++;
         }
         toggleNextStageBox();
