@@ -51,8 +51,53 @@ body {
  .hidden {
      display: none;
  }
+ 
+ /*---------------- w3schools modals with modifications -------------------------*/
+ .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    border-radius: 0;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-contents {
+    background-color: #fefefe;
+    margin: 2rem auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #006400;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
 
+  .modal-image {
+      width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #006400;
+    float: right;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #00cc00;
+    text-decoration: none;
+    cursor: pointer;
+  }
+ 
+ 
 
+/*-------------------- Encryption fields ------------------*/
  .form-section {
     background-color: #000;
     margin-top: 2rem;
