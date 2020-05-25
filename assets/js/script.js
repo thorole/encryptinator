@@ -18,36 +18,34 @@ $("#intro-button-two").click(function () { //Read more/less functionality for 2n
   }
 });
 
-$("button").hover(function(){
+$("button").hover(function () {
   $(this).css("background-color", "#000");
-  }, function(){
+}, function () {
   $(this).css("background-color", "#252525");
 });
 
 //-------------------- Modals opening and closing functionality -----------------------
-// Get the modal
-var modal = document.getElementById("cesar-modal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("open-cesar-modal");
+$("#open-cesar-modal").click(function () {
+  $("#cesar-modal").css("display", "block");
+});
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+$(".close").click(function () {
+  $("#cesar-modal").css("display", "none");
+});
 
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+$("#open-vigenere-modal").click(function () {
+  $("#vigenere-modal").css("display", "block");
+});
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+$(".close").click(function () {
+  $("#vigenere-modal").css("display", "none");
+});
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+
+window.onclick = function (event) {
+  if (event.target == document.getElementById("cesar-modal")) {
+    $("#cesar-modal").css("display", "none");
   }
 }
 
@@ -58,7 +56,7 @@ function blinkingText() {
     $("#start-game-btn").removeClass("dark-green").addClass("light-green");
   }
   else {
-      $("#start-game-btn").removeClass("light-green").addClass("dark-green");
+    $("#start-game-btn").removeClass("light-green").addClass("dark-green");
   }
 }
 
