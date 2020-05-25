@@ -146,13 +146,13 @@ $(document).ready(function () {
     $("#cesar-btn").click(function () {
         getText("input-text");
         getShift("input-shift");
-        let cesarString = iterateString(cesarUserText, shift, false);
+        let cesarString = iterateString(cesarUserText, shift, true);
         writeMessage('encrypted');
     })
     $("#cesar-decipher-btn").click(function () {
         getText("text-to-decrypt");
         getShift("output-shift");
-        iterateString(cesarUserText, shift, true);
+        iterateString(cesarUserText, shift, false);
         writeMessage('decrypted');
     })
 
