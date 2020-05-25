@@ -52,6 +52,13 @@ body {
      display: none;
  }
  
+ .vigenere-explained {
+     display: inline-block;
+ }
+
+ .sample {
+     color: #f1f7f1;
+ }
  /*---------------- w3schools modals with modifications -------------------------*/
  .modal {
     display: none; /* Hidden by default */
