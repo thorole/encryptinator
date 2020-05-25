@@ -71,17 +71,25 @@
           <button id="intro-button-one">Read more</button>
         </div>
         <div class="col-lg-6">
-          <p id="encryption-info-two">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam rhoncus ultrices
-            risus,
-            vitae vestibulum dolor imperdiet eu. Cras bibendum, neque ut lacinia dignissim, augue nisl
-            dignissim
-            urna, et pretium massa sem eu massa.<span class="hidden" id="intro-more-two"> Proin at sodales quam. Ut
-              porta diam quis augue imperdiet,
-              a
-              accumsan enim suscipit.<img id="open-vigenere-modal" src="./assets/images/vigeneretable.jpg" Nulla malesuada venenatis semper. Donec sodales ut arcu et rhoncus.
-              Lorem ipsum
-              dolor sit amet, consectetur adipiscing elit. In blandit ultrices mattis.</span></p>
-              <!-- Vigenere Modal -->
+          <p id="encryption-info-two">The Vigenere Cipher is a method of encrypting text, which builds upon the Cesar
+            Cipher method. This encryption method was (wrongfully) attributed to Blaise de Vigènere and so acquired its
+            name.</p><span class="hidden" id="intro-more-two">
+            <p>In the Vigenere Cipher each letter of the plaintext is given
+              an individual shift, in contrast
+              to the Cesar Cipher where the same shift is applied to all the letters in the plaintext. The shift of each
+              letter is provided with a key, which are all letters The key is then put "upon" the plaintext.</p>
+            <div  class="vigenere-explained">
+              <p>Plaintext: <br>
+                Key: <br>
+                Shift:</p>
+            </div>
+            <div class="vigenere-explained">
+              <p> a p p l e <br>
+              a d d e d <br>
+              0 3 3 4 3</p>
+            </div> <img id="open-vigenere-modal" src="./assets/images/vigeneretable.jpg"></p>
+          </span>
+          <!-- Vigenere Modal -->
           <div id="vigenere-modal" class="modal">
             <!-- Modal content -->
             <div class="modal-contents">
