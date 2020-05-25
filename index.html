@@ -55,7 +55,8 @@
               instance, if we have the letter "E" in plaintext and apply a shift of 3 we would end up with a "B".
               <img id="open-cesar-modal" src="./assets/images/cesarcipher.png"
                 alt="Image explaining how a shift in cesar cipher works."> As you can see, we started with the letter
-              <span class="sample">"E"</span>, skipped three letters <em>down</em>, and ended up at <span class="sample">"B"</span>. In order to decrypt a word which has been
+              <span class="sample">"E"</span>, skipped three letters <em>down</em>, and ended up at <span
+                class="sample">"B"</span>. In order to decrypt a word which has been
               encrypted with this method, all you have to do is apply the same shift to the encrypted letter and skip 3
               letters <em>up</em> the alphabet. Try it out in the form below!</span></p>
           <!-- Cesar Cipher Modal -->
@@ -90,6 +91,12 @@
                 0 3 3 4 3 <br>
                 a s s p h</p>
             </div> <img id="open-vigenere-modal" src="./assets/images/vigeneretable.jpg"></p>
+            <p>As you can see, each letter in the key has an index in relation to its position in the alphabet.
+              <em>Notice
+                that the letter "A" is indexed to 0.</em> That means that B = 1, C = 2, and so on.</p>
+            <p>In order to decrypt a text encrypted with the Vigenere Cipher, all you need is the correct key and then
+              skip <em>down</em> the alphabet as many letters as the index of the corresponding key letter.</p>
+              <p>If the key is totally random, and the length of the key is the same as the plaintext, this method of encryption is more or less unbreakable.</p>
           </span>
           <!-- Vigenere Modal -->
           <div id="vigenere-modal" class="modal">
