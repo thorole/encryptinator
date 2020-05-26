@@ -180,13 +180,15 @@
           </div>
           <!-- ----------------- In-game elements --------------------------- -->
           <div id="game-content" class="game-elements hidden">
+            <div class="flex-container">
+              <div id="current-score" class="score game-element"></div>
+              <div id="shift-value" class="shift game-element"></div>
+            </div>
             <div id="game-word" class="game-word-box game-element"></div>
             <input id="user-word" class="game-user-input game-element" type="text">
-            <button id="check-result-btn" class="check-button game-element">Check</button>
             <div id="result" class="check-result game-element"></div>
+            <button id="check-result-btn" class="check-button game-element">Check</button>
             <div id="timer" class="time-remaining game-element"></div>
-            <div id="current-score" class="score game-element"></div>
-            <div id="shift-value" class="shift game-element"></div>
             <div id="alphabet-helper" class="alphabet-tool game-element">a b c d e f g h i j k l m n o p q r s t
               u
               v w x y z</div>
