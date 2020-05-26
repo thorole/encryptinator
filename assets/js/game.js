@@ -54,7 +54,7 @@ $(document).ready(function () {
 
     function encryptGameWord() {
         if (level < 5) {
-            iterateString(gameWord, gameShift, false);
+            iterateString(gameWord, gameShift, true);
         }
         else {
             convertKeyToNumbers(finalStageKeys[0]);
@@ -67,12 +67,12 @@ $(document).ready(function () {
         if (level > 0 && level < 5) {
             gameShift += 2;
             $("#shift-value").text("Shift: " + gameShift);
+            console.log("shift is: " + gameShift);
         }
         else {
             gameShift = finalStageKeys[0];
             $("#shift-value").text("Shift: " + gameShift + " = " + key);
         }
-        console.log("shift is: " + gameShift);
     }
 
     function initiateGame() {
