@@ -152,11 +152,11 @@ $(document).ready(function () {
     }
 
     function toggleGameElements() {
-        if ($(".game-element").hasClass("hidden")) {
-            $(".game-element").removeClass("hidden");
+        if ($("#game-content").hasClass("hidden")) {
+            $("#game-content").removeClass("hidden");
         }
         else {
-            $(".game-element").addClass("hidden")
+            $("#game-content").addClass("hidden")
         }
     }
 

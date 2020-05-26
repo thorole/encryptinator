@@ -172,22 +172,25 @@
             <div id="final-score"></div>
             <button id="reset-btn">Back to start</button>
           </div>
-          <div id="next-lvl-box" class="message-box message-box-wide">
+          <div id="next-lvl-box" class="message-box message-box-wide hidden">
             <div id="success-message" class="message">ERROR!</div>
             <div id="error-message">A critical error has been detected! Encryption method is set to Vigenere Cipher. You
               must decrypt the the next word to prevent breakdown of the site!</div>
             <button id="next-stage-btn" class="next-lvl">Next stage</button>
           </div>
           <!-- ----------------- In-game elements --------------------------- -->
-          <div id="game-word" class="game-word-box hidden game-element"></div>
-          <input id="user-word" class="game-user-input hidden game-element" type="text">
-          <button id="check-result-btn" class="check-button hidden game-element">Check</button>
-          <div id="result" class="check-result game-element hidden"></div>
-          <div id="timer" class="time-remaining game-element hidden"></div>
-          <div id="current-score" class="score game-element hidden"></div>
-          <div id="shift-value" class="game-element hidden"></div>
-          <div id="alphabet-helper" class="alphabet-tool game-element hidden">a b c d e f g h i j k l m n o p q r s t u
-            v w x y z</div>
+          <div id="game-content" class="game-elements hidden">
+            <div id="game-word" class="game-word-box game-element"></div>
+            <input id="user-word" class="game-user-input game-element" type="text">
+            <button id="check-result-btn" class="check-button game-element">Check</button>
+            <div id="result" class="check-result game-element"></div>
+            <div id="timer" class="time-remaining game-element"></div>
+            <div id="current-score" class="score game-element"></div>
+            <div id="shift-value" class="shift game-element"></div>
+            <div id="alphabet-helper" class="alphabet-tool game-element">a b c d e f g h i j k l m n o p q r s t
+              u
+              v w x y z</div>
+          </div>
         </div>
       </div>
     </div>

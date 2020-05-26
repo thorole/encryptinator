@@ -270,6 +270,13 @@ body {
       left: 0.5rem;
   }
 
+  .shift {
+      position: absolute;
+      width: 50%;
+      top: 0.5rem;
+      left: 25%;
+  }
+
   .time-remaining {
     position: absolute;
     width: 10%;
