@@ -29,8 +29,8 @@ $(document).ready(function () {
 
     $("#next-stage-btn").click(function () {
         nextStage();
-        displayNextLevel();
         getGameShift();
+        displayNextLevel();
     });
 
     $("#reset-btn").click(function () {
