@@ -123,6 +123,7 @@ $(document).ready(function () {
             $("#success-message").text("Correct!");
         }
         else {
+            $("#next-lvl-box").addClass("message-box-wide");
             $("#success-message").text("ERROR!");
             $("#error-message").text("A critical error has been detected! Encryption method is set to Vigenere Cipher. You must decrypt the the next word to prevent breakdown of the site!");
         }

@@ -96,7 +96,8 @@
                 that the letter "A" is indexed to 0.</em> That means that B = 1, C = 2, and so on.</p>
             <p>In order to decrypt a text encrypted with the Vigenere Cipher, all you need is the correct key and then
               skip <em>down</em> the alphabet as many letters as the index of the corresponding key letter.</p>
-              <p>If the key is totally random, and the length of the key is the same as the plaintext, this method of encryption is more or less unbreakable.</p>
+            <p>If the key is totally random, and the length of the key is the same as the plaintext, this method of
+              encryption is more or less unbreakable.</p>
           </span>
           <!-- Vigenere Modal -->
           <div id="vigenere-modal" class="modal">
@@ -171,13 +172,11 @@
             <div id="final-score"></div>
             <button id="reset-btn">Back to start</button>
           </div>
-          <div id="next-lvl-box" class="message-box hidden">
-            <div id="success-message" class="message"></div>
-            <div id="error-message"></div>
+          <div id="next-lvl-box" class="message-box message-box-wide">
+            <div id="success-message" class="message">ERROR!</div>
+            <div id="error-message">A critical error has been detected! Encryption method is set to Vigenere Cipher. You
+              must decrypt the the next word to prevent breakdown of the site!</div>
             <button id="next-stage-btn" class="next-lvl">Next stage</button>
-          </div>
-          <div>
-            <div id="critical-error"></div>
           </div>
           <!-- ----------------- In-game elements --------------------------- -->
           <div id="game-word" class="game-word-box hidden game-element"></div>

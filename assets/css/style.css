@@ -173,7 +173,7 @@ body {
      border: 1px solid #252525;
  }
 
- @media only screen and (max-width: 600px) {
+ @media only screen and (max-width: 768px) {
     body {
       font-size: 1rem;
     }
@@ -252,9 +252,10 @@ body {
   }
   
   .message-box-wide {
-      width: 90%;
-      left: 5%;
-  }
+    top: 1rem;
+    width: 90%;
+    left: 5%;
+}
 
   .message {
       font-size: 3rem;
@@ -290,5 +291,13 @@ body {
       border: 1px solid #00cc00;
       background-color: #000;
       cursor: pointer;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .game-box {
+        width: 100%;
+        height: 23rem;
+    }
+
   }
   
