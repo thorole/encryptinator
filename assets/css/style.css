@@ -185,7 +185,7 @@ body {
     }
 
   }
-
+/* -------------------- The Game -----------------------*/
   .start-button {
       position: absolute;
       top: 40%;
@@ -249,6 +249,11 @@ body {
       left: 25%;
       text-align: center;
       padding: 1rem;
+  }
+  
+  .message-box-wide {
+      width: 90%;
+      left: 5%;
   }
 
   .message {
