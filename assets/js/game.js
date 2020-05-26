@@ -49,7 +49,7 @@ $(document).ready(function () {
         encryptGameWord();
         writeEncryptedWord();
         toggleGameElements();
-        startTimer(15);
+        startTimer(90);
     }
 
     function encryptGameWord() {
