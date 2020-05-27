@@ -47,6 +47,7 @@ $(document).ready(function () {
         console.log(gameWord);
         encryptGameWord();
         writeEncryptedWord();
+        writeGameInfo();
         toggleGameElements();
         startTimer(60);
     }
@@ -65,11 +66,18 @@ $(document).ready(function () {
     function getGameShift() {
         if (level > 0 && level < 5) {
             gameShift += 2;
-            $("#shift-value").text("Shift: " + gameShift);
             console.log("shift is: " + gameShift);
         }
         else {
             gameShift = finalStageKeys[0];
+        }
+    }
+
+    function writeGameInfo () {
+        if (level >= 0 && level < 5) {
+            $("#shift-value").text("Shift: " + gameShift);
+        }
+        else {
             $("#shift-value").text("Shift: " + gameShift + " = " + key);
         }
     }
@@ -126,7 +134,6 @@ $(document).ready(function () {
         }
         else {
             $("#next-lvl-box").addClass("message-box-wide");
-            $("#game-content").addClass("dark-orange");
             $("#success-message").text("ERROR!");
             $("#error-message").text("A critical error has been detected! Encryption method is set to Vigenere Cipher. You must decrypt the the next word to prevent breakdown of the site!");
         }
