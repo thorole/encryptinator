@@ -218,19 +218,25 @@ body {
   }
 
   .game-word-box {
-      padding: 1rem;
+      width: 50%;
+      margin: 1rem auto;
+      padding: .5rem;
+      border: 1px dashed #006400;
   }
 
   .game-user-input {
     margin: 0 auto;
+    height: 2rem;
   }
 
   .check-button {
-    
+    width: 50%;
+    margin-top: 1rem;
   }
 
   .alphabet-tool {
-      
+      margin-top: 1rem;
+      padding: 0 .5rem 0 .5rem
   }
 
   .message-box {
@@ -261,16 +267,15 @@ body {
 
   .score {
       text-align: left;
-      width: 20%;
+      margin-right: 1rem;
   }
 
   .shift {
       text-align: left;
-      width: 45%;
   }
 
   .time-remaining {
-    width: 12%;
+    width: 14%;
     margin: 0 auto;
     border: 1px dotted #00cc00;
     padding: 0.25rem;
