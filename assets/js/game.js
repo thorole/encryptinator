@@ -2,8 +2,7 @@
 $(document).ready(function () {
 
     let elements = ["heading", "sub-heading-one", "sub-heading-two", "sub-heading-three", "about-encryption",
-        "encryption-info-one", "encryption-info-two", "encryption-info-three", "intro-button-one", "intro-button-two",
-        "intro-button-three", "cesar-heading", "vigenere-heading"];
+        "encryption-info-one", "encryption-info-two", "intro-button-one", "intro-button-two", "cesar-heading", "vigenere-heading"];
 
     let stages = [
         ["car", "cow", "too", "far", "see", "sea", "all", "say"],
@@ -49,7 +48,7 @@ $(document).ready(function () {
         encryptGameWord();
         writeEncryptedWord();
         toggleGameElements();
-        startTimer(90);
+        startTimer(10);
     }
 
     function encryptGameWord() {
@@ -203,6 +202,7 @@ $(document).ready(function () {
 
     function encryptElements() {
         for (let i = 0; i < elements.length; i++) {
+            console.log(i);
             let elementText = document.getElementById(elements[i]).innerHTML;
             iterateString(elementText, 13, false);
             console.log(cesarString);
