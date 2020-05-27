@@ -12,6 +12,10 @@ body {
     color: #00cc00;
 }
 
+.dark-orange {
+    color: #CC8400;
+}
+
 .center {
     margin: 0 auto;
 }
@@ -227,6 +231,7 @@ body {
   .game-user-input {
     margin: 0 auto;
     height: 2rem;
+    font-size: 1.25rem;
   }
 
   .check-button {
@@ -234,9 +239,14 @@ body {
     margin-top: 1rem;
   }
 
+  .check-result {
+      color: #CC8400;
+  }
+
   .alphabet-tool {
       margin-top: 1rem;
-      padding: 0 .5rem 0 .5rem
+      padding: 0 .5rem 0 .5rem;
+      text-transform: uppercase;
   }
 
   .message-box {
@@ -253,6 +263,7 @@ body {
     top: 1rem;
     width: 90%;
     left: 5%;
+    color: #CC8400;
 }
 
   .message {
@@ -272,6 +283,7 @@ body {
 
   .shift {
       text-align: left;
+      color: #f1f7f1;
   }
 
   .time-remaining {

@@ -100,7 +100,7 @@ $(document).ready(function () {
 
     function checkWord() {
         let userWord = document.getElementById("user-word").value;
-        userText = userText.toLowerCase();
+        userWord = userWord.toLowerCase();
         if (userWord == "") {
             $("#result").text("Please insert a word.");
         }
@@ -126,6 +126,7 @@ $(document).ready(function () {
         }
         else {
             $("#next-lvl-box").addClass("message-box-wide");
+            $("#game-content").addClass("dark-orange");
             $("#success-message").text("ERROR!");
             $("#error-message").text("A critical error has been detected! Encryption method is set to Vigenere Cipher. You must decrypt the the next word to prevent breakdown of the site!");
         }
