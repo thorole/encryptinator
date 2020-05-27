@@ -100,6 +100,7 @@ $(document).ready(function () {
 
     function checkWord() {
         let userWord = document.getElementById("user-word").value;
+        userText = userText.toLowerCase();
         if (userWord == "") {
             $("#result").text("Please insert a word.");
         }
