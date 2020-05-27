@@ -48,7 +48,7 @@ $(document).ready(function () {
         encryptGameWord();
         writeEncryptedWord();
         toggleGameElements();
-        startTimer(10);
+        startTimer(60);
     }
 
     function encryptGameWord() {
@@ -80,6 +80,7 @@ $(document).ready(function () {
         gameShift = 3;
         $("#current-score").text("Score: 0");
         $("#shift-value").text("Shift: " + gameShift);
+        $("#result").text("");
     }
 
     let gameWord;
@@ -106,11 +107,12 @@ $(document).ready(function () {
             score += seconds + 1;
             console.log(score);
             $("#current-score").text("Score: " + score)
+            $("#user-word").val("");
+            $("#result").text("");
             clearInterval(timer);
             setMessage();
             toggleNextStageBox();
             toggleGameElements();
-            $("#user-word").val("");
         }
         else {
             $("#result").text("Incorrect");
