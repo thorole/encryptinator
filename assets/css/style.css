@@ -199,6 +199,10 @@ body {
 
   }
 /* -------------------- The Game -----------------------*/
+.game-info {
+text-align: center;
+}
+
   .start-button {
       position: absolute;
       top: 40%;

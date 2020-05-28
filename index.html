@@ -141,14 +141,14 @@
             <p class="input-info">Enter plain text:</p>
             <textarea id="input-text" class="input-element"></textarea>
             <p class="input-info">Enter shift 1-25:</p>
-            <input id="input-shift" class="input-element" type="number" min="1" max="25">
+            <input id="input-shift" class="input-element" type="number" value="13" min="1" max="25">
             <button id="cesar-btn" class="encrypt-btn">Encrypt!</button>
             <p id="encrypted" class="output-field input-element"></p>
             <!-- Cesar decryption fields -->
             <p class="input-info">Enter encrypted text:</p>
             <textarea id="text-to-decrypt" class="input-element"></textarea>
             <p class="input-info">Enter shift 1-25:</p>
-            <input id="output-shift" class="input-element" type="number" min="1" max="25">
+            <input id="output-shift" class="input-element" type="number" value="13" min="1" max="25">
             <button id="cesar-decipher-btn" class="encrypt-btn">Decrypt!</button>
             <p id="decrypted" class="output-field input-element"></p>
           </div>
@@ -163,14 +163,14 @@
             <p class="input-info">Enter plain text:</p>
             <textarea id="vigenere-input" class="input-element"></textarea>
             <p class="input-info">Enter key (letters only - no spaces):</p>
-            <input id="vigenere-key" class="input-element" type="text">
+            <input id="vigenere-key" class="input-element" value="thisisthekey" type="text">
             <button id="vigenere-btn" class="encrypt-btn">Encrypt!</button>
             <p id="vigenere-output" class="output-field input-element"></p>
             <!--Vigenere decrypt fields-->
             <p class="input-info">Enter encrypted text:</p>
             <textarea id="vigenere-to-decrypt" class="input-element" type="text"></textarea>
             <p class="input-info">Enter key (letters only - no spaces):</p>
-            <input id="vigenere-key-decrypt" class="input-element" type="text">
+            <input id="vigenere-key-decrypt" class="input-element" value="thisisthekey" type="text">
             <button id="vigenere-decrypt-btn" class="encrypt-btn">Decrypt!</button>
             <p id="vigenere-decrypt-output" class="output-field input-element"></p>
           </div>
@@ -182,6 +182,12 @@
     <!--======================================================================-->
     <div class="row">
       <div class="col-12">
+        <div class="game-info">
+          <h3>Test your new skills!</h3>
+          <p>Please read through the section about the Cesar Cipher and Vigenere Cipher before playing the game. Your
+            mission is to decrypt the word on the game screen before the time runs out. Both the shift and the length of the word will increase
+            as you progress. Good luck!</p>
+        </div>
         <div class="game-box">
           <div id="start-game-btn" class="start-button center-content dark-green">Start Game</div>
           <!-- --------------- Message box elements ------------------------- -->
