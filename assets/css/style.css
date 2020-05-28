@@ -312,6 +312,11 @@ body {
         width: 100%;
         height: 23rem;
     }
+    .message {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
 
   }
   
