@@ -79,23 +79,7 @@
               an individual shift, in contrast
               to the Cesar Cipher where the same shift is applied to all the letters in the plaintext. The shift of each
               letter is provided with a key, which are all letters The key is then put "upon" the plaintext.</p>
-            <div class="vigenere-explained">
-              <p>Plaintext: <br>
-                Key: <br>
-                Shift:<br>
-                Output:</p>
-            </div>
-            <div class="vigenere-explained">
-              <p class="sample"> a p p l e <br>
-                a d d e d <br>
-                0 3 3 4 3 <br>
-                a s s p h</p>
-            </div> <img id="open-vigenere-modal" src="./assets/images/alphabetindex.png"></p>
-            <p>As you can see, each letter in the key has an index in relation to its position in the alphabet.
-              <em>Notice
-                that the letter "A" is indexed to 0.</em> That means that B = 1, C = 2, and so on.</p>
-            <p>In order to decrypt a text encrypted with the Vigenere Cipher, all you need is the correct key and then
-              skip <em>down</em> the alphabet as many letters as the index of the corresponding key letter.</p>
+            <img id="open-vigenere-modal" src="./assets/images/alphabetindex.png"></p>
             <p>If the key is totally random, and the length of the key is the same as the plaintext, this method of
               encryption is more or less unbreakable.</p>
           </span>
@@ -104,9 +88,37 @@
             <!-- Modal content -->
             <div class="modal-contents">
               <span class="close">&times;</span>
-              <p>This illustrates a negative shift of 3.</p>
+              <p>The image below displays the indexing of the letters in the alphabet. The key used for encrypting with
+                the Vigenere Cipher will have each of its letters converted to its corresponding number. These numbers
+                determines the shift of each of the individual letters in the plaintext. When encrypting a plaintext we go <em>up</em> the alphabet.</p>
               <img class="modal-image" src="./assets/images/alphabetindex.png"
                 alt="Image explaining how vigenere cipher works.">
+              <p>Let's have a look at an example:</p>
+              <div class="vigenere-explained">
+                <p>Plaintext: <br>
+                  Key: <br>
+                  Shift:<br>
+                  Output:</p>
+              </div>
+              <div class="vigenere-explained">
+                <p class="sample"> a p p l e <br>
+                  a d d e d <br>
+                  0 3 3 4 3 <br>
+                  a s s p h</p>
+              </div>
+              <p>To decrypt a decrypted text works the same way, only this time we go <em>down</em> the alphabet:</p>
+              <div class="vigenere-explained">
+                <p>Decrypted text: <br>
+                  Key: <br>
+                  Shift:<br>
+                  Output:</p>
+              </div>
+              <div class="vigenere-explained">
+                <p class="sample"> a s s p h <br>
+                  a d d e d <br>
+                  0 3 3 4 3 <br>
+                  a p p l e</p>
+              </div>
             </div>
           </div>
           <button id="intro-button-two">Read more</button>
