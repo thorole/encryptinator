@@ -70,6 +70,8 @@ body {
  .sample {
      color: #f1f7f1;
  }
+
+ .intro
  /*---------------- w3schools modals with modifications -------------------------*/
  .modal {
     display: none; /* Hidden by default */
@@ -119,7 +121,7 @@ body {
  .form-section {
     background-color: #000;
     margin-top: 2rem;
-    padding-top: 1.5rem;
+    padding: 2rem .5rem;
  }
 
  .input-container {
