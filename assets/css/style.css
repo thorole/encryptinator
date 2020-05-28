@@ -52,6 +52,13 @@ body {
      width: 100%;
  }
 
+ .img-space {
+     border: 1px solid #006400;
+     padding: 2rem;
+     cursor: pointer;
+     background-color: #000;
+ }
+
  .hidden {
      display: none;
  }
