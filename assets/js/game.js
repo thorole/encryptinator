@@ -10,6 +10,7 @@ $(document).ready(function () {
         ["ready", "sauce", "cream", "spoke", "tired", "dirty", "crutch", "alias"],
         ["archer", "kitten", "signal", "psycho", "charger", "candle", "gloves", "finger"],
         ["cruches", "eyeball", "physics", "lunatic", "battery", "flowers", "handbag", "sixpack"],
+        ["greatful"],
         ["attackatdawn"]
     ];
     let finalStageKeys = ["ahead"]
