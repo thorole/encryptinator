@@ -28,12 +28,14 @@ $(document).ready(function () {
 
     $("#next-stage-btn").click(function () {
         nextStage();
+        toggleNextStageBox();
         getGameShift();
         displayNextLevel();
+        console.log("level is: " + level)
     });
 
     $("#reset-btn").click(function () {
-        if (level < 5) {
+        if (level <= stages.length - 1) {
             toggleGameOverBox();
             $("#start-game-btn").removeClass("hidden");
         }
@@ -49,11 +51,11 @@ $(document).ready(function () {
         writeEncryptedWord();
         writeGameInfo();
         toggleGameElements();
-        startTimer(60);
+        startTimer(15);
     }
 
     function encryptGameWord() {
-        if (level < 5) {
+        if (level < stages.length - 1) {
             iterateString(gameWord, gameShift, true);
         }
         else {
@@ -64,7 +66,7 @@ $(document).ready(function () {
     }
 
     function getGameShift() {
-        if (level > 0 && level < 5) {
+        if (level > 0 && level < stages.length - 1) {
             gameShift += 2;
             console.log("shift is: " + gameShift);
         }
@@ -74,7 +76,7 @@ $(document).ready(function () {
     }
 
     function writeGameInfo() {
-        if (level >= 0 && level < 5) {
+        if (level >= 0 && level < stages.length - 1) {
             $("#shift-value").text("Shift: " + gameShift);
         }
         else {
@@ -89,6 +91,7 @@ $(document).ready(function () {
         $("#current-score").text("Score: 0");
         $("#shift-value").text("Shift: " + gameShift);
         $("#result").text("");
+        $("#next-lvl-box").removeClass("message-box-wide");
     }
 
     let gameWord;
@@ -98,7 +101,7 @@ $(document).ready(function () {
     }
 
     function writeEncryptedWord() {
-        if (level < 5) {
+        if (level < stages.length -1) {
             $("#game-word").text(cesarString);
         }
         else {
@@ -114,7 +117,7 @@ $(document).ready(function () {
         }
         else if (userWord == gameWord) {
             score += seconds + 1;
-            console.log(score);
+            console.log("score: " + score);
             $("#current-score").text("Score: " + score)
             $("#user-word").val("");
             $("#result").text("");
@@ -129,19 +132,21 @@ $(document).ready(function () {
         console.log(typeof userWord);
     }
     function setMessage() {
-        if (level < 4) {
+        if (level < stages.length - 2) {
             $("#success-message").text("Correct!");
+            $("#error-message").text("");
         }
-        else if (level < 5) {
+        else if (level == stages.length - 2) {
             $("#next-lvl-box").addClass("message-box-wide");
             $("#success-message").text("ERROR!");
             $("#error-message").text("A critical error has been detected! Encryption method is set to Vigenere Cipher. You must decrypt the the next word to prevent breakdown of the site!");
         }
         else {
-            toggleNextStageBox();
             toggleGameOverBox();
+            toggleNextStageBox();
             $("#game-over-message").text("Congratulations!");
             $("#game-finished").text("You prevented the breakdown of the site! You are a true ENCRYPTINATOR!");
+            $("#final-score").text("Final score: " + score);
         }
     }
 
@@ -177,10 +182,9 @@ $(document).ready(function () {
     }
 
     function nextStage() {
-        if (level < 5) {
-            level++;
-        }
-        toggleNextStageBox();
+        level++;
+        console.log("level is: " + level);
+        
     }
 
     let score;
@@ -206,12 +210,15 @@ $(document).ready(function () {
     }
 
     function setGameOverText() {
-        if (level < 5) {
+        if (level < stages.length - 1) {
             $("#game-over-message").text("Game Over");
+            $("#game-finished").text("");
             $("#final-score").text("Final score: " + score);
         }
         else {
+            nextStage();
             $("#game-over-message").text("Game Over");
+            $("#game-finished").text("");
             $("#final-score").text("Website destroyed. Thanks for trying!");
             encryptElements();
         }
