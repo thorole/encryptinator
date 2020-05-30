@@ -159,7 +159,7 @@ $(document).ready(function () {
             $("#game-over-box").removeClass("hidden");
         }
         else {
-            $("#game-over-box").addClass("hidden")
+            $("#game-over-box").addClass("hidden");
         }
     }
 
@@ -168,7 +168,7 @@ $(document).ready(function () {
             $("#next-lvl-box").removeClass("hidden");
         }
         else {
-            $("#next-lvl-box").addClass("hidden")
+            $("#next-lvl-box").addClass("hidden");
         }
     }
 
@@ -177,7 +177,7 @@ $(document).ready(function () {
             $("#game-content").removeClass("hidden");
         }
         else {
-            $("#game-content").addClass("hidden")
+            $("#game-content").addClass("hidden");
         }
     }
 
@@ -193,7 +193,7 @@ $(document).ready(function () {
     function startTimer(timeInseconds) {
         seconds = timeInseconds;
         countDown();
-        timer = setInterval(countDown, 1000)
+        timer = setInterval(countDown, 1000);
     }
 
     function countDown() {
