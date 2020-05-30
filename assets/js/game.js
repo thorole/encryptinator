@@ -73,7 +73,7 @@ $(document).ready(function () {
         }
     }
 
-    function writeGameInfo () {
+    function writeGameInfo() {
         if (level >= 0 && level < 5) {
             $("#shift-value").text("Shift: " + gameShift);
         }
@@ -132,10 +132,16 @@ $(document).ready(function () {
         if (level < 4) {
             $("#success-message").text("Correct!");
         }
-        else {
+        else if (level == 5) {
             $("#next-lvl-box").addClass("message-box-wide");
             $("#success-message").text("ERROR!");
             $("#error-message").text("A critical error has been detected! Encryption method is set to Vigenere Cipher. You must decrypt the the next word to prevent breakdown of the site!");
+        }
+        else {
+            toggleNextStageBox();
+            toggleGameOverBox();
+            $("#game-over-message").text("Congratulations!");
+            $("#game-finished").text("You prevented the breakdown of the site! You are a true ENCRYPTINATOR!");
         }
     }
 
