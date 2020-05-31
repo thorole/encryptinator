@@ -99,6 +99,7 @@ function convertKeyToNumbers(userKey) {
         }
     }
     console.log("Userkey is: " + key);
+    return key;
 }
 
 /*Loops through each letter in the userString and each number in key synchronically. userString[i] 
@@ -131,6 +132,7 @@ function iterateVigenereString(text, reverse) {
             }
         }
     }
+    return vigenereText;
 }
 
 //Prints vigenereText to html element.
