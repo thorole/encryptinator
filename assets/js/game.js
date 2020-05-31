@@ -45,6 +45,12 @@ game = function () {
             }
         });
 
+        $("#exit-game").click(function () {
+            clearInterval(timer);
+            toggleGameElements();
+            $("#start-game-btn").removeClass("hidden");
+        });
+
         function displayNextLevel() {
             getWord(level);
             console.log(gameWord);
