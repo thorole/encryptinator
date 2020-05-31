@@ -57,11 +57,11 @@ $(document).ready(function () {
 
     function encryptGameWord() {
         if (level < stages.length - 1) {
-            iterateString(gameWord, gameShift, true);
+            encryption.iterateString(gameWord, gameShift, true);
         }
         else {
-            convertKeyToNumbers(finalStageKeys[0]);
-            iterateVigenereString(gameWord, false);
+            encryption.convertKeyToNumbers(finalStageKeys[0]);
+            encryption.iterateVigenereString(gameWord, false);
 
         }
     }
