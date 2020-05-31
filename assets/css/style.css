@@ -243,6 +243,15 @@ text-align: center;
       
   }
 
+  .exit {
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+      border: 1px solid #006400;
+      width: 5%;
+      cursor: pointer;
+  }
+
   .game-word-box {
       width: 50%;
       margin: 1rem auto;
