@@ -91,7 +91,7 @@ game = function () {
             level = 0;
             score = 0;
             gameShift = 3;
-            disableDecryptFields();
+            toggleDecryptFields();
             $("#current-score").text("Score: 0");
             $("#shift-value").text("Shift: " + gameShift);
             $("#result").text("");
@@ -242,7 +242,7 @@ game = function () {
             $("#restore").removeClass("hidden");
         }
 
-        function disableDecryptFields() {
+        function toggleDecryptFields() {
             if ($("#text-to-decrypt").prop('disabled', false) && $("#vigenere-to-decrypt").prop('disabled', false)) {
                 $("#text-to-decrypt").prop('disabled', true);
                 $("#vigenere-to-decrypt").prop('disabled', true);
