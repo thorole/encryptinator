@@ -91,6 +91,7 @@ game = function () {
             level = 0;
             score = 0;
             gameShift = 3;
+            disableDecryptFields();
             $("#current-score").text("Score: 0");
             $("#shift-value").text("Shift: " + gameShift);
             $("#result").text("");
@@ -239,6 +240,17 @@ game = function () {
             $("textarea").prop('disabled', true);
             $("number").prop('disabled', true);
             $("#restore").removeClass("hidden");
+        }
+
+        function disableDecryptFields() {
+            if ($("#text-to-decrypt").prop('disabled', false) && $("#vigenere-to-decrypt").prop('disabled', false)) {
+                $("#text-to-decrypt").prop('disabled', true);
+                $("#vigenere-to-decrypt").prop('disabled', true);
+            }
+            else {
+                $("#text-to-decrypt").prop('disabled', false);
+                $("#vigenere-to-decrypt").prop('disabled', false);
+            }
         }
 
         $("#restore").click(function () {
