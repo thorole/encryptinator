@@ -6,10 +6,10 @@ game = function () {
 
         let stages = [
             ["car", "cow", "too", "far", "see", "sea", "all", "say"],
-            ["milk", "call", "core", "fish", "must", "mill", "mark", "quit"],
-            ["ready", "sauce", "cream", "spoke", "tired", "dirty", "crutch", "alias"],
-            ["archer", "kitten", "signal", "psycho", "charger", "candle", "gloves", "finger"],
-            ["cruches", "eyeball", "physics", "lunatic", "battery", "flowers", "handbag", "sixpack"],
+            //["milk", "call", "core", "fish", "must", "mill", "mark", "quit"],
+            //["ready", "sauce", "cream", "spoke", "tired", "dirty", "crutch", "alias"],
+            //["archer", "kitten", "signal", "psycho", "charger", "candle", "gloves", "finger"],
+            //["cruches", "eyeball", "physics", "lunatic", "battery", "flowers", "handbag", "sixpack"],
             //["greatful"],
             ["attackatdawn"]
         ];
@@ -252,6 +252,7 @@ game = function () {
             $("textarea").prop('disabled', true);
             $("number").prop('disabled', true);
             $("button").prop("disabled", true);
+            $("a").attr("href", "https://www..../");
             $("#restore").removeClass("hidden");
         }
 
