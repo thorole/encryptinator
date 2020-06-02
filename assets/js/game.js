@@ -1,7 +1,7 @@
 game = function () {
     $(document).ready(function () {
 
-        let elements = ["heading", "sub-heading-one", "sub-heading-two", "sub-heading-three", "about-encryption",
+        let elements = ["heading", "sub-heading-one", "sub-heading-two", "sub-heading-three",
             "encryption-info-one", "encryption-info-two", "intro-button-one", "intro-button-two", "cesar-heading", "vigenere-heading"];
 
         let stages = [
@@ -48,6 +48,7 @@ game = function () {
         $("#exit-game").click(function () {
             clearInterval(timer);
             toggleGameElements();
+            enableDecryptFields();
             $("#start-game-btn").removeClass("hidden");
         });
 
@@ -102,6 +103,8 @@ game = function () {
             $("#shift-value").text("Shift: " + gameShift);
             $("#result").text("");
             $("#next-lvl-box").removeClass("message-box-wide");
+            $("#next-lvl-box").removeClass("dark-orange");
+            $("#game-over-box").removeClass("message-box-wide");
         }
 
         let gameWord;
@@ -148,12 +151,14 @@ game = function () {
             }
             else if (level == stages.length - 2) {
                 $("#next-lvl-box").addClass("message-box-wide");
+                $("#next-lvl-box").addClass("dark-orange");
                 $("#success-message").text("ERROR!");
                 $("#error-message").text("A critical error has been detected! Encryption method is set to Vigenere Cipher. You must decrypt the the next word to prevent breakdown of the site!");
             }
             else {
                 toggleGameOverBox();
                 toggleNextStageBox();
+                $("#game-over-box").addClass("message-box-wide");
                 $("#game-over-message").text("Congratulations!");
                 $("#game-finished").text("You prevented the breakdown of the site! You are a true ENCRYPTINATOR!");
                 $("#final-score").text("Final score: " + score);
@@ -211,6 +216,7 @@ game = function () {
                 clearInterval(timer);
                 toggleGameElements();
                 toggleGameOverBox();
+                enableDecryptFields();
                 setGameOverText();
             }
             else {
@@ -245,6 +251,7 @@ game = function () {
             $("input").prop('disabled', true);
             $("textarea").prop('disabled', true);
             $("number").prop('disabled', true);
+            $("button").prop("disabled", true);
             $("#restore").removeClass("hidden");
         }
 

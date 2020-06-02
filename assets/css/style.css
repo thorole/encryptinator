@@ -324,8 +324,9 @@ text-align: center;
     top: 1rem;
     width: 90%;
     left: 5%;
-    color: #CC8400;
 }
+
+
 
   .message {
       font-size: 2.5rem;
@@ -378,6 +379,5 @@ text-align: center;
         font-weight: 700;
         text-transform: uppercase;
     }
-
-  }
+ }
   
