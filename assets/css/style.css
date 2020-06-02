@@ -29,19 +29,22 @@ body {
      font-weight: 700;
  }
 
- 
- .navbar.navbar-expand-lg{
-     background-color: #000;
-     margin-bottom: 2rem;
-}
-
-
- .nav-item .nav-link {
-    color: #00cc00;
+ .custom-navbar {
+     display: flex;
+     align-items: center;
+     height: 3rem;
+     border-bottom: 2px solid #00cc00;
  }
 
- .navbar-brand {
-     color: #00cc00;
+ .custom-navbar ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+ }
+
+ ul li {
+     margin: 0 1rem;
  }
 
  button {
