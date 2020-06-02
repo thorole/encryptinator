@@ -29,6 +29,10 @@ body {
      font-weight: 700;
  }
 
+ .navbar-padding {
+    padding: 3rem 0 0 0;
+}
+
  .custom-navbar {
      position: fixed;
      width: 100%;
@@ -47,9 +51,13 @@ body {
     padding: 0;
  }
 
- ul li {
+ul li a {
      margin: 0 1rem;
+     color: #00cc00;
  }
+ ul li a:hover {
+    color: #f1f7f1;
+}
 
  button {
      border: 1px solid #00cc00;
