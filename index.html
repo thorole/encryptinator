@@ -56,18 +56,29 @@
               instance, if we have the letter "E" in plaintext and apply a shift of 3 we would end up with a "B".
             <p>Click the image for a larger example:</p>
             <img id="open-cesar-modal" class="img-space" src="./assets/images/cesarcipher.png"
-              alt="Image explaining how a shift in cesar cipher works."> As you can see, we started with the letter
-            <span class="sample">"E"</span>, skipped three letters <em>down</em>, and ended up at <span
-              class="sample">"B"</span>. In order to decrypt a word which has been
-            encrypted with this method, all you have to do is apply the same shift to the encrypted letter and skip 3
-            letters <em>up</em> the alphabet. Try it out in the form below!</p>
+              alt="Image explaining how a shift in cesar cipher works.">
+            <p>Lets encrypt the word <span class="sample">"APPLES"</span> with a shift of <span class="sample">3</span>:
+            </p>
+            <div class="vigenere-explained">
+              <p>Plaintext:<br>
+                Shift:<br>
+                Output:</p>
+            </div>
+            <div class="vigenere-explained">
+              <p class="sample"> a p p l e s <br>
+                3 3 3 3 3 3 <br>
+                x m m i b p</p>
+            </div>
+            <p>Decrypting the text works the same way, only this time we go <em>up</em> the alphabet. The letter "x"
+              with a shift of 3 becomes "a", and so on. Try it out in the form below!</p>
           </div>
           <!-- Cesar Cipher Modal -->
           <div id="cesar-modal" class="modal">
             <!-- Modal content -->
             <div class="modal-contents">
               <span class="close">&times;</span>
-              <p>This image displays encrypting a letter in the plaintext with a shift of 3. </p>
+              <p>This image displays encrypting a letter in the plaintext with a shift of 3. When we encrypt with Cesar
+                Cipher we go <em>down</em> the alphabet, and <em>up</em> the alphabet when we decrypt.</em> </p>
               <img class="modal-image" src="./assets/images/cesarcipher.png"
                 alt="Image explaining how a shift in cesar cipher works.">
             </div>
@@ -84,8 +95,10 @@
               to the Cesar Cipher where the same shift is applied to all the letters in the plaintext. The shift of each
               letter is provided with a key, which are all letters The key is then put "upon" the plaintext.</p>
             <p>Click the image below to learn more:</p>
-            <img id="open-vigenere-modal" class="img-space" src="./assets/images/alphabetindex.png">
-            <p>Let's encrypt the word "APPLES" with the key "CAB":</p>
+            <img id="open-vigenere-modal" class="img-space" src="./assets/images/alphabetindex.png"
+              alt="Image showing indexing of alphabet.">
+            <p>Let's encrypt the word <span class="sample">"APPLES"</span> with the key <span
+                class="sample">"CAB"</span>:</p>
             <div class="vigenere-explained">
               <p>Plaintext:<br>
                 Key:<br>
