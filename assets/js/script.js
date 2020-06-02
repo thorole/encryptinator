@@ -24,6 +24,19 @@ $("button").hover(function () {
   $(this).css("background-color", "#252525");
 });
 
+$("#clear-cesar-encrypt").click(function () {
+  clearForm("input-text", "input-shift", "encrypted");
+});
+$("#clear-cesar-decrypt").click(function () {
+  clearForm("text-to-decrypt", "output-shift", "decrypted");
+});
+$("#clear-vigenere-encrypt").click(function () {
+  clearForm("vigenere-input", "vigenere-key", "vigenere-output");
+});
+$("#clear-vigenere-decrypt").click(function () {
+  clearForm("vigenere-to-decrypt", "vigenere-key-decrypt", "vigenere-decrypt-output");
+});
+
 //-------------------- Modals opening and closing functionality -----------------------
 
 $("#open-cesar-modal").click(function () {
@@ -48,10 +61,10 @@ window.onclick = function (event) {
     $("#cesar-modal").css("display", "none");
   }
 }
-
+// Clears form
 function clearForm(inputField, shiftField, outputField) {
-  document.getElementById(inputField).innerHTML = "";
-  document.getElementById(shiftField).innerHTML = "";
+  document.getElementById(inputField).value = "";
+  document.getElementById(shiftField).value = "";
   document.getElementById(outputField).innerHTML = "";
 }
 
