@@ -57,6 +57,7 @@ ul li a {
  }
  ul li a:hover {
     color: #f1f7f1;
+    text-decoration: none;
 }
 
  button {
