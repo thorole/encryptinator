@@ -56,11 +56,21 @@ $(".close").click(function () {
 });
 
 
-window.onclick = function (event) {
-  if (event.target == document.getElementById("cesar-modal")) {
-    $("#cesar-modal").css("display", "none");
-  }
-}
+$("#vigenere-modal").click(function () {
+  $(this).css("display", "none")
+});
+
+$("#cesar-modal").click(function () {
+  $(this).css("display", "none")
+});
+
+ /* window.onclick = function (event) {
+    if (event.target == document.getElementById("vigenere-modal")) {
+      $("#vigenere-modal").css("display", "none");
+    }
+  }*/
+
+
 // Clears form
 function clearForm(inputField, shiftField, outputField) {
   document.getElementById(inputField).value = "";

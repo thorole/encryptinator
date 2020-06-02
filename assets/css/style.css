@@ -97,7 +97,7 @@ ul li a {
 
  .intro
  /*---------------- w3schools modals with modifications -------------------------*/
- .modal {
+ .my-modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -128,8 +128,8 @@ ul li a {
   .close {
     color: #006400;
     float: right;
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 2rem;
+    text-shadow: none;
   }
   
   .close:hover,
