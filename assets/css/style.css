@@ -22,11 +22,13 @@ body {
 
 .hero {
     background-color: #000;
+    margin-bottom: 2rem;
 }
 .hero h1 {
      font-size: 4rem;
      font-weight: 700;
  }
+
  
  .navbar.navbar-expand-lg{
      background-color: #000;
