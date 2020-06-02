@@ -49,6 +49,12 @@ window.onclick = function (event) {
   }
 }
 
+function clearForm(inputField, shiftField, outputField) {
+  document.getElementById(inputField).innerHTML = "";
+  document.getElementById(shiftField).innerHTML = "";
+  document.getElementById(outputField).innerHTML = "";
+}
+
 //This function is called on page load. It makes the game start button blink by removing and adding classes 
 
 function blinkingText() {
