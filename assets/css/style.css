@@ -66,6 +66,12 @@ ul li a {
      color: #00cc00;
  }
 
+ button:focus {
+     outline: none;
+     border: 1px solid #00cc00;
+    box-shadow: 0 0 5px #00cc00;
+ }
+
  img {
      width: 100%;
  }
