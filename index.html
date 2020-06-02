@@ -85,6 +85,22 @@
               letter is provided with a key, which are all letters The key is then put "upon" the plaintext.</p>
             <p>Click the image below to learn more:</p>
             <img id="open-vigenere-modal" class="img-space" src="./assets/images/alphabetindex.png">
+            <p>Let's encrypt the word "APPLES" with the key "CAB":</p>
+            <div class="vigenere-explained">
+              <p>Plaintext:<br>
+                Key:<br>
+                Shift:<br>
+                Output:</p>
+            </div>
+            <div class="vigenere-explained">
+              <p class="sample"> a p p l e s <br>
+                c a b c a b <br>
+                2 0 1 2 0 1 <br>
+                c p q n e t</p>
+            </div>
+            <p>Decrypting the text works the same way, only this time we go <em>down</em> the alphabet. The letter "c"
+              with a negative shift of 2 becomes "a", and so on.</p>
+
             <p>If the key is totally random, and the length of the key is the same as the plaintext, this method of
               encryption is more or less unbreakable. Try it out in the form below!</p>
           </div>
@@ -93,38 +109,14 @@
             <!-- Modal content -->
             <div class="modal-contents">
               <span class="close">&times;</span>
-              <p>The image below displays the indexing of the letters in the alphabet. The key used for encrypting with
-                the Vigenere Cipher will have each of its letters converted to its corresponding number. These numbers
-                determines the shift of each of the individual letters in the plaintext. When encrypting a plaintext we
+              <p>The image below displays the indexing of the letters in the alphabet. If we let the key be "CAB", we
+                have a shift of 2, 0, 1. These numbers are apllied to the plaintext letter by letter. When encrypting a
+                plaintext we
                 go <em>up</em> the alphabet.</p>
               <img class="modal-image" src="./assets/images/alphabetindex.png"
                 alt="Image explaining how vigenere cipher works.">
-              <p>Let's have a look at an example:</p>
-              <div class="vigenere-explained">
-                <p>Plaintext: <br>
-                  Key: <br>
-                  Shift:<br>
-                  Output:</p>
-              </div>
-              <div class="vigenere-explained">
-                <p class="sample"> a p p l e <br>
-                  a d d e d <br>
-                  0 3 3 4 3 <br>
-                  a s s p h</p>
-              </div>
-              <p>To decrypt a decrypted text works the same way, only this time we go <em>down</em> the alphabet:</p>
-              <div class="vigenere-explained">
-                <p>Decrypted text: <br>
-                  Key: <br>
-                  Shift:<br>
-                  Output:</p>
-              </div>
-              <div class="vigenere-explained">
-                <p class="sample"> a s s p h <br>
-                  a d d e d <br>
-                  0 3 3 4 3 <br>
-                  a p p l e</p>
-              </div>
+              <p>Notice that "A" is indexed at 0. So, if you chose to encrypt a text with the key "A", nothing will
+                happen to the plaintext.</p>
             </div>
           </div>
           <button id="intro-button-two">Read more</button>
@@ -185,7 +177,8 @@
         <div class="game-info">
           <h3>Test your new skills!</h3>
           <p>Please read through the section about the Cesar Cipher and Vigenere Cipher before playing the game. Your
-            mission is to decrypt the word on the game screen before the time runs out. Both the shift and the length of the word will increase
+            mission is to decrypt the word on the game screen before the time runs out. Both the shift and the length of
+            the word will increase
             as you progress. Good luck!</p>
         </div>
         <div class="game-box">
