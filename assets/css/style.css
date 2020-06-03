@@ -4,9 +4,10 @@ body {
     color: #00cc00;
     font-size: 1.25rem;
 }
- .light-green {
-     color: #f1f7f1;
- }
+
+.light-green {
+    color: #f1f7f1;
+}
 
 .dark-green {
     color: #00cc00;
@@ -24,38 +25,40 @@ body {
     background-color: #000;
     margin: 4rem 0 2rem 0;
 }
-.hero h1 {
-     font-size: 4rem;
-     font-weight: 700;
- }
 
- .navbar-padding {
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.navbar-padding {
     padding: 3rem 0 0 0;
 }
 
- .custom-navbar {
-     position: fixed;
-     width: 100%;
-     z-index: 1;
-     display: flex;
-     align-items: center;
-     height: 3rem;
-     background-color: #252525;
-     border-bottom: 2px solid #00cc00;
- }
+.custom-navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    background-color: #252525;
+    border-bottom: 2px solid #00cc00;
+}
 
- .custom-navbar ul {
+.custom-navbar ul {
     display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
- }
+}
 
 ul li a {
-     margin: 0 1rem;
-     color: #00cc00;
- }
- ul li a:hover {
+    margin: 0 1rem;
+    color: #00cc00;
+}
+
+ul li a:hover {
     color: #f1f7f1;
     text-decoration: none;
 }
@@ -64,182 +67,181 @@ ul li a {
     margin-bottom: 0;
 }
 
- button {
-     border: 1px solid #00cc00;
-     background-color: #252525;
-     color: #00cc00;
- }
+button {
+    border: 1px solid #00cc00;
+    background-color: #252525;
+    color: #00cc00;
+}
 
- button:focus {
-     outline: none;
-     border: 1px solid #00cc00;
+button:focus {
+    outline: none;
+    border: 1px solid #00cc00;
     box-shadow: 0 0 5px #00cc00;
- }
+}
 
- .read-more-para {
-     margin-bottom: 0;
- }
+.read-more-para {
+    margin-bottom: 0;
+}
 
- img {
-     width: 100%;
- }
+img {
+    width: 100%;
+}
 
- .img-space {
-     border: 1px solid #006400;
-     padding: 2rem;
-     cursor: pointer;
-     background-color: #000;
- }
+.img-space {
+    border: 1px solid #006400;
+    padding: 2rem;
+    cursor: pointer;
+    background-color: #000;
+}
 
- .hidden {
-     display: none;
- }
- 
- .vigenere-explained {
-     display: inline-block;
- }
+.hidden {
+    display: none;
+}
 
- .row .col-lg-6 {
+.vigenere-explained {
+    display: inline-block;
+}
+
+.row .col-lg-6 {
     margin-top: 1rem;
- }
+}
 
- .sample {
-     color: #f1f7f1;
- }
+.sample {
+    color: #f1f7f1;
+}
 
- /*---------------- w3schools modals with modifications -------------------------*/
- .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+/*---------------- w3schools modals with modifications -------------------------*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
     border-radius: 0;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,.6); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-contents {
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, .6);
+}
+
+/* Modal Content/Box */
+
+.modal-contents {
     background-color: #000;
-    margin: 2rem auto; /* 15% from the top and centered */
+    margin: 2rem auto;
+    /* 15% from the top and centered */
     padding: 20px;
     border: 2px solid #00cc00;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%;
+    /* Could be more or less, depending on screen size */
     border-radius: 0;
-  }
+}
 
-  .modal-image {
-      width: 100%;
-  }
-  
-  /* The Close Button */
-  .close {
+.modal-image {
+    width: 100%;
+}
+
+/* The Close Button */
+
+.close {
     color: #006400;
     float: right;
     font-size: 2rem;
     text-shadow: none;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover, .close:focus {
     color: #00cc00;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
-  @media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .modal-contents {
         width: 100%;
     }
-
-  }
-
-
- 
- 
+}
 
 /*-------------------- Encryption fields ------------------*/
- .form-section {
+
+.form-section {
     background-color: #000;
     margin-top: 1rem;
     padding: 2rem .5rem;
- }
+}
 
- .input-container {
-     border: 2px solid #252525;
- }
+.input-container {
+    border: 2px solid #252525;
+}
 
- .input-elements {
-     width: 95%;
-     margin: 0 auto;
- }
+.input-elements {
+    width: 95%;
+    margin: 0 auto;
+}
 
- .bar {
-     width: 100%;
-     height: 2px;
-     background-color: #252525;
-     margin-bottom: 1rem;
- }
- .bar-green {
+.bar {
     width: 100%;
-     height: 2px;
-     background-color: #00cc00;
-     margin-bottom: 1rem; 
- }
+    height: 2px;
+    background-color: #252525;
+    margin-bottom: 1rem;
+}
 
- .encrypt-btn {
+.bar-green {
+    width: 100%;
+    height: 2px;
+    background-color: #00cc00;
+    margin-bottom: 1rem;
+}
+
+.encrypt-btn {
     margin-top: 1rem;
- }
- 
- input {
-     display: block;
-     width: 50%;
-     
- }
+}
 
- input[type="number"] {
+input {
+    display: block;
+    width: 50%;
+}
+
+input[type="number"] {
     width: 15%;
- }
+}
 
- textarea {
-     width: 100%;
-    }
+textarea {
+    width: 100%;
+}
 
- .input-element {
+.input-element {
     background-color: #000;
     border: 1px solid #006400;
     color: #00cc00;
     font-size: 1rem;
     transition: ease-in-out, box-shadow, 0.2s;
- }
+}
 
 .input-element:focus {
     outline: none;
     border: 1px solid #00cc00;
     box-shadow: 0 0 5px #00cc00;
-    
- }
+}
 
- .input-info {
-     margin-bottom: 0;
-     font-size: 1rem;
- }
+.input-info {
+    margin-bottom: 0;
+    font-size: 1rem;
+}
 
- .output-field {
-     min-height: 5rem;
-     width: 100%;
-     margin-top: 1.5rem;
-     color: #f1f7f1;
-     border: 1px solid #252525;
- }
+.output-field {
+    min-height: 5rem;
+    width: 100%;
+    margin-top: 1.5rem;
+    color: #f1f7f1;
+    border: 1px solid #252525;
+}
 
- @media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     body {
-      font-size: 1rem;
+        font-size: 1rem;
     }
     .hero h1 {
         font-size: 2rem;
@@ -250,141 +252,139 @@ ul li a {
     .row .col-md-6 {
         margin-bottom: 1rem;
     }
-
-  }
-/* -------------------- The Game -----------------------*/
-.game-info {
-text-align: center;
 }
 
-  .start-button {
-      position: absolute;
-      top: 40%;
-      left: 30%;
-      right: 30%;
-      width: 40%;
-      height: 4rem;
-      padding-top: 1rem;
-      border: 1px solid #00cc00;
-      text-align: center;
-  }
+/* -------------------- The Game -----------------------*/
 
-  .start-button:hover {
-      cursor: pointer;
-  }
+.game-info {
+    text-align: center;
+}
 
-  .game-box {
-      position: relative;
-      width: 85%;
-      margin: 2rem auto 12rem auto;
-      border: 3px solid #00cc00;
-      height: 22rem;
-      background-color: #000;
-  }
+.start-button {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    right: 30%;
+    width: 40%;
+    height: 4rem;
+    padding-top: 1rem;
+    border: 1px solid #00cc00;
+    text-align: center;
+}
 
-  .game-elements {
-      position: relative;
-      text-align: center;
-      
-  }
+.start-button:hover {
+    cursor: pointer;
+}
 
-  .exit {
-      position: absolute;
-      top: .5rem;
-      right: .5rem;
-      border: 1px solid #006400;
-      width: 5%;
-      cursor: pointer;
-  }
+.game-box {
+    position: relative;
+    width: 85%;
+    margin: 2rem auto 12rem auto;
+    border: 3px solid #00cc00;
+    height: 22rem;
+    background-color: #000;
+}
 
-  .game-word-box {
-      width: 50%;
-      margin: 1rem auto;
-      padding: .5rem;
-      border: 1px dashed #006400;
-  }
+.game-elements {
+    position: relative;
+    text-align: center;
+}
 
-  .game-user-input {
+.exit {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    border: 1px solid #006400;
+    width: 5%;
+    cursor: pointer;
+}
+
+.game-word-box {
+    width: 50%;
+    margin: 1rem auto;
+    padding: .5rem;
+    border: 1px dashed #006400;
+}
+
+.game-user-input {
     margin: 0 auto;
     height: 2rem;
     font-size: 1.25rem;
-  }
+}
 
-  .check-button {
+.check-button {
     width: 50%;
     margin-top: 1rem;
-  }
+}
 
-  .check-result {
-      color: #CC8400;
-  }
+.check-result {
+    color: #CC8400;
+}
 
-  .alphabet-tool {
-      margin-top: 1rem;
-      padding: 0 .5rem 0 .5rem;
-      text-transform: uppercase;
-  }
+.alphabet-tool {
+    margin-top: 1rem;
+    padding: 0 .5rem 0 .5rem;
+    text-transform: uppercase;
+}
 
-  .message-box {
-      position: absolute;
-      border: 1px dotted #00cc00;
-      width: 50%;
-      top: 2rem;
-      left: 25%;
-      text-align: center;
-      padding: 1rem;
-  }
-  
-  .message-box-wide {
+.message-box {
+    position: absolute;
+    border: 1px dotted #00cc00;
+    width: 50%;
+    top: 2rem;
+    left: 25%;
+    text-align: center;
+    padding: 1rem;
+}
+
+.message-box-wide {
     top: 1rem;
     width: 90%;
     left: 5%;
 }
 
+.message {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 
+.flex-container {
+    display: flex;
+}
 
-  .message {
-      font-size: 2.5rem;
-      font-weight: 700;
-      text-transform: uppercase;
-  }
+.score {
+    text-align: left;
+    margin-right: 1rem;
+}
 
-  .flex-container {
-      display: flex;
-  }
+.shift {
+    text-align: left;
+    color: #f1f7f1;
+}
 
-  .score {
-      text-align: left;
-      margin-right: 1rem;
-  }
-
-  .shift {
-      text-align: left;
-      color: #f1f7f1;
-  }
-
-  .time-remaining {
+.time-remaining {
     width: 14%;
     margin: 0 auto;
     border: 1px dotted #00cc00;
     padding: 0.25rem;
     font-size: 1.5rem;
-    text-align: center; 
-  }
+    text-align: center;
+}
 
-  .restore-website {
-      margin: 0 auto;
-      position: sticky;
-      top: 30%;
-      width: 10%;
-      text-align: center;
-      z-index: 1;
-      border: 1px solid #00cc00;
-      background-color: #000;
-      cursor: pointer;
-  }
+.restore-website {
+    margin: 0 auto;
+    position: sticky;
+    top: 30%;
+    width: 10%;
+    text-align: center;
+    z-index: 1;
+    border: 1px solid #00cc00;
+    background-color: #000;
+    cursor: pointer;
+}
 
-  @media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .game-box {
         width: 100%;
         height: 23rem;
@@ -394,5 +394,4 @@ text-align: center;
         font-weight: 700;
         text-transform: uppercase;
     }
- }
-  
+}
