@@ -72,6 +72,10 @@ ul li a {
     box-shadow: 0 0 5px #00cc00;
  }
 
+ .read-more-para {
+     margin-bottom: 0;
+ }
+
  img {
      width: 100%;
  }
@@ -89,6 +93,10 @@ ul li a {
  
  .vigenere-explained {
      display: inline-block;
+ }
+
+ .row .col-lg-6 {
+     margin-top: 1rem;
  }
 
  .sample {
