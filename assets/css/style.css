@@ -96,7 +96,7 @@ ul li a {
  }
 
  .row .col-lg-6 {
-     margin-top: 1rem;
+    margin-top: 1rem;
  }
 
  .sample {
@@ -161,7 +161,7 @@ ul li a {
 /*-------------------- Encryption fields ------------------*/
  .form-section {
     background-color: #000;
-    margin-top: 2rem;
+    margin-top: 1rem;
     padding: 2rem .5rem;
  }
 
@@ -242,6 +242,9 @@ ul li a {
     }
     h2 {
         font-size: 1.5rem;
+    }
+    .row .col-md-6 {
+        margin-bottom: 1rem;
     }
 
   }
