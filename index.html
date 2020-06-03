@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <title>Title</title>
+  <title>The Encryptinator</title>
 </head>
 
 <body>
@@ -148,17 +148,17 @@
                 <h3 id="cesar-heading">Cesar Cipher</h3>
                 <div class="bar"></div>
                 <!--Cesar encrypt fields-->
-                <p class="input-info">Enter plain text:</p>
+                <label for="input-text" class="input-info">Enter plain text:</label>
                 <textarea id="input-text" class="input-element"></textarea>
-                <p class="input-info">Enter shift 1-25:</p>
+                <label for="input-shift" class="input-info">Enter shift 1-25:</label>
                 <input id="input-shift" class="input-element" type="number" value="13" min="1" max="25">
                 <button id="cesar-btn" class="encrypt-btn">Encrypt!</button>
                 <button id="clear-cesar-encrypt">Clear</button>
                 <p id="encrypted" class="output-field input-element"></p>
                 <!-- Cesar decryption fields -->
-                <p class="input-info">Enter encrypted text:</p>
+                <label for="text-to-decrypt" class="input-info">Enter encrypted text:</label>
                 <textarea id="text-to-decrypt" class="input-element"></textarea>
-                <p class="input-info">Enter shift 1-25:</p>
+                <label for="output-shift" class="input-info">Enter shift 1-25:</label>
                 <input id="output-shift" class="input-element" type="number" value="13" min="1" max="25">
                 <button id="cesar-decipher-btn" class="encrypt-btn">Decrypt!</button>
                 <button id="clear-cesar-decrypt">Clear</button>
@@ -172,17 +172,17 @@
                 <h3 id="vigenere-heading">Vigenere Cipher</h3>
                 <div class="bar"></div>
                 <!--Vigenere encrypt fields-->
-                <p class="input-info">Enter plain text:</p>
+                <label for="vigenere-input" class="input-info">Enter plain text:</label>
                 <textarea id="vigenere-input" class="input-element"></textarea>
-                <p class="input-info">Enter key (letters only - no spaces):</p>
+                <label for="vigenere-key" class="input-info">Enter key (letters only - no spaces):</label>
                 <input id="vigenere-key" class="input-element" value="thisisthekey" type="text">
                 <button id="vigenere-btn" class="encrypt-btn">Encrypt!</button>
                 <button id="clear-vigenere-encrypt">Clear</button>
                 <p id="vigenere-output" class="output-field input-element"></p>
                 <!--Vigenere decrypt fields-->
-                <p class="input-info">Enter encrypted text:</p>
+                <label for="vigenere-to-decrypt" class="input-info">Enter encrypted text:</label>
                 <textarea id="vigenere-to-decrypt" class="input-element"></textarea>
-                <p class="input-info">Enter key (letters only - no spaces):</p>
+                <label for="vigenere-key-decrypt" class="input-info">Enter key (letters only - no spaces):</p>
                 <input id="vigenere-key-decrypt" class="input-element" value="thisisthekey" type="text">
                 <button id="vigenere-decrypt-btn" class="encrypt-btn">Decrypt!</button>
                 <button id="clear-vigenere-decrypt">Clear</button>
@@ -229,6 +229,7 @@
             </div>
             <div id="timer" class="time-remaining game-element"></div>
             <div id="game-word" class="game-word-box game-element"></div>
+            <label for="user-word" class="hidden">Type word:</label>
             <input id="user-word" class="game-user-input input-element game-element" type="text">
             <div id="result" class="check-result game-element"></div>
             <button id="check-result-btn" class="check-button game-element">Check</button>
