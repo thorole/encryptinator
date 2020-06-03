@@ -1,26 +1,21 @@
 encryption = function () {
-    let alphabetOriginal = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
-        "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
-        "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
+    
     //===================== Cesar cipher logic =======================
 
-    let alphabet = alphabetOriginal.slice()
-    let shift = 13;
-    let cesarUserText;
-
-    function getText(message) {
-        cesarUserText = "";
-        cesarUserText = document.getElementById(message).value;
+    function getAlphabet () {
+        let alphabetOriginal = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
+        "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
+        "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        return alphabetOriginal;
     }
 
     function iterateString(text, shiftNumber, reversed) {
-        alphabet = alphabetOriginal.slice();
+        alphabet = getAlphabet();
         if (reversed == true) {
             alphabet = alphabet.reverse();
         }
         shift = shiftNumber;
-        cesarString = "";
+        let cesarString = "";
         let inputText = text;
         inputText = inputText.toLowerCase();
         for (let i = 0; i < inputText.length; i++) {
@@ -39,13 +34,15 @@ encryption = function () {
     }
 
     function getShift(shiftField) {
-        let checkShift = document.getElementById(shiftField).value;
-        if (checkShift < 1 || checkShift > 25 || checkShift == isNaN(shift)) {
+        let shift = document.getElementById(shiftField).value;
+        if (shift < 1 || shift > 25 || shift == isNaN(shift)) {
             shift = 13;
             document.getElementById(shiftField).value = shift;
+            return shift;
         }
         else {
             shift = Number(document.getElementById(shiftField).value);
+            return shift;
         }
     }
 
@@ -89,10 +86,11 @@ encryption = function () {
 
     // Loops through each letter in the key and gets its index. Assigns index numbers to key
     function convertKeyToNumbers(userKey) {
+        let alphabetOriginal = getAlphabet();
         let keyToConvert;
         keyToConvert = userKey;
         let convertedKey = [];
-        console.log(alphabetOriginal);
+        console.log(getAlphabet());
         for (let i = 0; i < keyToConvert.length; i++) {
             for (k = 0; k < alphabetOriginal.length; k++) {
                 if (keyToConvert[i] == alphabetOriginal[k]) {
@@ -113,7 +111,7 @@ encryption = function () {
         let vigenereText;
         let key = numberKey;
         console.log("text is: " + text);
-        alphabet = alphabetOriginal.slice();
+        alphabet = getAlphabet();
         vigenereText = "";
         if (reverse === true) {
             alphabet = alphabet.reverse();
@@ -171,16 +169,16 @@ encryption = function () {
 
         // Cesar encrypt/decrypt button handlers
         $("#cesar-btn").click(function () {
-            getText("input-text");
-            getShift("input-shift");
-            let cesarString = iterateString(cesarUserText, shift, true);
-            writeMessage('encrypted');
+            let userText = getUserText("input-text");
+            let shift = getShift("input-shift");
+            let cesarString = iterateString(userText, shift, true);
+            writeVigenereText("encrypted", cesarString);
         })
         $("#cesar-decipher-btn").click(function () {
-            getText("text-to-decrypt");
-            getShift("output-shift");
-            iterateString(cesarUserText, shift, false);
-            writeMessage('decrypted');
+            let userText = getUserText("text-to-decrypt");
+            let shift = getShift("output-shift");
+            let cesarString = iterateString(userText, shift, false);
+            writeVigenereText("decrypted", cesarString);
         })
 
         // Vigenere encrypt/decrypt button handlers
