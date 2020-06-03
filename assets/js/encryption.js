@@ -148,6 +148,24 @@ encryption = function () {
         cryptedParagraph.innerHTML = textToPrint;
     }
 
+    function decryptVigenereText() {
+        let userText = getUserText("vigenere-to-decrypt");
+        let key = getUserKey("vigenere-key-decrypt");
+        key = writeDefaultKey(key, "vigenere-key-decrypt");
+        let numberKey = convertKeyToNumbers(key);
+        let decryptedText = iterateVigenereString(userText, numberKey, true);
+        writeVigenereText("vigenere-decrypt-output", decryptedText);
+    }
+
+    function encryptVigenereText() {
+        let userText = getUserText("vigenere-input");
+        let key = getUserKey("vigenere-key");
+        key = writeDefaultKey(key, "vigenere-key");
+        let numberKey = convertKeyToNumbers(key);
+        let encryptedText = iterateVigenereString(userText, numberKey, false);
+        writeVigenereText("vigenere-output", encryptedText);
+    }
+
     //=================== Click handlers and function calls ========================
     $(document).ready(function () {
 
@@ -168,20 +186,10 @@ encryption = function () {
         // Vigenere encrypt/decrypt button handlers
 
         $("#vigenere-btn").click(function () {
-            let userText = getUserText("vigenere-input");
-            let key = getUserKey("vigenere-key");
-            key = writeDefaultKey(key, "vigenere-key");
-            let numberKey = convertKeyToNumbers(key);
-            let encryptedText = iterateVigenereString(userText, numberKey, false);
-            writeVigenereText("vigenere-output", encryptedText);
+            encryptVigenereText();
         })
         $("#vigenere-decrypt-btn").click(function () {
-            getUserText("vigenere-to-decrypt");
-            getUserKey("vigenere-key-decrypt");
-            writeDefaultKey("vigenere-key-decrypt");
-            convertKeyToNumbers(inputKey);
-            iterateVigenereString(userString, true);
-            writeVigenereText("vigenere-decrypt-output");
+            decryptVigenereText();
         })
 
 
