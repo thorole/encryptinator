@@ -60,6 +60,10 @@ ul li a {
     text-decoration: none;
 }
 
+.col-12.hero {
+    margin-bottom: 0;
+}
+
  button {
      border: 1px solid #00cc00;
      background-color: #252525;
