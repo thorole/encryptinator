@@ -1,11 +1,11 @@
 encryption = function () {
-    
+
     //===================== Cesar cipher logic =======================
 
-    function getAlphabet () {
+    function getAlphabet() {
         let alphabetOriginal = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
-        "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
-        "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
+            "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
         return alphabetOriginal;
     }
 
@@ -164,21 +164,29 @@ encryption = function () {
         writeVigenereText("vigenere-output", encryptedText);
     }
 
+    function encryptCesarText() {
+        let userText = getUserText("input-text");
+        let shift = getShift("input-shift");
+        let cesarString = iterateString(userText, shift, true);
+        writeVigenereText("encrypted", cesarString);
+    }
+
+    function decryptCesarText() {
+        let userText = getUserText("text-to-decrypt");
+        let shift = getShift("output-shift");
+        let cesarString = iterateString(userText, shift, false);
+        writeVigenereText("decrypted", cesarString);
+    }
+
     //=================== Click handlers and function calls ========================
     $(document).ready(function () {
 
         // Cesar encrypt/decrypt button handlers
         $("#cesar-btn").click(function () {
-            let userText = getUserText("input-text");
-            let shift = getShift("input-shift");
-            let cesarString = iterateString(userText, shift, true);
-            writeVigenereText("encrypted", cesarString);
+            encryptCesarText();
         })
         $("#cesar-decipher-btn").click(function () {
-            let userText = getUserText("text-to-decrypt");
-            let shift = getShift("output-shift");
-            let cesarString = iterateString(userText, shift, false);
-            writeVigenereText("decrypted", cesarString);
+            decryptCesarText();
         })
 
         // Vigenere encrypt/decrypt button handlers
