@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 body {
     background-color: #252525;
     font-family: 'Fira Code', monospace;
@@ -39,14 +46,20 @@ body {
     position: fixed;
     width: 100%;
     z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 3rem;
     background-color: #252525;
     border-bottom: 2px solid #00cc00;
 }
 
 .custom-navbar ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     list-style-type: none;
     margin: 0;
@@ -76,7 +89,8 @@ button {
 button:focus {
     outline: none;
     border: 1px solid #00cc00;
-    box-shadow: 0 0 5px #00cc00;
+    -webkit-box-shadow: 0 0 5px #00cc00;
+            box-shadow: 0 0 5px #00cc00;
 }
 
 .read-more-para {
@@ -217,13 +231,18 @@ textarea {
     border: 1px solid #006400;
     color: #00cc00;
     font-size: 1rem;
+    -webkit-transition: ease-in-out, 0.2s, -webkit-box-shadow;
+    transition: ease-in-out, 0.2s, -webkit-box-shadow;
+    -o-transition: ease-in-out, box-shadow, 0.2s;
     transition: ease-in-out, box-shadow, 0.2s;
+    transition: ease-in-out, box-shadow, 0.2s, -webkit-box-shadow;
 }
 
 .input-element:focus {
     outline: none;
     border: 1px solid #00cc00;
-    box-shadow: 0 0 5px #00cc00;
+    -webkit-box-shadow: 0 0 5px #00cc00;
+            box-shadow: 0 0 5px #00cc00;
 }
 
 .input-info {
@@ -350,6 +369,8 @@ textarea {
 }
 
 .flex-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -374,6 +395,7 @@ textarea {
 
 .restore-website {
     margin: 0 auto;
+    position: -webkit-sticky;
     position: sticky;
     top: 30%;
     width: 10%;
