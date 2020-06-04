@@ -24,7 +24,7 @@ encryption = function () {
                     cesarString += alphabet[j + shift];
                     j = alphabet.length;
                 }
-                if ((!/^[a-z]/.test(inputText[i]))) {
+                if (!(/^[a-z]/).test(inputText[i])) {
                     cesarString += inputText[i];
                     j = alphabet.length;
                 }
@@ -35,7 +35,7 @@ encryption = function () {
 
     function getShift(shiftField) {
         let shift = document.getElementById(shiftField).value;
-        if (shift < 1 || shift > 25 || shift == isNaN(shift)) {
+        if (shift < 1 || shift > 25 || shift === isNaN(shift)) {
             shift = 13;
             document.getElementById(shiftField).value = shift;
             return shift;
@@ -44,12 +44,6 @@ encryption = function () {
             shift = Number(document.getElementById(shiftField).value);
             return shift;
         }
-    }
-
-    function writeMessage(outputParagraph) {
-        encryptedParagraph = document.getElementById(outputParagraph);
-        console.log("alphabetOriginal: " + alphabetOriginal);
-        encryptedParagraph.innerHTML = cesarString;
     }
 
     //========================== Vignere Cipher logic =============================
