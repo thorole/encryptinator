@@ -66,7 +66,7 @@ encryption = function () {
     // Sets inputKey to default key
     function writeDefaultKey(userKey, keyField) {
         let key = userKey;
-        if (/[^a-z]/.test(key) || key == "") {
+        if ((/[^a-z]/).test(key) || key == "") {
             console.log("User key is not according to rule");
             key = "thisisthekey";
             document.getElementById(keyField).value = key;
