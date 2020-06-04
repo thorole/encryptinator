@@ -10,12 +10,12 @@ let game = function () {
             "enter-cesar-decrypt", "enter-key-decrypt", "enter-shift-decrypt"];
 
         let stages = [
-            //["car", "cow", "too", "far", "see", "sea", "all", "say"],
-            //["milk", "call", "core", "fish", "must", "mill", "mark", "quit"],
-            //["ready", "sauce", "cream", "spoke", "tired", "dirty", "crutch", "alias"],
-            //["archer", "kitten", "signal", "psycho", "charger", "candle", "gloves", "finger"],
-            //["cruches", "eyeball", "physics", "lunatic", "battery", "flowers", "handbag", "sixpack"],
-            //["greatful"],
+            ["car", "cow", "too", "far", "see", "sea", "all", "say"],
+            ["milk", "call", "core", "fish", "must", "mill", "mark", "quit"],
+            ["ready", "sauce", "cream", "spoke", "tired", "dirty", "crutch", "alias"],
+            ["archer", "kitten", "signal", "psycho", "charger", "candle", "gloves", "finger"],
+            ["cruches", "eyeball", "physics", "lunatic", "battery", "flowers", "handbag", "sixpack"],
+            ["greatful"],
             ["attackatdawn"]
         ];
         let finalStageKeys = ["ahead"];
@@ -63,7 +63,7 @@ let game = function () {
             writeEncryptedWord();
             writeGameInfo();
             toggleGameElements();
-            startTimer(10);
+            startTimer(80);
         }
 
         let gameKey;
