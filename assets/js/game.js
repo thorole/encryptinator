@@ -70,7 +70,7 @@ game = function () {
             }
             else {
                 gameKey = encryption.convertKeyToNumbers(finalStageKeys[0]);
-                encryptedGameWord = encryption.iterateVigenereString(gameWord, false);
+                encryptedGameWord = encryption.iterateVigenereString(gameWord, gameKey, false);
 
             }
         }
