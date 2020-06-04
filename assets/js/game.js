@@ -3,7 +3,7 @@ let game = function () {
 
     $(document).ready(function () {
 
-        let elements = ["heading", "sub-heading-one", "sub-heading-two", "sub-heading-three",
+        let elements = ["nav-one", "nav-two", "nav-three", "nav-four", "heading", "sub-heading-one", "sub-heading-two", "sub-heading-three",
             "encryption-info-one", "encryption-info-two", "intro-button-one", "intro-button-two", "cesar-heading",
             "vigenere-heading", "cesar-info-heading", "vigenere-info-heading", "game-heading", "game-instructions", 
             "enter-cesar-text", "enter-vigenere-text", "enter-shift", "enter-key", "enter-vigenere-decrypt", 
@@ -257,6 +257,10 @@ let game = function () {
             $("button").prop("disabled", true);
             $("button").text("xxxx");
             $("a").attr({"href":"https://www..../", "target":"_blank"});
+            $("#input-shift").val(0);
+            $("#output-shift").val(0);
+            $("#vigenere-key").val(":-(");
+            $("#vigenere-key-decrypt").val(":-(");
             $("#restore").removeClass("hidden");
         }
 
