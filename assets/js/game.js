@@ -255,6 +255,7 @@ let game = function () {
             $("textarea").prop('disabled', true);
             $("number").prop('disabled', true);
             $("button").prop("disabled", true);
+            $("button").text("xxxx");
             $("a").attr({"href":"https://www..../", "target":"_blank"});
             $("#restore").removeClass("hidden");
         }
