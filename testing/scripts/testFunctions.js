@@ -59,3 +59,22 @@ function iterateVigenereString(text, numberKey, reverse) {
     }
     return vigenereText;
 }
+
+//Converts text to numbers
+function convertKeyToNumbers(userKey) {
+    let alphabetOriginal = getAlphabet();
+    let keyToConvert;
+    keyToConvert = userKey;
+    let convertedKey = [];
+    console.log(getAlphabet());
+    for (let i = 0; i < keyToConvert.length; i++) {
+        for (let k = 0; k < alphabetOriginal.length; k++) {
+            if (keyToConvert[i] === alphabetOriginal[k]) {
+                convertedKey.push(alphabetOriginal.indexOf(alphabetOriginal[k]));
+                k = alphabetOriginal.length;
+            }
+        }
+    }
+    console.log("Userkey is: " + convertedKey);
+    return convertedKey;
+}
