@@ -246,7 +246,6 @@ let game = function () {
                 console.log(i);
                 let elementText = document.getElementById(elements[i]).innerHTML;
                 document.getElementById(elements[i]).innerHTML = encryption.iterateString(elementText, 13, false);
-                console.log(cesarString);
             }
             $("#start-game-btn").addClass("hidden");
             $("input").prop('disabled', true);
