@@ -5,7 +5,9 @@ let game = function () {
 
         let elements = ["heading", "sub-heading-one", "sub-heading-two", "sub-heading-three",
             "encryption-info-one", "encryption-info-two", "intro-button-one", "intro-button-two", "cesar-heading",
-            "vigenere-heading", "cesar-info-heading", "vigenere-info-heading", "game-heading", "game-instructions"];
+            "vigenere-heading", "cesar-info-heading", "vigenere-info-heading", "game-heading", "game-instructions", 
+            "enter-cesar-text", "enter-vigenere-text", "enter-shift", "enter-key", "enter-vigenere-decrypt", 
+            "enter-cesar-decrypt", "enter-key-decrypt", "enter-shift-decrypt"];
 
         let stages = [
             //["car", "cow", "too", "far", "see", "sea", "all", "say"],
