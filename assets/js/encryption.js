@@ -10,11 +10,11 @@ encryption = function () {
     }
 
     function iterateString(text, shiftNumber, reversed) {
-        alphabet = getAlphabet();
+        let alphabet = getAlphabet();
         if (reversed == true) {
             alphabet = alphabet.reverse();
         }
-        shift = shiftNumber;
+        let shift = shiftNumber;
         let cesarString = "";
         let inputText = text;
         inputText = inputText.toLowerCase();
@@ -118,12 +118,13 @@ encryption = function () {
         }
         let inputText = text;
         console.log("userstring is: " + inputText);
-        for (let i = 0, g = 0; i < inputText.length; i++) {
+        let g = 0;
+        for (let i = 0; i < inputText.length; i++) {
             if (g == key.length) {
                 g = 0;
             }
             for (let j = 0; j < alphabet.length; j++) {
-                if (inputText[i] == alphabet[j]) {
+                if (inputText[i] === alphabet[j]) {
                     vigenereText += alphabet[j + key[g]];
                     j = alphabet.length;
                     g++;
