@@ -1,4 +1,6 @@
-encryption = function () {
+"use strict";
+
+let encryption = function () {
 
     //===================== Cesar cipher logic =======================
 
@@ -86,8 +88,8 @@ encryption = function () {
         let convertedKey = [];
         console.log(getAlphabet());
         for (let i = 0; i < keyToConvert.length; i++) {
-            for (k = 0; k < alphabetOriginal.length; k++) {
-                if (keyToConvert[i] == alphabetOriginal[k]) {
+            for (let k = 0; k < alphabetOriginal.length; k++) {
+                if (keyToConvert[i] === alphabetOriginal[k]) {
                     convertedKey.push(alphabetOriginal.indexOf(alphabetOriginal[k]));
                     k = alphabetOriginal.length;
                 }
@@ -105,16 +107,15 @@ encryption = function () {
         let vigenereText;
         let key = numberKey;
         console.log("text is: " + text);
-        alphabet = getAlphabet();
+        let alphabet = getAlphabet();
         vigenereText = "";
         if (reverse === true) {
             alphabet = alphabet.reverse();
         }
         let inputText = text;
         console.log("userstring is: " + inputText);
-        let g = 0;
-        for (let i = 0; i < inputText.length; i++) {
-            if (g == key.length) {
+        for (let i = 0, g = 0; i < inputText.length; i++) {
+            if (g === key.length) {
                 g = 0;
             }
             for (let j = 0; j < alphabet.length; j++) {
@@ -124,7 +125,7 @@ encryption = function () {
                     g++;
                     console.log("encryptedmsginloopis: " + vigenereText);
                 }
-                if ((!/^[a-z]/.test(inputText[i]))) {    //Makes sure characters not in the range of a-z is printed
+                if (!(/^[a-z]/).test(inputText[i])) {    //Makes sure characters not in the range of a-z is printed
                     vigenereText += inputText[i];
                     break;
                 }
@@ -136,7 +137,7 @@ encryption = function () {
     //Prints vigenereText to html element.
     function writeVigenereText(outputParagraph, text) {
         let textToPrint = text;
-        cryptedParagraph = document.getElementById(outputParagraph);
+        let cryptedParagraph = document.getElementById(outputParagraph);
         console.log("Encryptedtextis: " + textToPrint);
         cryptedParagraph.innerHTML = textToPrint;
     }
@@ -179,19 +180,19 @@ encryption = function () {
         // Cesar encrypt/decrypt button handlers
         $("#cesar-btn").click(function () {
             encryptCesarText();
-        })
+        });
         $("#cesar-decipher-btn").click(function () {
             decryptCesarText();
-        })
+        });
 
         // Vigenere encrypt/decrypt button handlers
 
         $("#vigenere-btn").click(function () {
             encryptVigenereText();
-        })
+        });
         $("#vigenere-decrypt-btn").click(function () {
             decryptVigenereText();
-        })
+        });
 
 
 

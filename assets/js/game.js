@@ -1,4 +1,6 @@
-game = function () {
+"use strict";
+let game = function () {
+    
     $(document).ready(function () {
 
         let elements = ["heading", "sub-heading-one", "sub-heading-two", "sub-heading-three",
@@ -6,16 +8,15 @@ game = function () {
 
         let stages = [
             ["car", "cow", "too", "far", "see", "sea", "all", "say"],
-            //["milk", "call", "core", "fish", "must", "mill", "mark", "quit"],
-            //["ready", "sauce", "cream", "spoke", "tired", "dirty", "crutch", "alias"],
-            //["archer", "kitten", "signal", "psycho", "charger", "candle", "gloves", "finger"],
-            //["cruches", "eyeball", "physics", "lunatic", "battery", "flowers", "handbag", "sixpack"],
-            //["greatful"],
+            ["milk", "call", "core", "fish", "must", "mill", "mark", "quit"],
+            ["ready", "sauce", "cream", "spoke", "tired", "dirty", "crutch", "alias"],
+            ["archer", "kitten", "signal", "psycho", "charger", "candle", "gloves", "finger"],
+            ["cruches", "eyeball", "physics", "lunatic", "battery", "flowers", "handbag", "sixpack"],
+            ["greatful"],
             ["attackatdawn"]
         ];
-        let finalStageKeys = ["ahead"]
+        let finalStageKeys = ["ahead"];
         let level;
-        let nextLevel;
         let gameShift;
 
 
@@ -32,7 +33,7 @@ game = function () {
             toggleNextStageBox();
             getGameShift();
             displayNextLevel();
-            console.log("level is: " + level)
+            console.log("level is: " + level);
         });
 
         $("#reset-btn").click(function () {
@@ -59,7 +60,7 @@ game = function () {
             writeEncryptedWord();
             writeGameInfo();
             toggleGameElements();
-            startTimer(15);
+            startTimer(80);
         }
 
         let gameKey;
@@ -131,7 +132,7 @@ game = function () {
             else if (userWord == gameWord) {
                 score += seconds + 1;
                 console.log("score: " + score);
-                $("#current-score").text("Score: " + score)
+                $("#current-score").text("Score: " + score);
                 $("#user-word").val("");
                 $("#result").text("");
                 clearInterval(timer);
@@ -268,6 +269,6 @@ game = function () {
 
         $("#restore").click(function () {
             window.location.reload();
-        })
+        });
     });
 }();
