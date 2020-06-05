@@ -37,13 +37,21 @@ let encryption = function () {
 
     function getShift(shiftField) {
         let shift = document.getElementById(shiftField).value;
+        return shift;
+    }
+
+    function writeDefaultShift (shiftField, shift) {
+        document.getElementById(shiftField).value = shift;
+    }
+
+    function checkShift(usershift) {
+        let shift = usershift;
         if (shift < 1 || shift > 25 || shift === isNaN(shift)) {
             shift = 13;
-            document.getElementById(shiftField).value = shift;
             return shift;
         }
         else {
-            shift = Number(document.getElementById(shiftField).value);
+            shift = Number(usershift);
             return shift;
         }
     }
@@ -163,6 +171,8 @@ let encryption = function () {
     function encryptCesarText() {
         let userText = getUserText("input-text");
         let shift = getShift("input-shift");
+        shift = checkShift(shift);
+        writeDefaultShift("input-shift", shift);
         let cesarString = iterateString(userText, shift, true);
         writeVigenereText("encrypted", cesarString);
     }
@@ -170,6 +180,8 @@ let encryption = function () {
     function decryptCesarText() {
         let userText = getUserText("text-to-decrypt");
         let shift = getShift("output-shift");
+        shift = checkShift(shift);
+        writeDefaultShift("output-shift", shift);
         let cesarString = iterateString(userText, shift, false);
         writeVigenereText("decrypted", cesarString);
     }
