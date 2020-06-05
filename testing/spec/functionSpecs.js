@@ -64,4 +64,30 @@ describe("Converts text to numbers", function () {
     });
 });
 
+//Test users shift input
+describe("Checks the shift, should be number.", function () {
+
+    let correctShift = 4;
+    let correctShiftString = "4";
+    let letterShift = "test";
+    let tooLowShift = 0;
+    let tooBigShift = 26;
+
+    it("should return 4(1)", function () {
+        expect(checkShift(correctShift)).toBe(4)
+    });
+    it("should return 4(2)", function () {
+        expect(checkShift(correctShiftString)).toBe(4);
+    });
+    it("should return 13(3)", function () {
+        expect(checkShift(letterShift)).toBe(13);
+    });
+    it("should return 13(4)", function () {
+        expect(checkShift(tooLowShift)).toBe(13);
+    });
+    it("should return 13(5)", function () {
+        expect(checkShift(tooBigShift)).toBe(13);
+    });
+});
+
 

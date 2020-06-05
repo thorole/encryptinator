@@ -40,18 +40,24 @@ let encryption = function () {
         return shift;
     }
 
-    function writeDefaultShift (shiftField, shift) {
+    function writeDefaultShift(shiftField, shift) {
         document.getElementById(shiftField).value = shift;
     }
 
     function checkShift(usershift) {
         let shift = usershift;
-        if (shift < 1 || shift > 25 || shift === isNaN(shift)) {
+        let isNotNumber = isNaN(shift);
+        console.log(typeof shift);
+        console.log("shift is: " + shift);
+        if (shift < 1 || shift > 25 || isNotNumber === true) {
             shift = 13;
+            console.log("if" + shift);
             return shift;
         }
         else {
-            shift = Number(usershift);
+            shift = parseInt(usershift);
+            shift = Number(shift);
+            console.log("else" + shift);
             return shift;
         }
     }
@@ -172,7 +178,9 @@ let encryption = function () {
         let userText = getUserText("input-text");
         let shift = getShift("input-shift");
         shift = checkShift(shift);
+        console.log("shift is: " + shift);
         writeDefaultShift("input-shift", shift);
+        console.log("shift is: " + shift);
         let cesarString = iterateString(userText, shift, true);
         writeVigenereText("encrypted", cesarString);
     }
