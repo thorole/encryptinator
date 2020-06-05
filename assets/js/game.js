@@ -162,6 +162,7 @@ let game = function () {
             else {
                 toggleGameOverBox();
                 toggleNextStageBox();
+                enableDecryptFields();
                 $("#game-over-box").addClass("message-box-wide");
                 $("#game-over-message").text("Congratulations!");
                 $("#game-finished").text("You prevented the breakdown of the site! You are a true ENCRYPTINATOR!");
