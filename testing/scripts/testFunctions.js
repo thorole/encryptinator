@@ -6,19 +6,15 @@ function getAlphabet() {
 }
 //Checks that value entered is within the rule
 function checkShift(usershift) {
-    let shift = usershift;
-    isNotNumber = isNaN(shift);
-    console.log(typeof shift);
-    console.log("shift is: " + shift);
+    let shift = Number(usershift);
+    let isNotNumber = isNaN(shift);
     if (shift < 1 || shift > 25 || isNotNumber === true) {
         shift = 13;
-        console.log("if" + shift);
         return shift;
     }
     else {
         shift = parseInt(usershift);
         shift = Number(shift);
-        console.log("else" + shift);
         return shift;
     }
 }

@@ -45,10 +45,8 @@ let encryption = function () {
     }
 
     function checkShift(usershift) {
-        let shift = usershift;
+        let shift = Number(usershift);
         let isNotNumber = isNaN(shift);
-        console.log(typeof shift);
-        console.log("shift is: " + shift);
         if (shift < 1 || shift > 25 || isNotNumber === true) {
             shift = 13;
             console.log("if" + shift);
