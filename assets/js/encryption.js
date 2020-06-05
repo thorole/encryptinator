@@ -24,11 +24,11 @@ let encryption = function () {
             for (let j = 0; j < alphabet.length; j++) {
                 if (inputText[i] == alphabet[j]) {
                     cesarString += alphabet[j + shift];
-                    j = alphabet.length;
+                    break;
                 }
                 if (!(/^[a-z]/).test(inputText[i])) {
                     cesarString += inputText[i];
-                    j = alphabet.length;
+                    break;
                 }
             }
         }
@@ -121,7 +121,7 @@ let encryption = function () {
             for (let j = 0; j < alphabet.length; j++) {
                 if (inputText[i] === alphabet[j]) {
                     vigenereText += alphabet[j + key[g]];
-                    j = alphabet.length;
+                    break;
                     g++;
                     console.log("encryptedmsginloopis: " + vigenereText);
                 }
