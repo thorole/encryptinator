@@ -1,3 +1,5 @@
+"use strict";
+
 $("#intro-button-one").click(function () { //Read more/less functionality for 1st paragraph
   if ($(this).text() === "Read more") {
     $(this).text("Read less");
