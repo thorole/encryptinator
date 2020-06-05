@@ -31,11 +31,17 @@ body {
 .hero {
     background-color: #000;
     margin: 4rem 0 2rem 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .hero h1 {
     font-size: 4rem;
     font-weight: 700;
+}
+
+.hero ul {
+    list-style-type: square;
 }
 
 .navbar-padding {

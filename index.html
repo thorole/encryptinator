@@ -30,9 +30,11 @@
     <div class="row">
       <div class="col-12 hero">
         <h1 id="heading">ENCRYPTINATOR</h1>
-        <p id="sub-heading-one">Learn basic encryption</p>
-        <p id="sub-heading-two">Encrypt and decrypt text</p>
-        <p id="sub-heading-three">Test your decryption skills!</p>
+        <ul>
+          <li id="sub-heading-one">Learn basic encryption</li>
+          <li id="sub-heading-two">Encrypt and decrypt text</li>
+          <li id="sub-heading-three">Test your decryption skills</li>
+        </ul>
       </div>
     </div>
     <!-- Button that is shown if you lose the last level of the game -->
@@ -45,7 +47,8 @@
         <div class="col-lg-6">
           <h2 id="cesar-info-heading">The Cesar Cipher</h2>
           <div class="bar-green"></div>
-          <p id="encryption-info-one" class="read-more-para">The Cesar Cipher is one of the oldest encryption methods known to man. It is named
+          <p id="encryption-info-one" class="read-more-para">The Cesar Cipher is one of the oldest encryption methods
+            known to man. It is named
             after Julius Cesar, who used it to send encrypted messages to his subordinates.</p>
           <div class="hidden" id="intro-more-one">
             <p>This encryption method takes all the letters of a plaintext and applies a shift. The
@@ -87,7 +90,8 @@
         <div class="col-lg-6">
           <h2 id="vigenere-info-heading">The Vigenere Cipher</h2>
           <div class="bar-green"></div>
-          <p id="encryption-info-two" class="read-more-para">The Vigenere Cipher is a method of encrypting text, which builds upon the Cesar
+          <p id="encryption-info-two" class="read-more-para">The Vigenere Cipher is a method of encrypting text, which
+            builds upon the Cesar
             Cipher method. This encryption method was (wrongfully) attributed to Blaise de Vigènere and so acquired its
             name.</p>
           <div class="hidden" id="intro-more-two">
@@ -174,15 +178,18 @@
                 <!--Vigenere encrypt fields-->
                 <label id="enter-vigenere-text" for="vigenere-input" class="input-info">Enter plain text:</label>
                 <textarea id="vigenere-input" class="input-element"></textarea>
-                <label id="enter-key" for="vigenere-key" class="input-info">Enter key (letters only - no spaces):</label>
+                <label id="enter-key" for="vigenere-key" class="input-info">Enter key (letters only - no
+                  spaces):</label>
                 <input id="vigenere-key" class="input-element" value="thisisthekey" type="text">
                 <button id="vigenere-btn" class="encrypt-btn">Encrypt!</button>
                 <button id="clear-vigenere-encrypt">Clear</button>
                 <p id="vigenere-output" class="output-field input-element"></p>
                 <!--Vigenere decrypt fields-->
-                <label id="enter-vigenere-decrypt" for="vigenere-to-decrypt" class="input-info">Enter encrypted text:</label>
+                <label id="enter-vigenere-decrypt" for="vigenere-to-decrypt" class="input-info">Enter encrypted
+                  text:</label>
                 <textarea id="vigenere-to-decrypt" class="input-element"></textarea>
-                <label id="enter-key-decrypt" for="vigenere-key-decrypt" class="input-info">Enter key (letters only - no spaces):</label>
+                <label id="enter-key-decrypt" for="vigenere-key-decrypt" class="input-info">Enter key (letters only - no
+                  spaces):</label>
                 <input id="vigenere-key-decrypt" class="input-element" value="thisisthekey" type="text">
                 <button id="vigenere-decrypt-btn" class="encrypt-btn">Decrypt!</button>
                 <button id="clear-vigenere-decrypt">Clear</button>
@@ -199,7 +206,8 @@
       <div class="col-12">
         <div class="game-info">
           <h3 id="game-heading">Test your new skills!</h3>
-          <p id="game-instructions">Please read through the section about the Cesar Cipher and Vigenere Cipher before playing the game. Your
+          <p id="game-instructions">Please read through the section about the Cesar Cipher and Vigenere Cipher before
+            playing the game. Your
             mission is to decrypt the word on the game screen before the time runs out. Both the shift and the length of
             the word will increase
             as you progress. Good luck!</p>
