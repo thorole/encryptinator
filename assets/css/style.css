@@ -50,10 +50,10 @@ body {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     height: 3rem;
-    background-color: #252525;
+    background-color: #000;
     border-bottom: 2px solid #00cc00;
 }
 
@@ -90,7 +90,7 @@ button:focus {
     outline: none;
     border: 1px solid #00cc00;
     -webkit-box-shadow: 0 0 5px #00cc00;
-            box-shadow: 0 0 5px #00cc00;
+    box-shadow: 0 0 5px #00cc00;
 }
 
 .read-more-para {
@@ -242,7 +242,7 @@ textarea {
     outline: none;
     border: 1px solid #00cc00;
     -webkit-box-shadow: 0 0 5px #00cc00;
-            box-shadow: 0 0 5px #00cc00;
+    box-shadow: 0 0 5px #00cc00;
 }
 
 .input-info {
@@ -433,10 +433,12 @@ textarea {
     margin-bottom: 0;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-            height: 3rem;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 3rem;
+    border-top: 2px solid #00cc00;
 }
+
 .footer p {
-    margin: 0 0 0  1rem;
+    margin: 0 0 0 1rem;
 }
