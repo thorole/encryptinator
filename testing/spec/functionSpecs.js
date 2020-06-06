@@ -45,10 +45,10 @@ describe("Encrypts or decrypts text", function () {
     it("should return correct", function () {
         expect(iterateVigenereString(decryptedText, key, decrypt)).toBe("correct");
     });
-    it("should return dqusgfu", function () {
+    it("should return na dhg lt _(36)", function () {
         expect(iterateVigenereString(textWithSpacesAndSigns, key, encrypt)).toBe(encryptedTxtWithSpaceSigns);
     });
-    it("should return correct", function () {
+    it("should return my age is _(36)", function () {
         expect(iterateVigenereString(encryptedTxtWithSpaceSigns, key, decrypt)).toBe(textWithSpacesAndSigns);
     });
 
