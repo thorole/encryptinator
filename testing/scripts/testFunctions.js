@@ -92,3 +92,17 @@ function convertKeyToNumbers(userKey) {
     console.log("Userkey is: " + convertedKey);
     return convertedKey;
 }
+
+//Should return default key if users input is the wrong format
+function checkUserKey(userKey) {
+    let key = userKey.toLowerCase();
+    if ((/[^a-z]/).test(key) || key == "") {
+        console.log("User key is not according to rule");
+        key = "thisisthekey";
+        console.log("userKey is: " + typeof key);
+        return key;
+    }
+    else {
+        return key;
+    }
+}

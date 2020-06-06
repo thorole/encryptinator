@@ -90,4 +90,26 @@ describe("Checks the shift, should be number.", function () {
     });
 });
 
+//Test that default key is returned when user input is of wrong format
+describe("Return user input or default key", function () {
+
+    let userKey = "mykey";
+    let keyWithUpper = "TesT";
+    let = keyWithNum = "34";
+    let = keyWithSpace = "my key";
+
+    it("should return mykey", function () {
+        expect(checkUserKey(userKey)).toBe("mykey");
+    });
+    it("should return test", function () {
+        expect(checkUserKey(keyWithUpper)).toBe("test");
+    });
+    it("should return thisisthekey", function () {
+        expect(checkUserKey(keyWithNum)).toBe("thisisthekey");
+    });
+    it("should return thisisthekey", function () {
+        expect(checkUserKey(keyWithSpace)).toBe("thisisthekey");
+    });
+});
+
 
