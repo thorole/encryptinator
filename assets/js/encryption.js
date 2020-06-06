@@ -49,13 +49,11 @@ let encryption = function () {
         let isNotNumber = isNaN(shift);
         if (shift < 1 || shift > 25 || isNotNumber === true) {
             shift = 13;
-            console.log("if" + shift);
             return shift;
         }
         else {
             shift = parseInt(usershift);
             shift = Number(shift);
-            console.log("else" + shift);
             return shift;
         }
     }
@@ -70,26 +68,25 @@ let encryption = function () {
     }
 
     // Assigns user key to inputKey
-    function getUserKey(userKey) {
-        let inputKey = document.getElementById(userKey).value;
-        console.log(inputKey);
-        inputKey = inputKey.toLowerCase();
-        return inputKey;
-    }
-
-    // Sets inputKey to default key
-    function writeDefaultKey(userKey, keyField) {
-        let key = userKey;
+    function checkUserKey(userKey) {
+        let key = userKey.toLowerCase();
         if ((/[^a-z]/).test(key) || key == "") {
             console.log("User key is not according to rule");
             key = "thisisthekey";
-            document.getElementById(keyField).value = key;
             console.log("userKey is: " + typeof key);
             return key;
         }
         else {
             return key;
         }
+        //let inputKey = document.getElementById(userKey).value;
+        //console.log(inputKey);
+        //return inputKey;
+    }
+
+    // Sets inputKey to default key
+    function writeDefaultKey(userKey, keyField) {
+        document.getElementById(keyField).value = userKey;
     }
 
     // Loops through each letter in the key and gets its index. Assigns index numbers to key
@@ -118,6 +115,7 @@ let encryption = function () {
     function iterateVigenereString(text, numberKey, reverse) {
         let vigenereText;
         let key = numberKey;
+        console.log("number key in iterate function is: " + key)
         console.log("text is: " + text);
         let alphabet = getAlphabet();
         vigenereText = "";
@@ -133,8 +131,8 @@ let encryption = function () {
             for (let j = 0; j < alphabet.length; j++) {
                 if (inputText[i] === alphabet[j]) {
                     vigenereText += alphabet[j + key[g]];
-                    break;
                     g++;
+                    break;
                     console.log("encryptedmsginloopis: " + vigenereText);
                 }
                 if (!(/^[a-z]/).test(inputText[i])) {    //Makes sure characters not in the range of a-z is printed
@@ -143,6 +141,7 @@ let encryption = function () {
                 }
             }
         }
+        console.log("encrypted text is: " + vigenereText);
         return vigenereText;
     }
 
@@ -154,22 +153,25 @@ let encryption = function () {
         cryptedParagraph.innerHTML = textToPrint;
     }
 
-    function decryptVigenereText() {
-        let userText = getUserText("vigenere-to-decrypt");
-        let key = getUserKey("vigenere-key-decrypt");
-        key = writeDefaultKey(key, "vigenere-key-decrypt");
-        let numberKey = convertKeyToNumbers(key);
-        let decryptedText = iterateVigenereString(userText, numberKey, true);
-        writeVigenereText("vigenere-decrypt-output", decryptedText);
-    }
 
     function encryptVigenereText() {
         let userText = getUserText("vigenere-input");
-        let key = getUserKey("vigenere-key");
-        key = writeDefaultKey(key, "vigenere-key");
+        let key = getShift("vigenere-key");
+        key = checkUserKey(key);
+        writeDefaultKey(key, "vigenere-key");
         let numberKey = convertKeyToNumbers(key);
         let encryptedText = iterateVigenereString(userText, numberKey, false);
         writeVigenereText("vigenere-output", encryptedText);
+    }
+    
+    function decryptVigenereText() {
+        let userText = getUserText("vigenere-to-decrypt");
+        let key = getShift("vigenere-key-decrypt");
+        key = checkUserKey(key);
+        writeDefaultKey(key, "vigenere-key-decrypt");
+        let numberKey = convertKeyToNumbers(key);
+        let decryptedText = iterateVigenereString(userText, numberKey, true);
+        writeVigenereText("vigenere-decrypt-output", decryptedText);
     }
 
     function encryptCesarText() {
