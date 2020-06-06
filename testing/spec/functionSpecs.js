@@ -1,4 +1,4 @@
-"use strict";
+
 
 //Test cesar cipher function
 
