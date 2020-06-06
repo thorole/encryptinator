@@ -14,11 +14,11 @@ let game = function () {
             ["milk", "call", "core", "fish", "must", "mill", "mark", "quit"],
             ["ready", "sauce", "cream", "spoke", "tired", "dirty", "crutch", "alias"],
             ["archer", "kitten", "signal", "psycho", "charger", "candle", "gloves", "finger"],
-            ["cruches", "eyeball", "physics", "lunatic", "battery", "flowers", "handbag", "sixpack"],
-            ["greatful"],
+            ["cadaver", "eyeball", "physics", "lunatic", "battery", "flowers", "handbag", "sixpack"],
+            ["greatful", "fearless", "truthful", "american", "costumes", "username", "malicious", "ludacris"],
             ["attackatdawn"]
         ];
-        let finalStageKeys = ["ahead"];
+        let finalStageKeys = ["big"];
         let level;
         let gameShift;
 
@@ -94,7 +94,7 @@ let game = function () {
                 $("#shift-value").text("Shift: " + gameShift);
             }
             else {
-                $("#shift-value").text("Shift: " + gameShift + " = " + gameKey);
+                $("#shift-value").text("Shift: " + gameKey);
             }
         }
 
@@ -240,7 +240,7 @@ let game = function () {
                 nextStage();
                 $("#game-over-message").text("Game Over");
                 $("#game-finished").text("");
-                $("#final-score").text("Website destroyed. Thanks for trying!");
+                $("#final-score").text("Website destroyed. Thanks for trying! Final score: " + score);
                 encryptElements();
             }
         }
