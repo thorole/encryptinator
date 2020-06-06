@@ -79,9 +79,6 @@ let encryption = function () {
         else {
             return key;
         }
-        //let inputKey = document.getElementById(userKey).value;
-        //console.log(inputKey);
-        //return inputKey;
     }
 
     // Sets inputKey to default key

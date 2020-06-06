@@ -57,7 +57,7 @@ describe("Encrypts or decrypts text", function () {
 //Test conversion of letters to numbers
 describe("Converts text to numbers", function () {
 
-    let userKey = "abc"
+    let userKey = "abc";
 
     it("should return 1 2 3", function () {
         expect(convertKeyToNumbers(userKey)).toEqual([0, 1, 2]);
@@ -65,7 +65,7 @@ describe("Converts text to numbers", function () {
 });
 
 //Test users shift input
-describe("Checks the shift, should be number.", function () {
+describe("Checks shift, return userinput or default shift (13)", function () {
 
     let correctShift = 4;
     let correctShiftString = "4";
@@ -91,12 +91,13 @@ describe("Checks the shift, should be number.", function () {
 });
 
 //Test that default key is returned when user input is of wrong format
-describe("Return user input or default key", function () {
+describe("Checks key, returns userinput or default key (thisisthekey)", function () {
 
     let userKey = "mykey";
     let keyWithUpper = "TesT";
     let = keyWithNum = "34";
     let = keyWithSpace = "my key";
+    let keyWithSymbols = "#%__%HJ(YR)";
 
     it("should return mykey", function () {
         expect(checkUserKey(userKey)).toBe("mykey");
@@ -109,6 +110,9 @@ describe("Return user input or default key", function () {
     });
     it("should return thisisthekey", function () {
         expect(checkUserKey(keyWithSpace)).toBe("thisisthekey");
+    });
+    it("should return thisisthekey", function () {
+        expect(checkUserKey(keyWithSymbols)).toBe("thisisthekey");
     });
 });
 
