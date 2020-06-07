@@ -16,14 +16,16 @@
 <body>
   <!-- ==================== Navbar ====================== -->
   <header>
-    <div class="custom-navbar">
-      <ul>
-        <li><a id="nav-one" href="index.html">Home</a></li>
-        <li><a id="nav-two" href="#learn">Learn</a></li>
-        <li><a id="nav-three" href="#forms">Forms</a></li>
-        <li><a id="nav-four" href="#play">Play</a></li>
-      </ul>
-    </div>
+    <nav>
+      <div class="custom-navbar">
+        <ul>
+          <li><a id="nav-one" href="index.html">Home</a></li>
+          <li><a id="nav-two" href="#learn">Learn</a></li>
+          <li><a id="nav-three" href="#forms">Forms</a></li>
+          <li><a id="nav-four" href="#play">Play</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 
   <!-- ================== Hero ===================== -->
@@ -51,27 +53,31 @@
           <p id="encryption-info-one" class="read-more-para">The Cesar Cipher is one of the oldest encryption methods
             known to man. It is named
             after Julius Cesar, who used it to send encrypted messages to his subordinates.</p>
-          <div class="hidden" id="intro-more-one">
-            <p>This encryption method takes all the letters of a plaintext and applies a shift. The
-              shift is a number which dictates how far down the alphabet you must jump to find the encrypted letter. For
-              instance, if we have the letter "E" in plaintext and apply a shift of 3 we would end up with a "B".
-            <p>Click the image below to learn more:</p>
-            <img id="open-cesar-modal" class="img-space" src="./assets/images/cesarcipher.png"
-              alt="Image explaining how a shift in cesar cipher works.">
-            <p>Lets encrypt the word <span class="sample">"APPLES"</span> with a shift of <span class="sample">3</span>:
-            </p>
-            <div class="vigenere-explained">
-              <p>Plaintext:<br>
-                Shift:<br>
-                Output:</p>
+          <div id="hide-cesar">
+            <div class="hidden" id="intro-more-one">
+              <p>This encryption method takes all the letters of a plaintext and applies a shift. The
+                shift is a number which dictates how far down the alphabet you must jump to find the encrypted letter.
+                For
+                instance, if we have the letter "E" in plaintext and apply a shift of 3 we would end up with a "B".
+              <p>Click the image below to learn more:</p>
+              <img id="open-cesar-modal" class="img-space" src="./assets/images/cesarcipher.png"
+                alt="Image explaining how a shift in cesar cipher works.">
+              <p>Lets encrypt the word <span class="sample">"APPLES"</span> with a shift of <span
+                  class="sample">3</span>:
+              </p>
+              <div class="vigenere-explained">
+                <p>Plaintext:<br>
+                  Shift:<br>
+                  Output:</p>
+              </div>
+              <div class="vigenere-explained">
+                <p class="sample"> a p p l e s <br>
+                  3 3 3 3 3 3 <br>
+                  x m m i b p</p>
+              </div>
+              <p>Decrypting the text works the same way, only this time we go <em>up</em> the alphabet. The letter "x"
+                with a shift of 3 becomes "a", and so on. Try it out in the form below!</p>
             </div>
-            <div class="vigenere-explained">
-              <p class="sample"> a p p l e s <br>
-                3 3 3 3 3 3 <br>
-                x m m i b p</p>
-            </div>
-            <p>Decrypting the text works the same way, only this time we go <em>up</em> the alphabet. The letter "x"
-              with a shift of 3 becomes "a", and so on. Try it out in the form below!</p>
           </div>
           <!-- Cesar Cipher Modal -->
           <div id="cesar-modal" class="modal">
@@ -95,33 +101,36 @@
             builds upon the Cesar
             Cipher method. This encryption method was (wrongfully) attributed to Blaise de Vigènere and so acquired its
             name.</p>
-          <div class="hidden" id="intro-more-two">
-            <p>In the Vigenere Cipher each letter of the plaintext is given
-              an individual shift, in contrast
-              to the Cesar Cipher where the same shift is applied to all the letters in the plaintext. The shift of each
-              letter is provided with a key, which are all letters The key is then put "upon" the plaintext.</p>
-            <p>Click the image below to learn more:</p>
-            <img id="open-vigenere-modal" class="img-space" src="./assets/images/alphabetindex.png"
-              alt="Image showing indexing of alphabet.">
-            <p>Let's encrypt the word <span class="sample">"APPLES"</span> with the key <span
-                class="sample">"CAB"</span>:</p>
-            <div class="vigenere-explained">
-              <p>Plaintext:<br>
-                Key:<br>
-                Shift:<br>
-                Output:</p>
-            </div>
-            <div class="vigenere-explained">
-              <p class="sample"> a p p l e s <br>
-                c a b c a b <br>
-                2 0 1 2 0 1 <br>
-                c p q n e t</p>
-            </div>
-            <p>Decrypting the text works the same way, only this time we go <em>down</em> the alphabet. The letter "c"
-              with a negative shift of 2 becomes "a", and so on.</p>
+          <div id="hide-vigenere">
+            <div class="hidden" id="intro-more-two">
+              <p>In the Vigenere Cipher each letter of the plaintext is given
+                an individual shift, in contrast
+                to the Cesar Cipher where the same shift is applied to all the letters in the plaintext. The shift of
+                each
+                letter is provided with a key, which are all letters The key is then put "upon" the plaintext.</p>
+              <p>Click the image below to learn more:</p>
+              <img id="open-vigenere-modal" class="img-space" src="./assets/images/alphabetindex.png"
+                alt="Image showing indexing of alphabet.">
+              <p>Let's encrypt the word <span class="sample">"APPLES"</span> with the key <span
+                  class="sample">"CAB"</span>:</p>
+              <div class="vigenere-explained">
+                <p>Plaintext:<br>
+                  Key:<br>
+                  Shift:<br>
+                  Output:</p>
+              </div>
+              <div class="vigenere-explained">
+                <p class="sample"> a p p l e s <br>
+                  c a b c a b <br>
+                  2 0 1 2 0 1 <br>
+                  c p q n e t</p>
+              </div>
+              <p>Decrypting the text works the same way, only this time we go <em>down</em> the alphabet. The letter "c"
+                with a negative shift of 2 becomes "a", and so on.</p>
 
-            <p>If the key is totally random, and the length of the key is the same as the plaintext, this method of
-              encryption is more or less unbreakable. Try it out in the form below!</p>
+              <p>If the key is totally random, and the length of the key is the same as the plaintext, this method of
+                encryption is more or less unbreakable. Try it out in the form below!</p>
+            </div>
           </div>
           <!-- Vigenere Modal -->
           <div id="vigenere-modal" class="modal">
@@ -156,7 +165,7 @@
                 <label id="enter-cesar-text" for="input-text" class="input-info">Enter plain text:</label>
                 <textarea id="input-text" class="input-element"></textarea>
                 <label id="enter-shift" for="input-shift" class="input-info">Enter shift: <span
-                  class="hint">(1-25)</span></label>
+                    class="hint">(1-25)</span></label>
                 <input id="input-shift" class="input-element" type="number" value="13" min="1" max="25">
                 <button id="cesar-btn" class="encrypt-btn">Encrypt!</button>
                 <button id="clear-cesar-encrypt">Clear</button>

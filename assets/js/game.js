@@ -251,6 +251,9 @@ let game = function () {
                 let elementText = document.getElementById(elements[i]).innerHTML;
                 document.getElementById(elements[i]).innerHTML = encryption.iterateString(elementText, 13, false);
             }
+            $("#hide-cesar").addClass("hidden");
+            $("#hide-vigenere").addClass("hidden");
+            $("#intro-more-two").addClass("hidden");
             $("#start-game-btn").addClass("hidden");
             $("input").prop('disabled', true);
             $("textarea").prop('disabled', true);
