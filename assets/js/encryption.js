@@ -217,18 +217,37 @@ let encryption = function () {
         document.getElementById(outputField).innerHTML = "";
     }
 
+    function checkField(input) {
+        let inputField = document.getElementById(input);
+        let isValid = inputField.checkValidity();
+        console.log(isValid);
+        return isValid;
+    }
+
     /*
     Collection of the vigenere encryption functions in correct order. The functions sets variables that are used
     as arguments in the proceeding functions.
     */
     function encryptVigenereText() {
-        let userText = getUserText("vigenere-input");
-        let key = getShift("vigenere-key");
-        key = checkUserKey(key);
-        writeDefaultKey(key, "vigenere-key");
-        let numberKey = convertKeyToNumbers(key);
-        let encryptedText = iterateVigenereString(userText, numberKey, false);
-        writeVigenereText("vigenere-output", encryptedText);
+        $("#invalid-input, #invalid-text").addClass("hidden");
+        if (checkField("vigenere-input") === false) {
+            $("#invalid-text").removeClass("hidden").text("Please insert text");
+        }
+        if (checkField("vigenere-key") === false) {
+            $("#invalid-input").removeClass("hidden").text("Only letters, no spaces.");
+        }
+        else {
+            $("#invalid-input, #invalid-text").addClass("hidden");
+            let userText = getUserText("vigenere-input");
+            let key = getShift("vigenere-key");
+            //key = checkUserKey(key);
+            writeDefaultKey(key, "vigenere-key");
+            let numberKey = convertKeyToNumbers(key);
+            let encryptedText = iterateVigenereString(userText, numberKey, false);
+            writeVigenereText("vigenere-output", encryptedText);
+        }
+
+
     }
 
     /*
@@ -236,13 +255,23 @@ let encryption = function () {
     as arguments in the proceeding functions.
     */
     function decryptVigenereText() {
-        let userText = getUserText("vigenere-to-decrypt");
-        let key = getShift("vigenere-key-decrypt");
-        key = checkUserKey(key);
-        writeDefaultKey(key, "vigenere-key-decrypt");
-        let numberKey = convertKeyToNumbers(key);
-        let decryptedText = iterateVigenereString(userText, numberKey, true);
-        writeVigenereText("vigenere-decrypt-output", decryptedText);
+        $("#invalid-decrypt-text, #invalid-decrypt-key").addClass("hidden");
+        if (checkField("vigenere-to-decrypt") === false) {
+            $("#invalid-decrypt-text").removeClass("hidden").text("Please insert text");
+        }
+        if (checkField("vigenere-key-decrypt") === false) {
+            $("#invalid-decrypt-key").removeClass("hidden").text("Only letters, no spaces.");
+        }
+        else {
+            $("#invalid-decrypt-text, #invalid-decrypt-key").addClass("hidden");
+            let userText = getUserText("vigenere-to-decrypt");
+            let key = getShift("vigenere-key-decrypt");
+            //key = checkUserKey(key);
+            writeDefaultKey(key, "vigenere-key-decrypt");
+            let numberKey = convertKeyToNumbers(key);
+            let decryptedText = iterateVigenereString(userText, numberKey, true);
+            writeVigenereText("vigenere-decrypt-output", decryptedText);
+        }
     }
 
     /*
