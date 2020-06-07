@@ -257,6 +257,13 @@ textarea {
     color: #f1f7f1;
 }
 
+.invalid-input {
+    font-size: .75rem;
+    color: #CC8400;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .input-element {
     background-color: #000;
     border: 1px solid #006400;
