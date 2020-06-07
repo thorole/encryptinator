@@ -1,14 +1,23 @@
 "use strict";
+/*
+All code encapsulated in IEFE (revealing module pattern) to keep global scope clean.
+*/
 let game = function () {
-
+ 
     $(document).ready(function () {
 
+        /*
+        Elements that will be decrypted when game lost on last level.
+        */
         const elements = ["nav-one", "nav-two", "nav-three", "nav-four", "heading", "sub-heading-one", "sub-heading-two", "sub-heading-three",
             "encryption-info-one", "encryption-info-two", "intro-button-one", "intro-button-two", "cesar-heading",
             "vigenere-heading", "cesar-info-heading", "vigenere-info-heading", "game-heading", "game-instructions", 
             "enter-cesar-text", "enter-vigenere-text", "enter-shift", "enter-key", "enter-vigenere-decrypt", 
             "enter-cesar-decrypt", "enter-key-decrypt", "enter-shift-decrypt"];
 
+        /*
+        The stages. Add elements to add more levels.
+        */
         const stages = [
             ["car", "cow", "too", "far", "see", "sea", "all", "say"],
             ["milk", "call", "core", "fish", "must", "mill", "mark", "quit"],
@@ -18,6 +27,7 @@ let game = function () {
             ["greatful", "fearless", "truthful", "american", "costumes", "username", "malicious", "ludacris"],
             ["attackatdawn"]
         ];
+
         const finalStageKeys = ["bag"];
         let level;
         let gameShift;

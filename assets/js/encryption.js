@@ -2,7 +2,7 @@
 
 /*
 All code encapsulated in IEFE (revealing module pattern) to keep global scope clean.
-*/ 
+*/
 let encryption = function () {
 
     /*
@@ -204,7 +204,7 @@ let encryption = function () {
         }
     };
     function requestRandomWord() {
-        xhttp.open("GET", "http://api.wordnik.com/v4/words.json/randomWord?api_key=6jvb3k81q3xetcoqdgk9zbkz6by1bcl0h9n9hg7ktkl0563h8", true);
+        xhttp.open("GET", "https://api.wordnik.com/v4/words.json/randomWord?api_key=6jvb3k81q3xetcoqdgk9zbkz6by1bcl0h9n9hg7ktkl0563h8", true);
         xhttp.send();
     }
 
@@ -317,7 +317,7 @@ let encryption = function () {
         });
 
     });
-    
+
     /*
     These functions are made available to the global scope as they're needed in the game.
     */
