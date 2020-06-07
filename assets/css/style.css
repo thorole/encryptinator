@@ -235,8 +235,12 @@ textarea {
 .random-word {
     display: inline;
     font-size: .75rem;
-    color: #f1f7f1;
+    color: #00cc00;
     cursor: pointer;
+}
+
+.random-word:hover {
+    color: #f1f7f1;
 }
 
 .input-element {
