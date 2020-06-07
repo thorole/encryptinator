@@ -173,6 +173,12 @@ let encryption = function () {
         xhttp.send();
     }
 
+    function clearForm(inputField, shiftField, outputField) {
+        document.getElementById(inputField).value = "";
+        document.getElementById(shiftField).value = "";
+        document.getElementById(outputField).innerHTML = "";
+      }
+
     function encryptVigenereText() {
         let userText = getUserText("vigenere-input");
         let key = getShift("vigenere-key");
@@ -235,6 +241,20 @@ let encryption = function () {
         $("#vigenere-decrypt-btn").click(function () {
             decryptVigenereText();
         });
+
+
+        $("#clear-cesar-encrypt").click(function () {
+            clearForm("input-text", "input-shift", "encrypted");
+          });
+          $("#clear-cesar-decrypt").click(function () {
+            clearForm("text-to-decrypt", "output-shift", "decrypted");
+          });
+          $("#clear-vigenere-encrypt").click(function () {
+            clearForm("vigenere-input", "vigenere-key", "vigenere-output");
+          });
+          $("#clear-vigenere-decrypt").click(function () {
+            clearForm("vigenere-to-decrypt", "vigenere-key-decrypt", "vigenere-decrypt-output");
+          });
 
 
 
