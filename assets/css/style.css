@@ -196,6 +196,14 @@ img {
     border: 2px solid #252525;
 }
 
+.input-container button {
+    font-size: 1rem;
+}
+
+.key {
+    width: 100%;
+}
+
 .input-elements {
     width: 95%;
     margin: 0 auto;
@@ -233,7 +241,8 @@ textarea {
 }
 
 .random-word {
-    display: inline;
+    margin-top: 0;
+    margin-bottom: 0;
     font-size: .75rem;
     color: #00cc00;
     cursor: pointer;
