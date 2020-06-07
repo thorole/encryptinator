@@ -194,6 +194,7 @@ img {
 
 .input-container {
     border: 2px solid #252525;
+    height: 45rem;
 }
 
 .input-container button {
@@ -234,6 +235,10 @@ input {
 
 input[type="number"] {
     width: 15%;
+}
+
+.hint {
+    font-size: .75rem;
 }
 
 textarea {
