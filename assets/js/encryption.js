@@ -1,16 +1,25 @@
 "use strict";
 
+/*
+All code encapsulated in IEFE (revealing module pattern) to keep global scope clean.
+*/ 
 let encryption = function () {
 
-    //===================== Cesar cipher logic =======================
-
+    /*
+    Function which returns the alphabet.
+    */
     function getAlphabet() {
         let alphabetOriginal = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
             "r", "s", "t", "u", "v", "w", "x", "y", "z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
             "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
         return alphabetOriginal;
     }
+    /*===================== Cesar cipher logic =======================*/
 
+    /* 
+    Encrypts/decrypts the text. Compares each letter in text for a match in alphabet.
+    If there's a match, it adds the index of the matched letter + the shift to a string.
+    */
     function iterateString(text, shiftNumber, reversed) {
         let alphabet = getAlphabet();
         if (reversed == true) {
@@ -26,7 +35,7 @@ let encryption = function () {
                     cesarString += alphabet[j + shift];
                     break;
                 }
-                if (!(/^[a-z]/).test(inputText[i])) {
+                if (!(/^[a-z]/).test(inputText[i])) { //If not a letter, add it unchanged to string.
                     cesarString += inputText[i];
                     break;
                 }
@@ -35,15 +44,25 @@ let encryption = function () {
         return cesarString;
     }
 
+    /*
+    Get the value from the form and return it.
+    */
     function getShift(shiftField) {
         let shift = document.getElementById(shiftField).value;
         return shift;
     }
 
+    /*
+    Write whatever value it it gets as argument to form.
+    */
     function writeDefaultShift(shiftField, shift) {
         document.getElementById(shiftField).value = shift;
     }
 
+    /*
+    Check if value is a number and between 1-25. If not, set shift to default 13.
+    Returns shift.
+    */
     function checkShift(usershift) {
         let shift = Number(usershift);
         let isNotNumber = isNaN(shift);
@@ -52,25 +71,30 @@ let encryption = function () {
             return shift;
         }
         else {
-            shift = parseInt(usershift);
+            shift = parseInt(usershift); //If user inputs a decimals
             shift = Number(shift);
             return shift;
         }
     }
 
-    //========================== Vignere Cipher logic =============================
+    /*========================== Vignere Cipher logic =============================*/
 
-    // Assigns user input to userString
+    /*
+    Assigns user input to userString
+    */
     function getUserText(vigenereUserText) {
         let userString = document.getElementById(vigenereUserText).value;
         userString = userString.toLowerCase();
         return userString;
     }
 
-    // Assigns user key to inputKey
+    /*
+    Assigns user value to key. If the key is not letters only, key is set to
+    default "thisisthekey". Returns the key.
+    */
     function checkUserKey(userKey) {
         let key = userKey.toLowerCase();
-        if ((/[^a-z]/).test(key) || key == "") {
+        if ((/[^a-z]/).test(key) || key == "") { //Test for letters only or spaces
             console.log("User key is not according to rule");
             key = "thisisthekey";
             console.log("userKey is: " + typeof key);
@@ -81,12 +105,17 @@ let encryption = function () {
         }
     }
 
-    // Sets inputKey to default key
+    /*
+    Writes whatever value it gets as argument.
+    */
     function writeDefaultKey(userKey, keyField) {
         document.getElementById(keyField).value = userKey;
     }
 
-    // Loops through each letter in the key and gets its index. Assigns index numbers to key
+    /*
+    Gets the key. Compares each letter in key with alphabet. If match, push the index 
+    of the matched alphabet letter to key.
+    */
     function convertKeyToNumbers(userKey) {
         let alphabetOriginal = getAlphabet();
         let keyToConvert;
@@ -94,10 +123,10 @@ let encryption = function () {
         let convertedKey = [];
         console.log(getAlphabet());
         for (let i = 0; i < keyToConvert.length; i++) {
-            for (let k = 0; k < alphabetOriginal.length; k++) {
-                if (keyToConvert[i] === alphabetOriginal[k]) {
-                    convertedKey.push(alphabetOriginal.indexOf(alphabetOriginal[k]));
-                    k = alphabetOriginal.length;
+            for (let j = 0; j < alphabetOriginal.length; j++) {
+                if (keyToConvert[i] === alphabetOriginal[j]) {
+                    convertedKey.push(alphabetOriginal.indexOf(alphabetOriginal[j]));
+                    break;
                 }
             }
         }
@@ -105,10 +134,11 @@ let encryption = function () {
         return convertedKey;
     }
 
-    /*Loops through each letter in the userString and each number in key synchronically. userString[i] 
-    is compared to alphabet[j], which is looped through for each letter in userString. When matched,
-    alphabet[j + key[g]] is added to vigenereText. Reverse parameter is used to check if the function
-    is called for encryption or decryption.*/
+    /*
+    Loops through each letter in the text and each number in key at the same time. Compares current letter (i) 
+    with alphabet (k). When matched, alphabet[k + key[g]] is added to vigenereText. Reverse parameter is used 
+    to check if the function is called for encryption or decryption. Returns text.
+    */
     function iterateVigenereString(text, numberKey, reverse) {
         let vigenereText;
         let key = numberKey;
@@ -121,14 +151,14 @@ let encryption = function () {
         }
         let inputText = text;
         console.log("userstring is: " + inputText);
-        for (let i = 0, g = 0; i < inputText.length; i++) {
-            if (g === key.length) {
-                g = 0;
+        for (let i = 0, j = 0; i < inputText.length; i++) {
+            if (j === key.length) {          //Loop through key again in cases where text is longer than the key
+                j = 0;
             }
-            for (let j = 0; j < alphabet.length; j++) {
-                if (inputText[i] === alphabet[j]) {
-                    vigenereText += alphabet[j + key[g]];
-                    g++;
+            for (let k = 0; k < alphabet.length; k++) {
+                if (inputText[i] === alphabet[k]) {
+                    vigenereText += alphabet[k + key[j]];
+                    j++;
                     break;
                     console.log("encryptedmsginloopis: " + vigenereText);
                 }
@@ -142,7 +172,9 @@ let encryption = function () {
         return vigenereText;
     }
 
-    //Prints vigenereText to html element.
+    /*
+    Prints vigenereText to html element.
+    */
     function writeVigenereText(outputParagraph, text) {
         let textToPrint = text;
         let cryptedParagraph = document.getElementById(outputParagraph);
@@ -150,8 +182,11 @@ let encryption = function () {
         cryptedParagraph.innerHTML = textToPrint;
     }
 
-    // Api request for a random word to wordnik api. Parts of the code is from from w3schools.
-
+    /*
+    Api request for a random word to wordnik api. Parts of the code is from from w3schools. It also
+    checks for all letters. If not, request new word. If api is called too many times, return key
+    "toomanyrequests".
+    */
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -173,12 +208,19 @@ let encryption = function () {
         xhttp.send();
     }
 
+    /*
+    Clears form
+    */
     function clearForm(inputField, shiftField, outputField) {
         document.getElementById(inputField).value = "";
         document.getElementById(shiftField).value = "";
         document.getElementById(outputField).innerHTML = "";
-      }
+    }
 
+    /*
+    Collection of the vigenere encryption functions in correct order. The functions sets variables that are used
+    as arguments in the proceeding functions.
+    */
     function encryptVigenereText() {
         let userText = getUserText("vigenere-input");
         let key = getShift("vigenere-key");
@@ -189,6 +231,10 @@ let encryption = function () {
         writeVigenereText("vigenere-output", encryptedText);
     }
 
+    /*
+    Collection of the vigenere decryption functions in correct order. The functions sets variables that are used
+    as arguments in the proceeding functions.
+    */
     function decryptVigenereText() {
         let userText = getUserText("vigenere-to-decrypt");
         let key = getShift("vigenere-key-decrypt");
@@ -199,6 +245,10 @@ let encryption = function () {
         writeVigenereText("vigenere-decrypt-output", decryptedText);
     }
 
+    /*
+    Collection of the cesar encryption functions in correct order. The functions sets variables that are used
+    as arguments in the proceeding functions.
+    */
     function encryptCesarText() {
         let userText = getUserText("input-text");
         let shift = getShift("input-shift");
@@ -210,6 +260,10 @@ let encryption = function () {
         writeVigenereText("encrypted", cesarString);
     }
 
+    /*
+    Collection of the cesar decryption functions in correct order. The functions sets variables that are used
+    as arguments in the proceeding functions.
+    */
     function decryptCesarText() {
         let userText = getUserText("text-to-decrypt");
         let shift = getShift("output-shift");
@@ -222,7 +276,9 @@ let encryption = function () {
     //=================== Click handlers and function calls ========================
     $(document).ready(function () {
 
-        // Cesar encrypt/decrypt button handlers
+        /*
+        Cesar encrypt/decrypt button handlers.
+        */
         $("#cesar-btn").click(function () {
             encryptCesarText();
         });
@@ -230,8 +286,10 @@ let encryption = function () {
             decryptCesarText();
         });
 
-        // Vigenere encrypt/decrypt button handlers
 
+        /*
+        Vigenere encrypt/decrypt button handlers.
+        */
         $("#vigenere-btn").click(function () {
             encryptVigenereText();
         });
@@ -242,24 +300,27 @@ let encryption = function () {
             decryptVigenereText();
         });
 
-
+        /*
+        Clear forms button handlers.
+        */
         $("#clear-cesar-encrypt").click(function () {
             clearForm("input-text", "input-shift", "encrypted");
-          });
-          $("#clear-cesar-decrypt").click(function () {
+        });
+        $("#clear-cesar-decrypt").click(function () {
             clearForm("text-to-decrypt", "output-shift", "decrypted");
-          });
-          $("#clear-vigenere-encrypt").click(function () {
+        });
+        $("#clear-vigenere-encrypt").click(function () {
             clearForm("vigenere-input", "vigenere-key", "vigenere-output");
-          });
-          $("#clear-vigenere-decrypt").click(function () {
+        });
+        $("#clear-vigenere-decrypt").click(function () {
             clearForm("vigenere-to-decrypt", "vigenere-key-decrypt", "vigenere-decrypt-output");
-          });
-
-
-
+        });
 
     });
+    
+    /*
+    These functions are made available to the global scope as they're needed in the game.
+    */
     return {
         iterateString: iterateString,
         convertKeyToNumbers: convertKeyToNumbers,
