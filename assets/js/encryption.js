@@ -150,6 +150,32 @@ let encryption = function () {
         cryptedParagraph.innerHTML = textToPrint;
     }
 
+// Api request for a random word to wordnik api
+
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            // Typical action to be performed when the document is ready:
+            let myResponse = this.responseText;
+            randomWord = JSON.parse(myResponse);
+            if ((/[^a-zA-Z]/).test(randomWord["word"])) {
+                requestRandomWord();
+            }
+            else {
+                document.getElementById("random-word").innerHTML = randomWord["word"];
+            }
+        }
+        if (this.status == 429) {
+            document.getElementById("random-word").innerHTML = "toomanyrequests";
+        }
+        else {
+            document.getElementById("random-word").innerHTML = "toomanyrequests";
+        }
+    };
+    function requestRandomWord() {
+        xhttp.open("GET", "http://api.wordnik.com/v4/words.json/randomWord?api_key=6jvb3k81q3xetcoqdgk9zbkz6by1bcl0h9n9hg7ktkl0563h8", true);
+        xhttp.send();
+    }
 
     function encryptVigenereText() {
         let userText = getUserText("vigenere-input");
@@ -160,7 +186,7 @@ let encryption = function () {
         let encryptedText = iterateVigenereString(userText, numberKey, false);
         writeVigenereText("vigenere-output", encryptedText);
     }
-    
+
     function decryptVigenereText() {
         let userText = getUserText("vigenere-to-decrypt");
         let key = getShift("vigenere-key-decrypt");
