@@ -156,19 +156,16 @@ let encryption = function () {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let myResponse = this.responseText;
-            randomWord = JSON.parse(myResponse);
+            let randomWord = JSON.parse(myResponse);
             if ((/[^a-zA-Z]/).test(randomWord["word"])) {
                 requestRandomWord();
             }
             else {
-                document.getElementById("random-word").innerHTML = randomWord["word"];
+                document.getElementById("vigenere-key").value = randomWord["word"];
             }
         }
         if (this.status == 429) {
-            document.getElementById("random-word").innerHTML = "toomanyrequests";
-        }
-        else {
-            document.getElementById("random-word").innerHTML = "toomanyrequests";
+            document.getElementById("vigenere-key").value = "toomanyrequests";
         }
     };
     function requestRandomWord() {
@@ -232,6 +229,9 @@ let encryption = function () {
         $("#vigenere-btn").click(function () {
             encryptVigenereText();
         });
+        $("#rndm-word").click(function () {
+            requestRandomWord();
+        })
         $("#vigenere-decrypt-btn").click(function () {
             decryptVigenereText();
         });
