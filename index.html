@@ -153,7 +153,8 @@
                 <h3 id="cesar-heading">Cesar Cipher</h3>
                 <div class="bar"></div>
                 <!--Cesar encrypt fields-->
-                <label id="enter-cesar-text" for="input-text" class="input-info">Enter plain text:</label>
+                <label id="enter-cesar-text" for="input-text" class="input-info">Enter shift: <span class="hint">(letters only - no
+                  spaces)</span></label>
                 <textarea id="input-text" class="input-element"></textarea>
                 <label id="enter-shift" for="input-shift" class="input-info">Enter shift 1-25:</label>
                 <input id="input-shift" class="input-element" type="number" value="13" min="1" max="25">
@@ -163,7 +164,8 @@
                 <!-- Cesar decryption fields -->
                 <label id="enter-cesar-decrypt" for="text-to-decrypt" class="input-info">Enter encrypted text:</label>
                 <textarea id="text-to-decrypt" class="input-element"></textarea>
-                <label id="enter-shift-decrypt" for="output-shift" class="input-info">Enter shift 1-25:</label>
+                <label id="enter-shift-decrypt" for="output-shift" class="input-info">Enter shift: <span class="hint">(letters only - no
+                  spaces)</span></label>
                 <input id="output-shift" class="input-element" type="number" value="13" min="1" max="25">
                 <button id="cesar-decipher-btn" class="encrypt-btn">Decrypt!</button>
                 <button id="clear-cesar-decrypt">Clear</button>
@@ -179,8 +181,8 @@
                 <!--Vigenere encrypt fields-->
                 <label id="enter-vigenere-text" for="vigenere-input" class="input-info">Enter plain text:</label>
                 <textarea id="vigenere-input" class="input-element"></textarea>
-                <label id="enter-key" for="vigenere-key" class="input-info">Enter key (letters only - no
-                  spaces):</label>
+                <label id="enter-key" for="vigenere-key" class="input-info">Enter key: <span class="hint">(letters only - no
+                  spaces)</span></label>
                 <input id="vigenere-key" class="input-element key" value="thisisthekey" type="text">
                 <p id="rndm-word" class="random-word">[Generate key]</p>
                 <button id="vigenere-btn" class="encrypt-btn">Encrypt!</button>
@@ -190,8 +192,8 @@
                 <label id="enter-vigenere-decrypt" for="vigenere-to-decrypt" class="input-info">Enter encrypted
                   text:</label>
                 <textarea id="vigenere-to-decrypt" class="input-element"></textarea>
-                <label id="enter-key-decrypt" for="vigenere-key-decrypt" class="input-info">Enter key (letters only - no
-                  spaces):</label>
+                <label id="enter-key-decrypt" for="vigenere-key-decrypt" class="input-info">Enter key: <span class="hint">(letters only - no
+                  spaces)</span></label>
                 <input id="vigenere-key-decrypt" class="input-element key" value="thisisthekey" type="text">
                 <button id="vigenere-decrypt-btn" class="encrypt-btn">Decrypt!</button>
                 <button id="clear-vigenere-decrypt">Clear</button>
