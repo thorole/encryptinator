@@ -189,11 +189,13 @@
                 <div class="bar"></div>
                 <!--Vigenere encrypt fields-->
                 <label id="enter-vigenere-text" for="vigenere-input" class="input-info">Enter plain text:</label>
-                <textarea id="vigenere-input" class="input-element"></textarea>
+                <p id="invalid-text" class="hidden invalid-input"></p>
+                <textarea id="vigenere-input" class="input-element" required></textarea>
                 <label id="enter-key" for="vigenere-key" class="input-info">Enter key: <span class="hint">(letters only
                     - no
                     spaces)</span></label>
-                <input id="vigenere-key" class="input-element key" value="thisisthekey" type="text">
+                <p id="invalid-input" class="hidden invalid-input"></p>
+                <input id="vigenere-key" class="input-element key" pattern="[a-zA-Z]+" type="text" required>
                 <p id="rndm-word" class="random-word">[Generate key]</p>
                 <button id="vigenere-btn" class="encrypt-btn">Encrypt!</button>
                 <button id="clear-vigenere-encrypt">Clear</button>
@@ -201,11 +203,13 @@
                 <!--Vigenere decrypt fields-->
                 <label id="enter-vigenere-decrypt" for="vigenere-to-decrypt" class="input-info">Enter encrypted
                   text:</label>
-                <textarea id="vigenere-to-decrypt" class="input-element"></textarea>
+                <p id="invalid-decrypt-text" class="hidden invalid-input"></p>
+                <textarea id="vigenere-to-decrypt" class="input-element" required></textarea>
                 <label id="enter-key-decrypt" for="vigenere-key-decrypt" class="input-info">Enter key: <span
                     class="hint">(letters only - no
                     spaces)</span></label>
-                <input id="vigenere-key-decrypt" class="input-element key" value="thisisthekey" type="text">
+                <p id="invalid-decrypt-key" class="hidden invalid-input"></p>
+                <input id="vigenere-key-decrypt" class="input-element key" type="text" pattern="[A-Za-z]+" required>
                 <button id="vigenere-decrypt-btn" class="encrypt-btn">Decrypt!</button>
                 <button id="clear-vigenere-decrypt">Clear</button>
                 <p id="vigenere-decrypt-output" class="output-field input-element"></p>
