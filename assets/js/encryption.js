@@ -150,12 +150,11 @@ let encryption = function () {
         cryptedParagraph.innerHTML = textToPrint;
     }
 
-// Api request for a random word to wordnik api
+    // Api request for a random word to wordnik api. Parts of the code is from from w3schools.
 
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            // Typical action to be performed when the document is ready:
             let myResponse = this.responseText;
             randomWord = JSON.parse(myResponse);
             if ((/[^a-zA-Z]/).test(randomWord["word"])) {
