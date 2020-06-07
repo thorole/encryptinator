@@ -3,13 +3,13 @@ let game = function () {
 
     $(document).ready(function () {
 
-        let elements = ["nav-one", "nav-two", "nav-three", "nav-four", "heading", "sub-heading-one", "sub-heading-two", "sub-heading-three",
+        const elements = ["nav-one", "nav-two", "nav-three", "nav-four", "heading", "sub-heading-one", "sub-heading-two", "sub-heading-three",
             "encryption-info-one", "encryption-info-two", "intro-button-one", "intro-button-two", "cesar-heading",
             "vigenere-heading", "cesar-info-heading", "vigenere-info-heading", "game-heading", "game-instructions", 
             "enter-cesar-text", "enter-vigenere-text", "enter-shift", "enter-key", "enter-vigenere-decrypt", 
             "enter-cesar-decrypt", "enter-key-decrypt", "enter-shift-decrypt"];
 
-        let stages = [
+        const stages = [
             ["car", "cow", "too", "far", "see", "sea", "all", "say"],
             ["milk", "call", "core", "fish", "must", "mill", "mark", "quit"],
             ["ready", "sauce", "cream", "spoke", "tired", "dirty", "crutch", "alias"],
@@ -18,9 +18,15 @@ let game = function () {
             ["greatful", "fearless", "truthful", "american", "costumes", "username", "malicious", "ludacris"],
             ["attackatdawn"]
         ];
-        let finalStageKeys = ["big"];
+        const finalStageKeys = ["bag"];
         let level;
         let gameShift;
+        let gameKey;
+        let encryptedGameWord;
+        let gameWord;
+        let score;
+        let timer;
+        let seconds;
 
 
 
@@ -66,8 +72,6 @@ let game = function () {
             startTimer(80);
         }
 
-        let gameKey;
-        let encryptedGameWord;
         function encryptGameWord() {
             if (level < stages.length - 1) {
                 encryptedGameWord = encryption.iterateString(gameWord, gameShift, true);
@@ -111,7 +115,7 @@ let game = function () {
             $("#game-over-box").removeClass("message-box-wide");
         }
 
-        let gameWord;
+        
         function getWord(stageNumber) {
             gameWord = stages[stageNumber][[Math.floor(Math.random() * stages[stageNumber].length)]];
             console.log(gameWord);
@@ -207,9 +211,7 @@ let game = function () {
 
         }
 
-        let score;
-        let timer;
-        let seconds;
+        
         function startTimer(timeInseconds) {
             seconds = timeInseconds;
             countDown();
