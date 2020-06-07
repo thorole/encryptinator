@@ -232,6 +232,13 @@ textarea {
     width: 100%;
 }
 
+.random-word {
+    display: inline;
+    font-size: .75rem;
+    color: #f1f7f1;
+    cursor: pointer;
+}
+
 .input-element {
     background-color: #000;
     border: 1px solid #006400;
