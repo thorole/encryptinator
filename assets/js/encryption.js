@@ -201,6 +201,7 @@ let encryption = function () {
         }
         if (this.status == 429) {
             document.getElementById("vigenere-key").value = "toomanyrequests";
+            alert("Request limit reached. Wait a few seconds before you try again.")
         }
     };
     function requestRandomWord() {
