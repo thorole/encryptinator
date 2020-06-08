@@ -233,10 +233,10 @@ let encryption = function () {
         if (checkField("vigenere-input") === false) {
             $("#invalid-text").removeClass("hidden").text("Please insert text");
         }
-        else if (checkField("vigenere-key") === false) {
+        if (checkField("vigenere-key") === false) {
             $("#invalid-input").removeClass("hidden").text("Only letters, no spaces.");
         }
-        else {
+        else if (checkField("vigenere-input") === true && checkField("vigenere-key") === true) {
             $("#invalid-input, #invalid-text").addClass("hidden");
             let userText = getUserText("vigenere-input");
             let key = getShift("vigenere-key");
