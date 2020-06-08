@@ -166,7 +166,7 @@
                 <textarea id="input-text" class="input-element"></textarea>
                 <label id="enter-shift" for="input-shift" class="input-info">Enter shift: <span
                     class="hint">(1-25)</span></label>
-                <input id="input-shift" class="input-element" type="number" value="13" min="1" max="25">
+                <input id="input-shift" class="input-element" type="number" value="13" step="1" min="1" max="25" required>
                 <button id="cesar-btn" class="encrypt-btn">Encrypt!</button>
                 <button id="clear-cesar-encrypt">Clear</button>
                 <p id="encrypted" class="output-field input-element"></p>
@@ -175,7 +175,7 @@
                 <textarea id="text-to-decrypt" class="input-element"></textarea>
                 <label id="enter-shift-decrypt" for="output-shift" class="input-info">Enter shift: <span
                     class="hint">(1-25)</span></label>
-                <input id="output-shift" class="input-element" type="number" value="13" min="1" max="25">
+                <input id="output-shift" class="input-element" type="number" value="13" step="1" min="1" max="25" required>
                 <button id="cesar-decipher-btn" class="encrypt-btn">Decrypt!</button>
                 <button id="clear-cesar-decrypt">Clear</button>
                 <p id="decrypted" class="output-field input-element"></p>

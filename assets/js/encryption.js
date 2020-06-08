@@ -234,13 +234,13 @@ let encryption = function () {
             $("#invalid-text").removeClass("hidden").text("Please insert text");
         }
         if (checkField("vigenere-key") === false) {
-            $("#invalid-input").removeClass("hidden").text("Only letters, no spaces.");
+            $("#invalid-input").removeClass("hidden").text("Letters only, no spaces.");
         }
         else if (checkField("vigenere-input") === true && checkField("vigenere-key") === true) {
             $("#invalid-input, #invalid-text").addClass("hidden");
             let userText = getUserText("vigenere-input");
             let key = getShift("vigenere-key");
-            //key = checkUserKey(key);
+            key = checkUserKey(key);
             writeDefaultKey(key, "vigenere-key");
             let numberKey = convertKeyToNumbers(key);
             let encryptedText = iterateVigenereString(userText, numberKey, false);
@@ -266,7 +266,7 @@ let encryption = function () {
             $("#invalid-decrypt-text, #invalid-decrypt-key").addClass("hidden");
             let userText = getUserText("vigenere-to-decrypt");
             let key = getShift("vigenere-key-decrypt");
-            //key = checkUserKey(key);
+            key = checkUserKey(key);
             writeDefaultKey(key, "vigenere-key-decrypt");
             let numberKey = convertKeyToNumbers(key);
             let decryptedText = iterateVigenereString(userText, numberKey, true);
