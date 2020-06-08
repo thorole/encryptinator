@@ -223,7 +223,6 @@ let encryption = function () {
     function checkField(input) {
         let inputField = document.getElementById(input);
         let isValid = inputField.checkValidity();
-        console.log(isValid);
         return isValid;
     }
 
@@ -265,7 +264,7 @@ let encryption = function () {
             $("#invalid-decrypt-text").removeClass("hidden").text("Please insert text");
         }
         if (checkField("vigenere-key-decrypt") === false) {
-            $("#invalid-decrypt-key").removeClass("hidden").text("Only letters, no spaces.");
+            $("#invalid-decrypt-key").removeClass("hidden").text("Letters only, no spaces.");
         }
         else if (checkField("vigenere-to-decrypt") === true && checkField("vigenere-key-decrypt") === true) {
             $("#invalid-decrypt-text, #invalid-decrypt-key").addClass("hidden");
