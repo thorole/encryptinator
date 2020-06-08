@@ -279,14 +279,23 @@ let encryption = function () {
     as arguments in the proceeding functions.
     */
     function encryptCesarText() {
-        let userText = getUserText("input-text");
-        let shift = getShift("input-shift");
-        shift = checkShift(shift);
-        console.log("shift is: " + shift);
-        writeDefaultShift("input-shift", shift);
-        console.log("shift is: " + shift);
-        let cesarString = iterateString(userText, shift, true);
-        writeVigenereText("encrypted", cesarString);
+        $("#error-cesar-encrypt, #error-shift").addClass("hidden");
+        if (checkField("input-text") === false) {
+            $("#error-cesar-encrypt").removeClass("hidden").text("Please insert text");
+        }
+        if (checkField("input-shift") === false) {
+            $("#error-shift").removeClass("hidden").text("Number must be integer, 1-25");
+        }
+        else if (checkField("input-text") === true && checkField("input-shift") === true) {
+            let userText = getUserText("input-text");
+            let shift = getShift("input-shift");
+            shift = checkShift(shift);
+            console.log("shift is: " + shift);
+            writeDefaultShift("input-shift", shift);
+            console.log("shift is: " + shift);
+            let cesarString = iterateString(userText, shift, true);
+            writeVigenereText("encrypted", cesarString);
+        }
     }
 
     /*
@@ -294,12 +303,21 @@ let encryption = function () {
     as arguments in the proceeding functions.
     */
     function decryptCesarText() {
-        let userText = getUserText("text-to-decrypt");
-        let shift = getShift("output-shift");
-        shift = checkShift(shift);
-        writeDefaultShift("output-shift", shift);
-        let cesarString = iterateString(userText, shift, false);
-        writeVigenereText("decrypted", cesarString);
+        $("#error-cesar-decrypt, #error-decrypt-shift").addClass("hidden");
+        if (checkField("text-to-decrypt") === false) {
+            $("#error-cesar-decrypt").removeClass("hidden").text("Please insert text");
+        }
+        if (checkField("output-shift") === false) {
+            $("#error-decrypt-shift").removeClass("hidden").text("Number must be integer, 1-25");
+        }
+        else if (checkField("text-to-decrypt") === true && checkField("output-shift") === true) {
+            let userText = getUserText("text-to-decrypt");
+            let shift = getShift("output-shift");
+            shift = checkShift(shift);
+            writeDefaultShift("output-shift", shift);
+            let cesarString = iterateString(userText, shift, false);
+            writeVigenereText("decrypted", cesarString);
+        }
     }
 
     //=================== Click handlers and function calls ========================
