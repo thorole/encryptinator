@@ -217,6 +217,9 @@ let encryption = function () {
         document.getElementById(outputField).innerHTML = "";
     }
 
+    /*
+    Checks if the value entered is valid.
+    */
     function checkField(input) {
         let inputField = document.getElementById(input);
         let isValid = inputField.checkValidity();
@@ -225,8 +228,9 @@ let encryption = function () {
     }
 
     /*
-    Collection of the vigenere encryption functions in correct order. The functions sets variables that are used
-    as arguments in the proceeding functions.
+    Collection of the vigenere decryption functions in correct order. First it runs checks on 
+    correct input, via the checkField function.Then each function sets variables that are used as arguments 
+    in the proceeding functions.
     */
     function encryptVigenereText() {
         $("#invalid-input, #invalid-text").addClass("hidden");
@@ -251,8 +255,9 @@ let encryption = function () {
     }
 
     /*
-    Collection of the vigenere decryption functions in correct order. The functions sets variables that are used
-    as arguments in the proceeding functions.
+    Collection of the vigenere decryption functions in correct order. First it runs checks on 
+    correct input, via the checkField function.Then each function sets variables that are used as arguments 
+    in the proceeding functions.
     */
     function decryptVigenereText() {
         $("#invalid-decrypt-text, #invalid-decrypt-key").addClass("hidden");
@@ -275,8 +280,9 @@ let encryption = function () {
     }
 
     /*
-    Collection of the cesar encryption functions in correct order. The functions sets variables that are used
-    as arguments in the proceeding functions.
+    Collection of the vigenere decryption functions in correct order. First it runs checks on 
+    correct input, via the checkField function.Then each function sets variables that are used as arguments 
+    in the proceeding functions.
     */
     function encryptCesarText() {
         $("#error-cesar-encrypt, #error-shift").addClass("hidden");
@@ -299,8 +305,9 @@ let encryption = function () {
     }
 
     /*
-    Collection of the cesar decryption functions in correct order. The functions sets variables that are used
-    as arguments in the proceeding functions.
+    Collection of the vigenere decryption functions in correct order. First it runs checks on 
+    correct input, via the checkField function.Then each function sets variables that are used as arguments 
+    in the proceeding functions.
     */
     function decryptCesarText() {
         $("#error-cesar-decrypt, #error-decrypt-shift").addClass("hidden");

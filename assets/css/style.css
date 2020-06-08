@@ -194,7 +194,7 @@ img {
 
 .input-container {
     border: 2px solid #252525;
-    height: 45rem;
+    min-height: 45rem;
 }
 
 .input-container button {
