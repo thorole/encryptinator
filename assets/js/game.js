@@ -164,11 +164,17 @@ let game = function () {
         }
 
         
+        /*
+        Gets a random word from array and sets it to gameWord
+        */
         function getWord(stageNumber) {
             gameWord = stages[stageNumber][[Math.floor(Math.random() * stages[stageNumber].length)]];
             console.log(gameWord);
         }
 
+        /*
+        Prints encrypted word to game screen, depending on last level or not.
+        */
         function writeEncryptedWord() {
             if (level < stages.length - 1) {
                 $("#game-word").text(encryptedGameWord);
@@ -178,6 +184,12 @@ let game = function () {
             }
         }
 
+        /*
+        Checks the user input. If blank, display error message. If correct, add remaining seconds
+        to score, stop timer, set success message, hide game elements, display next level message box.
+        Set current score for next level game screen, reset input field and potential error messages.
+        If user input is wrong word, display error message. 
+        */
         function checkWord() {
             let userWord = document.getElementById("user-word").value;
             userWord = userWord.toLowerCase();
@@ -187,19 +199,26 @@ let game = function () {
             else if (userWord == gameWord) {
                 score += seconds + 1;
                 console.log("score: " + score);
+                clearInterval(timer);
+                setMessage();
+                toggleGameElements();
+                toggleNextStageBox();
                 $("#current-score").text("Score: " + score);
                 $("#user-word").val("");
                 $("#result").text("");
-                clearInterval(timer);
-                setMessage();
-                toggleNextStageBox();
-                toggleGameElements();
             }
             else {
                 $("#result").text("Incorrect");
             }
             console.log(typeof userWord);
         }
+
+        /*
+        (If correct word) on any level before next last level, display Correct.
+        (If correct word) on next last level, display error message.
+        (If correct (last level), hide next level message box, display game over 
+        message box and let user know they won the game.) 
+        */
         function setMessage() {
             if (level < stages.length - 2) {
                 $("#success-message").text("Correct!");
@@ -212,8 +231,8 @@ let game = function () {
                 $("#error-message").text("A critical error has been detected! Encryption method is set to Vigenere Cipher. You must decrypt the the next word to prevent breakdown of the site!");
             }
             else {
-                toggleGameOverBox();
                 toggleNextStageBox();
+                toggleGameOverBox();
                 enableDecryptFields();
                 $("#game-over-box").addClass("message-box-wide");
                 $("#game-over-message").text("Congratulations!");
@@ -221,11 +240,14 @@ let game = function () {
                 $("#final-score").text("Final score: " + score);
             }
         }
-
+        
         $("#check-result-btn").click(function () {
             checkWord();
         });
 
+        /*
+        Hides or displays game over message box, depending on class.
+        */
         function toggleGameOverBox() {
             if ($("#game-over-box").hasClass("hidden")) {
                 $("#game-over-box").removeClass("hidden");
@@ -235,6 +257,9 @@ let game = function () {
             }
         }
 
+        /*
+        Hides or displays next stage message box, depending on class.
+        */
         function toggleNextStageBox() {
             if ($("#next-lvl-box").hasClass("hidden")) {
                 $("#next-lvl-box").removeClass("hidden");
@@ -244,6 +269,9 @@ let game = function () {
             }
         }
 
+        /*
+        Hides or displays the game elements, depending on class.
+        */
         function toggleGameElements() {
             if ($("#game-content").hasClass("hidden")) {
                 $("#game-content").removeClass("hidden");
@@ -253,13 +281,23 @@ let game = function () {
             }
         }
 
+        /*
+        Add 1 to level for each level.
+        */
         function nextStage() {
             level++;
             console.log("level is: " + level);
 
         }
 
-        
+        /*
+        Sets and starts the countdown. countDown is called once before the interval is 
+        called, or else the first second will delay. You can, alternatively, remove the call to
+        countDown and set the time to 1 second more than you actually want to give the user. if
+        seconds reach 0, stop timer, hide game elements, display game over message box, set game over
+        text and enable decrypting fields. 
+        Else, subtract 1 from seconds every 1000th ms. 
+        */
         function startTimer(timeInseconds) {
             seconds = timeInseconds;
             countDown();
@@ -271,8 +309,8 @@ let game = function () {
                 clearInterval(timer);
                 toggleGameElements();
                 toggleGameOverBox();
-                enableDecryptFields();
                 setGameOverText();
+                enableDecryptFields();
             }
             else {
                 $("#timer").text(seconds);
@@ -280,6 +318,10 @@ let game = function () {
             }
         }
 
+        /*
+        If level is less than last level, display set ordinary Game over message. If last stage,
+        Display website destroyed message adn call encryptElements().
+        */
         function setGameOverText() {
             if (level < stages.length - 1) {
                 $("#game-over-message").text("Game Over");
@@ -294,7 +336,12 @@ let game = function () {
                 encryptElements();
             }
         }
-
+        
+        /*
+        Loops through items(html elements) in elements array. Encrypts the items text and prints it to 
+        the same html element. Disables all user input fields, hides elements, changes href to 404 on nav links,
+        displays "restore website" button.
+        */
         function encryptElements() {
             for (let i = 0; i < elements.length; i++) {
                 console.log(i);
@@ -318,16 +365,24 @@ let game = function () {
             $("#restore").removeClass("hidden");
         }
 
+        /*
+        Disables decryption fields (used when game is active).
+        */
         function disableDecryptFields() {
             $("#text-to-decrypt").prop('disabled', true);
             $("#vigenere-to-decrypt").prop('disabled', true);
         }
-
+        /*
+        Enables the decryption fields (when game is not active).
+        */
         function enableDecryptFields() {
             $("#text-to-decrypt").prop('disabled', false);
             $("#vigenere-to-decrypt").prop('disabled', false);
         }
 
+        /*
+        When restore website button is clicked, browser refresh.
+        */
         $("#restore").click(function () {
             window.location.reload();
         });
