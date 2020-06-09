@@ -27,8 +27,15 @@ let game = function () {
             ["greatful", "fearless", "truthful", "american", "costumes", "username", "malicious", "ludacris"],
             ["attackatdawn"]
         ];
-
+        
+        /*
+        Key for final stage
+        */
         const finalStageKeys = ["bag"];
+
+        /*
+        These variables will be set and used throughout the game.
+        */
         let level;
         let gameShift;
         let gameKey;
@@ -39,7 +46,9 @@ let game = function () {
         let seconds;
 
 
-
+        /*
+        When start button is clicked, it is hidden and first level is displayed.
+        */
         $("#start-game-btn").click(function () {
             initiateGame();
             $("#start-game-btn").addClass("hidden");
@@ -47,6 +56,9 @@ let game = function () {
             console.log(level);
         });
 
+        /*
+        When next button is clicked, next stage is set, hide current messagebox and displays next level.
+        */
         $("#next-stage-btn").click(function () {
             nextStage();
             toggleNextStageBox();
@@ -55,6 +67,9 @@ let game = function () {
             console.log("level is: " + level);
         });
 
+        /*
+        When reset button is clicked, if not last level, hide game-over box and display start button.
+        */
         $("#reset-btn").click(function () {
             if (level <= stages.length - 1) {
                 toggleGameOverBox();
@@ -65,6 +80,10 @@ let game = function () {
             }
         });
 
+        /*
+        When exit button is clicked, stop timer, hide game elements, enable decryption fields.
+        Display start button.
+        */
         $("#exit-game").click(function () {
             clearInterval(timer);
             toggleGameElements();
@@ -72,6 +91,9 @@ let game = function () {
             $("#start-game-btn").removeClass("hidden");
         });
 
+        /*
+        Sets the next level. See individual function's comment.
+        */
         function displayNextLevel() {
             getWord(level);
             console.log(gameWord);
@@ -82,6 +104,10 @@ let game = function () {
             startTimer(80);
         }
 
+        /*
+        If level is not last level, pass the gameword and shift to iterateString.
+        If last level, pass gameword and key to iterateVigenereString.
+        */
         function encryptGameWord() {
             if (level < stages.length - 1) {
                 encryptedGameWord = encryption.iterateString(gameWord, gameShift, true);
@@ -93,6 +119,9 @@ let game = function () {
             }
         }
 
+        /*
+        If level is not last level, add 2 to gameshift. If last level, set shift to a key.
+        */
         function getGameShift() {
             if (level > 0 && level < stages.length - 1) {
                 gameShift += 2;
@@ -103,6 +132,10 @@ let game = function () {
             }
         }
 
+        /*
+        If not last level, write gameshift to game screen.
+        If last level, write gamekey (numbers) to screen.
+        */
         function writeGameInfo() {
             if (level >= 0 && level < stages.length - 1) {
                 $("#shift-value").text("Shift: " + gameShift);
@@ -112,6 +145,11 @@ let game = function () {
             }
         }
 
+        /*
+        Sets game variables when game is started. Displays the data on the game screen.
+        Removes classes which are used for the next level message box and game over box on
+        next last and last level.
+        */
         function initiateGame() {
             level = 0;
             score = 0;
