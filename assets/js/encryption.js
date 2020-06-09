@@ -197,7 +197,7 @@ let encryption = function () {
             }
             else {
                 $("#invalid-input").addClass("hidden");
-                document.getElementById("vigenere-key").value = randomWord["word"];
+                document.getElementById("vigenere-key").value = randomWord.word;
             }
         }
         else if (this.status == 429) {
