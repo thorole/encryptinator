@@ -142,7 +142,7 @@ let encryption = function () {
     function iterateVigenereString(text, numberKey, reverse) {
         let vigenereText;
         let key = numberKey;
-        console.log("number key in iterate function is: " + key)
+        console.log("number key in iterate function is: " + key);
         console.log("text is: " + text);
         let alphabet = getAlphabet();
         vigenereText = "";
@@ -158,7 +158,7 @@ let encryption = function () {
             for (let k = 0; k < alphabet.length; k++) {
                 if (inputText[i] === alphabet[k]) {
                     vigenereText += alphabet[k + key[j]];
-                    j++;
+                    j++;                     //j must increment only when there's a match.
                     break;
                     console.log("encryptedmsginloopis: " + vigenereText);
                 }
@@ -349,7 +349,7 @@ let encryption = function () {
         });
         $("#rndm-word").click(function () {
             requestRandomWord();
-        })
+        });
         $("#vigenere-decrypt-btn").click(function () {
             decryptVigenereText();
         });
