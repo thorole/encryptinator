@@ -196,12 +196,12 @@ let encryption = function () {
                 requestRandomWord();
             }
             else {
+                $("#invalid-input").addClass("hidden");
                 document.getElementById("vigenere-key").value = randomWord["word"];
             }
         }
-        if (this.status == 429) {
-            document.getElementById("vigenere-key").value = "toomanyrequests";
-            alert("Request limit reached. Wait a few seconds before you try again.")
+        else if (this.status == 429) {
+            $("#invalid-input").removeClass("hidden").text("Too many requests. Try again in a few seconds.");
         }
     };
     function requestRandomWord() {
@@ -378,6 +378,6 @@ let encryption = function () {
     return {
         iterateString: iterateString,
         convertKeyToNumbers: convertKeyToNumbers,
-        iterateVigenereString: iterateVigenereString
+        iterateVigenereString: iterateVigenereString,
     };
 }();
