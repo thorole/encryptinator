@@ -99,6 +99,7 @@ let game = function () {
             writeGameInfo();
             toggleGameElements();
             startTimer(80);
+            console.log(gameWord);
         }
 
         /*
@@ -381,6 +382,13 @@ let game = function () {
                 $("#start-game-btn").removeClass("light-green").addClass("dark-green");
             }
         }
+
+        $("#user-word").keypress(function (e) {
+            var key = e.which;
+            if (key == 13) {
+                checkWord();
+            }
+        });
 
         /*
         Call to blinking text with intervals. Makes button blink continously.
