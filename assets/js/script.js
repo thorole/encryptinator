@@ -26,18 +26,6 @@ $("button").hover(function () {
   $(this).css("background-color", "#252525");
 });
 
-$("#clear-cesar-encrypt").click(function () {
-  clearForm("input-text", "input-shift", "encrypted");
-});
-$("#clear-cesar-decrypt").click(function () {
-  clearForm("text-to-decrypt", "output-shift", "decrypted");
-});
-$("#clear-vigenere-encrypt").click(function () {
-  clearForm("vigenere-input", "vigenere-key", "vigenere-output");
-});
-$("#clear-vigenere-decrypt").click(function () {
-  clearForm("vigenere-to-decrypt", "vigenere-key-decrypt", "vigenere-decrypt-output");
-});
 
 //-------------------- Modals opening and closing functionality -----------------------
 
@@ -66,29 +54,5 @@ $("#cesar-modal").click(function () {
   $(this).css("display", "none")
 });
 
- /* window.onclick = function (event) {
-    if (event.target == document.getElementById("vigenere-modal")) {
-      $("#vigenere-modal").css("display", "none");
-    }
-  }*/
+ 
 
-
-// Clears form
-function clearForm(inputField, shiftField, outputField) {
-  document.getElementById(inputField).value = "";
-  document.getElementById(shiftField).value = "";
-  document.getElementById(outputField).innerHTML = "";
-}
-
-//This function is called on page load. It makes the game start button blink by removing and adding classes 
-
-function blinkingText() {
-  if ($("#start-game-btn").hasClass("dark-green")) {
-    $("#start-game-btn").removeClass("dark-green").addClass("light-green");
-  }
-  else {
-    $("#start-game-btn").removeClass("light-green").addClass("dark-green");
-  }
-}
-
-setInterval(blinkingText, 500);
