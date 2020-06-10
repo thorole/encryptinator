@@ -9,11 +9,13 @@ let game = function () {
         /*
         Elements that will be decrypted when game lost on last level.
         */
-        const elements = ["nav-one", "nav-two", "nav-three", "nav-four", "heading", "sub-heading-one", "sub-heading-two", "sub-heading-three",
-            "encryption-info-one", "encryption-info-two", "intro-button-one", "intro-button-two", "cesar-heading",
-            "vigenere-heading", "cesar-info-heading", "vigenere-info-heading", "game-heading", "game-instructions",
-            "enter-cesar-text", "enter-vigenere-text", "enter-shift", "enter-key", "enter-vigenere-decrypt",
-            "enter-cesar-decrypt", "enter-key-decrypt", "enter-shift-decrypt"];
+        const elements = ["nav-one", "nav-two", "nav-three", "nav-four", "heading", "sub-heading-one",
+            "sub-heading-two", "sub-heading-three", "encryption-info-one", "encryption-info-two", "intro-button-one",
+            "intro-button-two", "cesar-heading", "vigenere-heading", "cesar-info-heading", "vigenere-info-heading", 
+            "error-cesar-encrypt", "error-shift", "error-cesar-decrypt", "error-decrypt-shift", "game-heading", 
+            "game-instructions", "enter-cesar-text", "enter-vigenere-text", "enter-shift", "enter-key",
+            "enter-vigenere-decrypt", "enter-cesar-decrypt", "enter-key-decrypt", "enter-shift-decrypt", "footer",
+        "invalid-text", "invalid-input", "rndm-word", "invalid-decrypt-text", "invalid-decrypt-key"];
 
         /*
         The stages. Add elements to add more levels.
@@ -53,6 +55,23 @@ let game = function () {
             initiateGame();
             $("#start-game-btn").addClass("hidden");
             displayNextLevel();
+        });
+
+        /*
+        When check button clicked, check if it's correct or not.
+        */
+        $("#check-result-btn").click(function () {
+            checkWord();
+        });
+
+        /*
+        Press enter to check word
+        */
+        $("#user-word").keypress(function (e) {
+            var key = e.which;
+            if (key == 13) {
+                checkWord();
+            }
         });
 
         /*
@@ -235,10 +254,6 @@ let game = function () {
             }
         }
 
-        $("#check-result-btn").click(function () {
-            checkWord();
-        });
-
         /*
         Hides or displays game over message box, depending on class.
         */
@@ -382,13 +397,6 @@ let game = function () {
                 $("#start-game-btn").removeClass("light-green").addClass("dark-green");
             }
         }
-
-        $("#user-word").keypress(function (e) {
-            var key = e.which;
-            if (key == 13) {
-                checkWord();
-            }
-        });
 
         /*
         Call to blinking text with intervals. Makes button blink continously.
