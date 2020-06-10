@@ -34,11 +34,11 @@ function iterateString(text, shiftNumber, reversed) {
         for (let j = 0; j < alphabet.length; j++) {
             if (inputText[i] == alphabet[j]) {
                 cesarString += alphabet[j + shift];
-                j = alphabet.length;
+                break;
             }
-            if (!(/^[a-z]/).test(inputText[i])) {
+            if (!(/^[a-z]/).test(inputText[i])) { //If not a letter, add it unchanged to string.
                 cesarString += inputText[i];
-                j = alphabet.length;
+                break;
             }
         }
     }
@@ -48,24 +48,21 @@ function iterateString(text, shiftNumber, reversed) {
 function iterateVigenereString(text, numberKey, reverse) {
     let vigenereText;
     let key = numberKey;
-    console.log("text is: " + text);
     let alphabet = getAlphabet();
     vigenereText = "";
     if (reverse === true) {
         alphabet = alphabet.reverse();
     }
     let inputText = text;
-    console.log("userstring is: " + inputText);
-    for (let i = 0, g = 0; i < inputText.length; i++) {
-        if (g === key.length) {
-            g = 0;
+    for (let i = 0, j = 0; i < inputText.length; i++) {
+        if (j === key.length) {          //Loop through key again in cases where text is longer than the key
+            j = 0;
         }
-        for (let j = 0; j < alphabet.length; j++) {
-            if (inputText[i] === alphabet[j]) {
-                vigenereText += alphabet[j + key[g]];
-                j = alphabet.length;
-                g++;
-                console.log("encryptedmsginloopis: " + vigenereText);
+        for (let k = 0; k < alphabet.length; k++) {
+            if (inputText[i] === alphabet[k]) {
+                vigenereText += alphabet[k + key[j]];
+                j++;                     //j must increment only when there's a match.
+                break;
             }
             if (!(/^[a-z]/).test(inputText[i])) {    //Makes sure characters not in the range of a-z is printed
                 vigenereText += inputText[i];
@@ -82,7 +79,6 @@ function convertKeyToNumbers(userKey) {
     let keyToConvert;
     keyToConvert = userKey;
     let convertedKey = [];
-    console.log(getAlphabet());
     for (let i = 0; i < keyToConvert.length; i++) {
         for (let k = 0; k < alphabetOriginal.length; k++) {
             if (keyToConvert[i] === alphabetOriginal[k]) {
@@ -91,7 +87,6 @@ function convertKeyToNumbers(userKey) {
             }
         }
     }
-    console.log("Userkey is: " + convertedKey);
     return convertedKey;
 }
 
@@ -99,9 +94,7 @@ function convertKeyToNumbers(userKey) {
 function checkUserKey(userKey) {
     let key = userKey.toLowerCase();
     if ((/[^a-z]/).test(key) || key == "") {
-        console.log("User key is not according to rule");
         key = "thisisthekey";
-        console.log("userKey is: " + typeof key);
         return key;
     }
     else {
