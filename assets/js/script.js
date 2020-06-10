@@ -20,11 +20,11 @@ $("#intro-button-two").click(function () { //Read more/less functionality for 2n
   }
 });
 
-$("button").hover(function () {
+/*$("button").hover(function () {
   $(this).css("background-color", "#000");
 }, function () {
   $(this).css("background-color", "#252525");
-});
+});*/
 
 
 //-------------------- Modals opening and closing functionality -----------------------
