@@ -3,7 +3,7 @@
 All code encapsulated in IEFE (revealing module pattern) to keep global scope clean.
 */
 let game = function () {
- 
+
     $(document).ready(function () {
 
         /*
@@ -11,8 +11,8 @@ let game = function () {
         */
         const elements = ["nav-one", "nav-two", "nav-three", "nav-four", "heading", "sub-heading-one", "sub-heading-two", "sub-heading-three",
             "encryption-info-one", "encryption-info-two", "intro-button-one", "intro-button-two", "cesar-heading",
-            "vigenere-heading", "cesar-info-heading", "vigenere-info-heading", "game-heading", "game-instructions", 
-            "enter-cesar-text", "enter-vigenere-text", "enter-shift", "enter-key", "enter-vigenere-decrypt", 
+            "vigenere-heading", "cesar-info-heading", "vigenere-info-heading", "game-heading", "game-instructions",
+            "enter-cesar-text", "enter-vigenere-text", "enter-shift", "enter-key", "enter-vigenere-decrypt",
             "enter-cesar-decrypt", "enter-key-decrypt", "enter-shift-decrypt"];
 
         /*
@@ -27,7 +27,7 @@ let game = function () {
             ["greatful", "fearless", "truthful", "american", "costumes", "username", "malicious", "ludacris"],
             ["attackatdawn"]
         ];
-        
+
         /*
         Key for final stage
         */
@@ -53,7 +53,6 @@ let game = function () {
             initiateGame();
             $("#start-game-btn").addClass("hidden");
             displayNextLevel();
-            console.log(level);
         });
 
         /*
@@ -64,7 +63,6 @@ let game = function () {
             toggleNextStageBox();
             getGameShift();
             displayNextLevel();
-            console.log("level is: " + level);
         });
 
         /*
@@ -96,7 +94,6 @@ let game = function () {
         */
         function displayNextLevel() {
             getWord(level);
-            console.log(gameWord);
             encryptGameWord();
             writeEncryptedWord();
             writeGameInfo();
@@ -125,7 +122,6 @@ let game = function () {
         function getGameShift() {
             if (level > 0 && level < stages.length - 1) {
                 gameShift += 2;
-                console.log("shift is: " + gameShift);
             }
             else {
                 gameShift = finalStageKeys[0];
@@ -163,13 +159,12 @@ let game = function () {
             $("#game-over-box").removeClass("message-box-wide");
         }
 
-        
+
         /*
         Gets a random word from array and sets it to gameWord
         */
         function getWord(stageNumber) {
             gameWord = stages[stageNumber][[Math.floor(Math.random() * stages[stageNumber].length)]];
-            console.log(gameWord);
         }
 
         /*
@@ -198,7 +193,6 @@ let game = function () {
             }
             else if (userWord == gameWord) {
                 score += seconds + 1;
-                console.log("score: " + score);
                 clearInterval(timer);
                 setMessage();
                 toggleGameElements();
@@ -210,7 +204,6 @@ let game = function () {
             else {
                 $("#result").text("Incorrect");
             }
-            console.log(typeof userWord);
         }
 
         /*
@@ -240,7 +233,7 @@ let game = function () {
                 $("#final-score").text("Final score: " + score);
             }
         }
-        
+
         $("#check-result-btn").click(function () {
             checkWord();
         });
@@ -286,8 +279,6 @@ let game = function () {
         */
         function nextStage() {
             level++;
-            console.log("level is: " + level);
-
         }
 
         /*
@@ -336,7 +327,7 @@ let game = function () {
                 encryptElements();
             }
         }
-        
+
         /*
         Loops through items(html elements) in elements array. Encrypts the items text and prints it to 
         the same html element. Disables all user input fields, hides elements, changes href to 404 on nav links,
@@ -344,7 +335,6 @@ let game = function () {
         */
         function encryptElements() {
             for (let i = 0; i < elements.length; i++) {
-                console.log(i);
                 let elementText = document.getElementById(elements[i]).innerHTML;
                 document.getElementById(elements[i]).innerHTML = encryption.iterateString(elementText, 13, false);
             }
@@ -357,7 +347,7 @@ let game = function () {
             $("number").prop('disabled', true);
             $("button").prop("disabled", true);
             $("button").text("xxxx");
-            $("a").attr({"href":"https://www..../", "target":"_blank"});
+            $("a").attr({ "href": "https://www..../", "target": "_blank" });
             $("#input-shift").val(0);
             $("#output-shift").val(0);
             $("#vigenere-key").val(":-(");
@@ -379,6 +369,23 @@ let game = function () {
             $("#text-to-decrypt").prop('disabled', false);
             $("#vigenere-to-decrypt").prop('disabled', false);
         }
+
+        /*
+        Makes start button text blink by switching classes.
+        */
+        function blinkingText() {
+            if ($("#start-game-btn").hasClass("dark-green")) {
+                $("#start-game-btn").removeClass("dark-green").addClass("light-green");
+            }
+            else {
+                $("#start-game-btn").removeClass("light-green").addClass("dark-green");
+            }
+        }
+
+        /*
+        Call to blinking text with intervals. Makes button blink continously.
+        */
+        setInterval(blinkingText, 500);
 
         /*
         When restore website button is clicked, browser refresh.
