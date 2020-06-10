@@ -11,11 +11,11 @@ let game = function () {
         */
         const elements = ["nav-one", "nav-two", "nav-three", "nav-four", "heading", "sub-heading-one",
             "sub-heading-two", "sub-heading-three", "encryption-info-one", "encryption-info-two", "intro-button-one",
-            "intro-button-two", "cesar-heading", "vigenere-heading", "cesar-info-heading", "vigenere-info-heading", 
-            "error-cesar-encrypt", "error-shift", "error-cesar-decrypt", "error-decrypt-shift", "game-heading", 
+            "intro-button-two", "cesar-heading", "vigenere-heading", "cesar-info-heading", "vigenere-info-heading",
+            "error-cesar-encrypt", "error-shift", "error-cesar-decrypt", "error-decrypt-shift", "game-heading",
             "game-instructions", "enter-cesar-text", "enter-vigenere-text", "enter-shift", "enter-key",
             "enter-vigenere-decrypt", "enter-cesar-decrypt", "enter-key-decrypt", "enter-shift-decrypt", "footer",
-        "invalid-text", "invalid-input", "rndm-word", "invalid-decrypt-text", "invalid-decrypt-key"];
+            "invalid-text", "invalid-input", "rndm-word", "invalid-decrypt-text", "invalid-decrypt-key"];
 
         /*
         The stages. Add elements to add more levels.
@@ -391,10 +391,10 @@ let game = function () {
         */
         function blinkingText() {
             if ($("#start-game-btn").hasClass("dark-green")) {
-                $("#start-game-btn").removeClass("dark-green").addClass("light-green");
+                $("#start-game-btn").removeClass("dark-green").addClass("off-white");
             }
             else {
-                $("#start-game-btn").removeClass("light-green").addClass("dark-green");
+                $("#start-game-btn").removeClass("off-white").addClass("dark-green");
             }
         }
 
