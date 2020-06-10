@@ -49,11 +49,11 @@ $(".close").click(function () {
 Closes modal by clicking anywhere.
 */
 $("#vigenere-modal").click(function () {
-  $(this).css("display", "none")
+  $(this).css("display", "none");
 });
 
 $("#cesar-modal").click(function () {
-  $(this).css("display", "none")
+  $(this).css("display", "none");
 });
 
  
