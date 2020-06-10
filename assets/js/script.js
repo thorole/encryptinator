@@ -1,16 +1,22 @@
 "use strict";
 
-$("#intro-button-one").click(function () { //Read more/less functionality for 1st paragraph
+/*
+Causes read more button to show read less when clicked, and vica versa. 
+*/
+$("#intro-button-one").click(function () { 
+  $("#intro-more-one").slideToggle(200);
   if ($(this).text() === "Read more") {
     $(this).text("Read less");
   }
   else {
     $(this).text("Read more");
   }
-  $("#intro-more-one").slideToggle(200);
 });
 
-$("#intro-button-two").click(function () { //Read more/less functionality for 2nd paragraph
+/*
+Causes read more button to show read less when clicked, and vica versa. 
+*/
+$("#intro-button-two").click(function () { 
   $("#intro-more-two").slideToggle(200);
   if ($(this).text() === "Read more") {
     $(this).text("Read less");
@@ -20,15 +26,9 @@ $("#intro-button-two").click(function () { //Read more/less functionality for 2n
   }
 });
 
-/*$("button").hover(function () {
-  $(this).css("background-color", "#000");
-}, function () {
-  $(this).css("background-color", "#252525");
-});*/
-
-
-//-------------------- Modals opening and closing functionality -----------------------
-
+/*
+Button handlers for modals and close symbols. Works by setting display to none or block.
+*/
 $("#open-cesar-modal").click(function () {
   $("#cesar-modal").css("display", "block");
 });
@@ -45,7 +45,9 @@ $(".close").click(function () {
   $("#vigenere-modal").css("display", "none");
 });
 
-
+/*
+Closes modal by clicking anywhere.
+*/
 $("#vigenere-modal").click(function () {
   $(this).css("display", "none")
 });
