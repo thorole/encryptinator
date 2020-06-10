@@ -181,7 +181,7 @@ let encryption = function () {
         if (this.readyState == 4 && this.status == 200) {
             let myResponse = this.responseText;
             let randomWord = JSON.parse(myResponse);
-            if ((/[^a-zA-Z]/).test(randomWord["word"])) {
+            if ((/[^a-zA-Z]/).test(randomWord.word)) {
                 requestRandomWord();
             }
             else {
