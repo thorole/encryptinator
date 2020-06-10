@@ -95,9 +95,7 @@ let encryption = function () {
     function checkUserKey(userKey) {
         let key = userKey.toLowerCase();
         if ((/[^a-z]/).test(key) || key == "") { //Test for letters only or spaces
-            console.log("User key is not according to rule");
             key = "thisisthekey";
-            console.log("userKey is: " + typeof key);
             return key;
         }
         else {
@@ -121,7 +119,6 @@ let encryption = function () {
         let keyToConvert;
         keyToConvert = userKey;
         let convertedKey = [];
-        console.log(getAlphabet());
         for (let i = 0; i < keyToConvert.length; i++) {
             for (let j = 0; j < alphabetOriginal.length; j++) {
                 if (keyToConvert[i] === alphabetOriginal[j]) {
@@ -130,7 +127,6 @@ let encryption = function () {
                 }
             }
         }
-        console.log("Userkey is: " + convertedKey);
         return convertedKey;
     }
 
@@ -142,15 +138,12 @@ let encryption = function () {
     function iterateVigenereString(text, numberKey, reverse) {
         let vigenereText;
         let key = numberKey;
-        console.log("number key in iterate function is: " + key);
-        console.log("text is: " + text);
         let alphabet = getAlphabet();
         vigenereText = "";
         if (reverse === true) {
             alphabet = alphabet.reverse();
         }
         let inputText = text;
-        console.log("userstring is: " + inputText);
         for (let i = 0, j = 0; i < inputText.length; i++) {
             if (j === key.length) {          //Loop through key again in cases where text is longer than the key
                 j = 0;
@@ -160,7 +153,6 @@ let encryption = function () {
                     vigenereText += alphabet[k + key[j]];
                     j++;                     //j must increment only when there's a match.
                     break;
-                    console.log("encryptedmsginloopis: " + vigenereText);
                 }
                 if (!(/^[a-z]/).test(inputText[i])) {    //Makes sure characters not in the range of a-z is printed
                     vigenereText += inputText[i];
@@ -168,7 +160,6 @@ let encryption = function () {
                 }
             }
         }
-        console.log("encrypted text is: " + vigenereText);
         return vigenereText;
     }
 
@@ -178,14 +169,12 @@ let encryption = function () {
     function writeVigenereText(outputParagraph, text) {
         let textToPrint = text;
         let cryptedParagraph = document.getElementById(outputParagraph);
-        console.log("Encryptedtextis: " + textToPrint);
         cryptedParagraph.innerHTML = textToPrint;
     }
 
     /*
     Api request for a random word to wordnik api. Parts of the code is from from w3schools. It also
-    checks for all letters. If not, request new word. If api is called too many times, return key
-    "toomanyrequests".
+    checks for all letters. If not, request new word. If api is called too many times, display error message.
     */
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -296,9 +285,7 @@ let encryption = function () {
             let userText = getUserText("input-text");
             let shift = getShift("input-shift");
             shift = checkShift(shift);
-            console.log("shift is: " + shift);
             writeDefaultShift("input-shift", shift);
-            console.log("shift is: " + shift);
             let cesarString = iterateString(userText, shift, true);
             writeVigenereText("encrypted", cesarString);
         }
