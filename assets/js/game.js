@@ -138,6 +138,7 @@ let game = function () {
             writeGameInfo();
             toggleGameElements();
             startTimer(80);
+            $("#user-word").focus();
         }
 
         /*
