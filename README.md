@@ -1,10 +1,12 @@
 # Encryptinator
-# Dragon's Den Designs
-![readmehero](assets/images/creatures/herocropped.jpg)
-[Live website](https://thorole.github.io/dragonsden)
 
-Dragon's Den Designs (or just Dragon's Den) is a website for dedicated table-top rpg players who want to lift their game to the next level. The designers at Dragons Den
-specialize in designing artwork for fantasy settings and make custom artwork, tailored after the customer's demands.
+![readmehero](assets/images/encryptinator-responsive.PNG)
+[Live website](https://thorole.github.io/encryptinator)
+
+Encryptinator is an educational website for people who want to learn basic encryption. Possible users could range
+from students of data science all the way down to students in elementary school. This does not exclude any other type of users, of course. Some may simply be interested in the website for the sole purpose of encrypting/decrypting
+a message.
+
  
 ## UX
 
