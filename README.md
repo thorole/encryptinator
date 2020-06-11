@@ -33,22 +33,17 @@ working with the command line. The website uses a font from [Google Fonts'](http
 ### User Stories
 
 
-- Upon entering the website, I can immediately see images and text that communicates the purpose/services of the website.
+- Upon entering the website, I immediately get the feeling of working with an old computer/command line.
 
-- I want to be able to easily locate the navigation bar, so that I can navigate directly to the content I wish to explore. The
-links in the navigation bar are self explanatory.
+- I want to see a navbar at the top of the screen.
 
-- On the landing page, I want to to be able to get a quick overview of what Dragon's Den Designs offer, so that I can can decide
-if this is something for me. I also want to be able to jump straight to the contact page from the bottom of the landing page.
+- I want to see a large jumbotron/hero which sums up the most important features of the website. 
 
-- As a potential customer, I want to be able to view some example artwork made by the artists behind the website. The example
-artwork should be organized into two categories, so that I can get the impression that the artists can handle different types
-of artwork.
+- As a learner, I would like to see a section which explains the two encryption/decryption methods used in the website, as well as examples and figures.
 
-- I should be able to reach the contact page with a single click from anywhere on the website.
+- I want to see a section beneath the learning section where I can try to encrypt and decrypt text in an easy way. 
 
-- The contact page should have a form which has fields that I am required to fill in. Some fields should also check that my 
-input is in the correct format, like the field for the e-mail address.
+- I would like to see a feature that lets me test what I have learned.
 
 ### Wireframes
 
