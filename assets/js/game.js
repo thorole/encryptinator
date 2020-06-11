@@ -50,7 +50,7 @@ let game = function () {
 
         /*
         For testers of the site.Lets you go straight to last level to experience the breakdown of the site.
-        Ivoked by clicking the © sign in the footer EXACTLY 15 times.
+        Invoked by clicking the © sign in the footer EXACTLY 15 times.
         */
         $("#i-am-god").click(function () {
             iAmGod();
