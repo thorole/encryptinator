@@ -483,3 +483,7 @@ textarea {
 .footer p {
     margin: 0 0 0 1rem;
 }
+
+footer span {
+    cursor: crosshair;
+}

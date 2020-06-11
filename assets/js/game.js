@@ -43,11 +43,18 @@ let game = function () {
         let gameKey;
         let encryptedGameWord;
         let gameWord;
-        let score;
+        let score = 0;
         let timer;
         let seconds;
+        let godClicks = 0;
 
-
+        /*
+        For testers of the site.Lets you go straight to last level to experience the breakdown of the site.
+        Ivoked by clicking the © sign in the footer EXACTLY 15 times.
+        */
+        $("#i-am-god").click(function () {
+            iAmGod();
+        });
         /*
         When start button is clicked, it is hidden and first level is displayed.
         */
@@ -107,6 +114,20 @@ let game = function () {
             enableDecryptFields();
             $("#start-game-btn").removeClass("hidden");
         });
+
+        /*
+        This function lets you skip to last level.
+        */
+        function iAmGod() {
+            console.log("clicked");
+            godClicks++;
+            if (godClicks >= 15) {
+                level = stages.length - 1;
+                $("#start-game-btn").addClass("hidden");
+                getGameShift();
+                displayNextLevel();
+            }
+        }
 
         /*
         Sets the next level. See individual function's comment.
