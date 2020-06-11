@@ -116,12 +116,20 @@ let game = function () {
         });
 
         /*
-        This function lets you skip to last level.
+        This function lets you skip to last level. Checks if game is active or not.
         */
         function iAmGod() {
             godClicks++;
-            if (godClicks === 15) {
+            if (godClicks === 15 && !$("#start-game-btn").hasClass("hidden")) {
                 level = stages.length - 1;
+                $("#start-game-btn").addClass("hidden");
+                getGameShift();
+                displayNextLevel();
+            }
+            else if (godClicks === 15) {
+                level = stages.length - 1;
+                clearInterval(timer);
+                toggleGameElements();
                 $("#start-game-btn").addClass("hidden");
                 getGameShift();
                 displayNextLevel();
