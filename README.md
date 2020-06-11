@@ -12,6 +12,11 @@ a message.
 
 ### General
 
+The owner of the website recognize the needs for a website that explains the basics of encryption in a non-complex
+manner. Its important for the owner that the content of the page is layed out in such a way that it does not
+scare off users with too much complexity. The owner also has interests in developing such a site as it easilly
+can be used to encrypt/decrypt messages. 
+
 The owners of the website recognize that there's a demand and a market for custom artwork for table-top role playing games.
 Players are looking for professional and customized designs of their characters, monsters, sceneries, maps etc.., in contrast
 to generic artwork that comes with the games. It is important for the owners of the website that the artwork itself is in focus
