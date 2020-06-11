@@ -95,8 +95,8 @@ describe("Checks key, returns userinput or default key (thisisthekey)", function
 
     let userKey = "mykey";
     let keyWithUpper = "TesT";
-    let = keyWithNum = "34";
-    let = keyWithSpace = "my key";
+    let keyWithNum = "34";
+    let keyWithSpace = "my key";
     let keyWithSymbols = "#%__%HJ(YR)";
 
     it("should return mykey", function () {
