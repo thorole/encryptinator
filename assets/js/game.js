@@ -50,7 +50,7 @@ let game = function () {
 
         /*
         For testers of the site.Lets you go straight to last level to experience the breakdown of the site.
-        Invoked by clicking the © sign in the footer EXACTLY 15 times.
+        Invoked by clicking the © sign in the footer 15 times.
         */
         $("#i-am-god").click(function () {
             iAmGod();
@@ -119,9 +119,8 @@ let game = function () {
         This function lets you skip to last level.
         */
         function iAmGod() {
-            console.log("clicked");
             godClicks++;
-            if (godClicks >= 15) {
+            if (godClicks === 15) {
                 level = stages.length - 1;
                 $("#start-game-btn").addClass("hidden");
                 getGameShift();
@@ -139,7 +138,6 @@ let game = function () {
             writeGameInfo();
             toggleGameElements();
             startTimer(80);
-            console.log(gameWord);
         }
 
         /*
