@@ -3,7 +3,7 @@
 ![readmehero](assets/images/encryptinator-responsive.PNG)
 [Live website](https://thorole.github.io/encryptinator)
 
-Encryptinator is an educational website for people who want to learn basic encryption. Possible users could range
+Encryptinator is a command line themed, educational website for people who want to learn basic encryption. Possible users could range
 from students of data science all the way down to students in elementary school. This does not exclude any other type of users, of course. Some may simply be interested in the website for the sole purpose of encrypting/decrypting
 a message.
 
@@ -17,26 +17,17 @@ manner. Its important for the owner that the content of the page is layed out in
 scare off users with too much complexity. The owner also has interests in developing such a site as it easilly
 can be used to encrypt/decrypt messages. 
 
-The owners of the website recognize that there's a demand and a market for custom artwork for table-top role playing games.
-Players are looking for professional and customized designs of their characters, monsters, sceneries, maps etc.., in contrast
-to generic artwork that comes with the games. It is important for the owners of the website that the artwork itself is in focus
-and gets the most attention. Furthermore it's also key for the owners that navigating between the three main parts of the
-website never require more than one click.
-
 ### Typography
-The website is very image-heavy, and does not demand the user to do a lot of reading. Nonetheless, it is important
-that the fonts works well for reading and that they have somewhat of an interesting look  The website makes use of two fonts from [Google Fonts'](https://fonts.google.com/) library: [Cinzel](https://fonts.google.com/specimen/Cinzel)
- and [Poppins](https://fonts.google.com/specimen/Poppins). Cinzel is used for all headings and for the brand because
- of its fantasy-like feeling and sharpened, pointy edges. Poppins is used for all other text, like paragraphs and in the contact form, because of
- its nice and rounded shapes and easy-to-read style.
+The font used for this website was carefully chosen, as it is very important that the font supports the feeling of 
+working with the command line. The website uses a font from [Google Fonts'](https://fonts.google.com/) library called [Fira Code](https://fonts.google.com/specimen/Fira+Code?selection.family=Fira+Code&sidebar.open&query=fira+code). This is font that has very much in common with your typical command line font, and most importantly, it's a monotype font. This is the only font used throughout the website.
 
  ### Colors
- The main idea of the website is to make all the imagery stand out and "steal" the user's focus and attention.
- Therefore, the layout of the site is mostly a light shade of black(#212121) and a tone of soft white(#fafafa).
- To make the site a bit more interactive and interesting, a secondary color is introduced in the links in the navbar, which fades to a light orange on hover.
- The same orange color appears again in the social media links in the footer. A third color, green, is applied
- to two links ("Contact us" and "Back to top") at the bottom of the landing page, just to make them stand out and
- encourage the user to use them. 
+ The color theme of the website is very simplistic. All text is green, while backgrounds alternate between black and dark grey. Black and grey is very important to provide some variation against the green text. It also serves the purpose of separating the three main parts of the website.
+
+ There are a few instances across the website where a tone of white is used. Most of these instances are for
+ text that needs to stand out, like in the learn section and the alternating green/white "start game" button.
+
+ A tone of orange is used for all error messages in the encryption forms and in the game. 
  
 
 ### User Stories
