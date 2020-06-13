@@ -29,32 +29,22 @@ $("#intro-button-two").click(function () {
 /*
 Button handlers for modals and close symbols. Works by setting display to none or block.
 */
-$("#open-cesar-modal").click(function () {
-  $("#cesar-modal").css("display", "block");
+$(".modal-trigger").click(function () {
+  let modalId = this.getAttribute("data-open");
+  $(modalId).css("display", "block");
 });
 
 $(".close").click(function () {
-  $("#cesar-modal").css("display", "none");
+  let modalId = this.getAttribute("data-open");
+  $(modalId).css("display", "none");
 });
 
-$("#open-vigenere-modal").click(function () {
-  $("#vigenere-modal").css("display", "block");
-});
 
-$(".close").click(function () {
-  $("#vigenere-modal").css("display", "none");
-});
-
-/*
-Closes modal by clicking anywhere.
-*/
-$("#vigenere-modal").click(function () {
+$(".modal").click(function () {
   $(this).css("display", "none");
 });
 
-$("#cesar-modal").click(function () {
-  $(this).css("display", "none");
-});
+
 
  
 
