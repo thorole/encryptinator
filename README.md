@@ -59,6 +59,11 @@ The website is divided into three main sections, all on the same page. The conte
 
 ### Existing Features
 
+![readmehero](assets/images/navjumbotron.PNG)
+![readmehero](assets/images/learningsection.PNG)
+![readmehero](assets/images/exploreforms.PNG)
+![readmehero](assets/images/game.PNG)
+
 
 In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
