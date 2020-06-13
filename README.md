@@ -3,7 +3,7 @@
 ![readmehero](assets/images/encryptinator-responsive.PNG)
 [Live website](https://thorole.github.io/encryptinator)
 
-Encryptinator is a command line themed, educational website for people who want to learn basic encryption. Possible users could range
+Encryptinator is a command line themed, educational website for people who want to learn basic encryption. Possible users can range
 from students of data science all the way down to students in elementary school. This does not exclude any other type of users, of course. Some may simply be interested in the website for the sole purpose of encrypting/decrypting
 a message.
 
@@ -19,13 +19,13 @@ can be used to encrypt/decrypt messages.
 
 ### Typography
 The font used for this website was carefully chosen, as it is very important that the font supports the feeling of 
-working with the command line. The website uses a font from [Google Fonts'](https://fonts.google.com/) library called [Fira Code](https://fonts.google.com/specimen/Fira+Code?selection.family=Fira+Code&sidebar.open&query=fira+code). This is font that has very much in common with your typical command line font, and most importantly, it's a monotype font. This is the only font used throughout the website.
+working with the command line. The website uses a font from [Google Fonts'](https://fonts.google.com/) library called [Fira Code](https://fonts.google.com/specimen/Fira+Code?selection.family=Fira+Code&sidebar.open&query=fira+code). This is font that has very much in common with your typical command line font, and most importantly, it's a monotype font. This is the only font used throughout the website, in order to enhance the feeling of a command line interface.
 
  ### Colors
  The color theme of the website is very simplistic. All text is green, while backgrounds alternate between black and dark grey. Black and grey is very important to provide some variation against the green text. It also serves the purpose of separating the three main parts of the website.
 
  There are a few instances across the website where a tone of white is used. Most of these instances are for
- text that needs to stand out, like in the learn section and the alternating green/white "start game" button.
+ text that needs to stand out, like in the learn section and the alternating green/white "start game" button, but also on hover on links in the navbar.
 
  A tone of orange is used for all error messages in the encryption forms and in the game. 
  
@@ -55,25 +55,10 @@ working with the command line. The website uses a font from [Google Fonts'](http
 
 ## Features
 
-The site is divided into three pages which are all meaningful on their own, meaning, for instance, that the user is not rquired to 
-read everything on the landing page to enjoy or understand what's going on in the gallery or contact pages. 
+The website is divided into three main sections, all on the same page. The content is layed out in such a way that a user who has no experience with encryption can read through the learning section at the top, move on to the encryption forms and try it out for themselves, and finally test themself in a simple game where the goal is to decrypt as many words as possible.   
 
 ### Existing Features
-- [About Us](https://github.com/thorole/dragonsden/blob/master/index.html) - This page, which is also the landing page, allows the user to get an impression of what the website can offer
-by reading and viewing images. It's structured as a walkthrough of the process from where the costumer presents and idea and up to the 
-point where the artwork is finished. At the bottom of this page there's a dramatic image to showcase what such artwork may look
-like when it's finished. 
-- [Gallery](https://github.com/thorole/dragonsden/blob/master/gallery.html) - The Gallery page offers example art for the user to view. All of the thumbnails opens up in a modal for able
-larger view of the image. This section is also split into two categories:
-   - Creatures
-   - Sceneries
 
-This way the user can see that the artists master different kinds of motives.
-
-- [Contact Us](https://github.com/thorole/dragonsden/blob/master/contact.html) - This page presents the user with a form. The form asks the user about relevant information
-such as name, contact information and a textfield where the user can freely express her-/himself.
-The form also asks for optional information about how the user came across the site. This should be useful for the 
-owners.
 
 In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
