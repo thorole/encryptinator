@@ -136,11 +136,7 @@ Debugging forms
 Debugging game
 ![Testing game](documentation/images/consoletestinggame.PNG)
 
-One of the more interesting bugs was discovered in automated testing. When passing numbers through the shift input field, the number was handled as a string, which again led to errors. This led to the re-writing of the function `checkShift()`. In the later stages of the project, the built in `checkValidity()` was introduced to the project to check all the input fields before the rest of the functions are called. This makes `checkShift()`,  `writeDefaultKey()` and `writeDefaultShift()` a bit redundant but they were kept as an extra safety.
-
-
-
-
+One of the more interesting bugs was discovered in automated testing. When passing numbers through the shift input field, the number was handled as a string, which again led to errors. This led to the re-writing of the function `checkShift()`. In the later stages of the project, the built in javascript method `checkValidity()` was introduced to the project to check all the input fields before the rest of the functions are called. This makes `checkShift()`, `writeDefaultKey()` and `writeDefaultShift()` a bit redundant but they were kept as an extra safety.
 
 
 
@@ -151,27 +147,25 @@ all browsers used in testing.
 
 The website has also been tested physically on iPhone S, ipad 2nd gen., iPhone 7 and Mi a2 Redmi note 7.
 The website responds well to smaller screen sizes and no major problems have appeared. The intention
-is that on medium to small screens the website is layed out in a single column 
-(except for the gallery), which it does. During construction the site was constantly tested on phone sized
+is that on medium to small screens the website is layed out in a single column. During construction the site was constantly tested on phone sized
 screen in the Chrome dev. tools to make sure it looked good and behaved as intended.
 
 #### Tools used in testing
-- [W3C Markup Validation](https://validator.w3.org/) (30 errors in bootstrap css, 0 errors in html and local style.css) 
-
-- [Accessibility checker](https://www.achecker.ca)
-    - 5 problems concerning use of ```<i>``` element (used for fontawsome) The checker suggests using ```<em>``` or ```<strong>```.
-      - *Font awsome recommends using the ```<i>``` element for their icons. Font awesome's [guidelines for accessibility](https://fontawesome.com/how-to-use/on-the-web/other-topics/accessibility)
-      has been followed to make all font awesome icons accessible.*  
-    - Potential problems concerning <img> elements and ```alt=""``` description being too short. 
-      - *All images have ```alt=""``` descriptions. None of the images are semantically important.*
+- [JsHint](https://jshint.com/) (0 warnings. Please note that there will be warnings of unused variables if you test each file individually. This is because game.js uses functions from encryption.js. JsHint will, of course, not detect this if not all the code is pasted in.)
+- [W3C Markup Validation](https://validator.w3.org/) (0 errors in html.)
+- [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_input)(0 errors, 17 warnings of unknown vendor extensions.) 
+- [Accessibility checker](https://www.achecker.ca) (No known problems.)
+- [Node.js](https://nodejs.org/en/) - In the early stages, node.js was used to run javascript on the cli.
+- [npm-package: http-server](https://www.npmjs.com/package/http-server) - Used to set up a server in development.
 - [Autoprefixer](https://autoprefixer.github.io/)
 - [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)
+- [Jasmine](https://jasmine.github.io/)
 
 ## Deployment
 
 **I followed this procedure to deploy Dragon's Den**
 
-1. Navigate to the [repository](https://github.com/thorole/dragonsden)
+1. Navigate to the [repository](https://github.com/thorole/encryptinator)
 2. Select [Branch: master]
 3. Go to settings
 4. Scroll down to "Github Pages". Make sure the repo is set to public in "Danger Zone"-section beneath. 
@@ -180,7 +174,7 @@ screen in the Chrome dev. tools to make sure it looked good and behaved as inten
 
 **To clone the repository, follow these instructions:**
 
-1. Navigate to the [repository](https://github.com/thorole/dragonsden)
+1. Navigate to the [repository](https://github.com/thorole/encryptinator)
 2. Click **Clone or download**
 3. Copy the url from the **Clone or download** dropdown.
 4. In cli, navigate to the folder where you want to clone the repository.
@@ -193,15 +187,16 @@ on github.
 ## Credits
 
 ### Content
-- The function that makes images open in modal when clicked was copied from [w3schools](https://www.w3schools.com/howto/howto_css_modal_images.asp).
-- Template for navigation bar copied from [Bootstrap website](https://getbootstrap.com/docs/4.0/components/navbar/)
-### Media
-- Most of the images on the site, including the hero image was taken from [Pixabay](https://www.pixabay.com) and [wallpaperflare](https://www.wallpaperflare.com)
-- Some images also taken from [HD wallpapers](https://www.hdwallpapers.net)
-- The dragon icon and favicon was taken from [FreeIconsPng](https://www.freeiconspng.com)
+- The figure image in the cesar cipher learn section was taken from [Wikipedia](https://no.wikipedia.org/wiki/C%C3%A6sarchiffer). Most of the facts in the learn section was also taken from the same Wikipedia page.
 
 
 ### Acknowledgements
 
-This site inspired some of Dragon's Den's layout:
-https://www.unicef.org/child-rights-convention 
+This template was used as a _visual reference_ to create a command line themed website. None of the actual code behind the template was used.
+https://brobin.github.io/hacker-bootstrap/
+
+Thanks to my mentor [Jonathan Munz](https://github.com/jpmunz) for guidance on the project and for providing online litterature.
+
+This site was used to double check that the encryption/decryption forms was working correctly in development.
+https://cryptii.com/pipes/vigenere-cipher
+
