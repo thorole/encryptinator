@@ -131,10 +131,10 @@ The automated testing tests the functionality of the encryption/decryption forms
 Through out development, there has been a series of minor and more complex bugs. The most important tool for debuggin has been the browser console in chrome. Here's how the console would typically look like during development.
 
 Debugging forms
-![Testing the forms](documentation/images/consoletestingforms.PNG)
+![Testing the forms](documentation/images/consoletestingforms.png)
 
 Debugging game
-![Testing game](documentation/images/consoletestinggame.PNG)
+![Testing game](documentation/images/consoletestinggame.png)
 
 One of the more interesting bugs was discovered in automated testing. When passing numbers through the shift input field, the number was handled as a string, which again led to errors. This led to the re-writing of the function `checkShift()`. In the later stages of the project, the built in javascript method `checkValidity()` was introduced to the project to check all the input fields before the rest of the functions are called. This makes `checkShift()`, `writeDefaultKey()` and `writeDefaultShift()` a bit redundant but they were kept as an extra safety.
 
