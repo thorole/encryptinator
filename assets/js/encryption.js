@@ -360,11 +360,13 @@ let encryption = function () {
     });
 
     /*
-    These functions are made available to the global scope as they're needed in the game.
+    These functions are made available to the global scope as they're needed in the game and for testing.
     */
     return {
         iterateString: iterateString,
         convertKeyToNumbers: convertKeyToNumbers,
         iterateVigenereString: iterateVigenereString,
+        checkUserKey: checkUserKey,
+        checkShift: checkShift,
     };
 }();

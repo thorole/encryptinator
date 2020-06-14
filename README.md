@@ -116,6 +116,8 @@ All of the features that was planned for on this website was executed. However, 
 - [Google Fonts](https://fonts.google.com/)
 - [Wordnik API](https://developer.wordnik.com/)
 - [Jasmine](https://jasmine.github.io/)
+- [Node.js](https://nodejs.org/en/)
+- [npm-package: http-server](https://www.npmjs.com/package/http-server)
 
  
 ## Testing

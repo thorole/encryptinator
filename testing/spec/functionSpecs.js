@@ -13,16 +13,16 @@ describe("Encrypts or decrypts text", function () {
     let encrypt = true;
 
     it("should return zloobzq", function () {
-        expect(iterateString(text, shift, encrypt)).toBe("zloobzq");
+        expect(encryption.iterateString(text, shift, encrypt)).toBe("zloobzq");
     });
     it("should return correct", function () {
-        expect(iterateString(decryptedText, shift, decrypt)).toBe("correct");
+        expect(encryption.iterateString(decryptedText, shift, decrypt)).toBe("correct");
     });
     it("should return jv xdb fp _(36)", function () {
-        expect(iterateString(textWithSpacesAndSigns, shift, encrypt)).toBe("jv xdb fp _(36)");
+        expect(encryption.iterateString(textWithSpacesAndSigns, shift, encrypt)).toBe("jv xdb fp _(36)");
     });
     it("should return my age is _(36)", function () {
-        expect(iterateString(encryptedTxtWithSpaceSigns, shift, decrypt)).toBe(textWithSpacesAndSigns);
+        expect(encryption.iterateString(encryptedTxtWithSpaceSigns, shift, decrypt)).toBe(textWithSpacesAndSigns);
     });
 
 });
@@ -38,18 +38,17 @@ describe("Encrypts or decrypts text", function () {
     let encryptedTxtWithSpaceSigns = "na dhg lt _(36)";
     let decrypt = true;
     let encrypt = false;
-
     it("should return dqusgfu", function () {
-        expect(iterateVigenereString(text, key, encrypt)).toBe("dqusgfu");
+        expect(encryption.iterateVigenereString(text, key, encrypt)).toBe("dqusgfu");
     });
     it("should return correct", function () {
-        expect(iterateVigenereString(decryptedText, key, decrypt)).toBe("correct");
+        expect(encryption.iterateVigenereString(decryptedText, key, decrypt)).toBe("correct");
     });
     it("should return na dhg lt _(36)", function () {
-        expect(iterateVigenereString(textWithSpacesAndSigns, key, encrypt)).toBe(encryptedTxtWithSpaceSigns);
+        expect(encryption.iterateVigenereString(textWithSpacesAndSigns, key, encrypt)).toBe(encryptedTxtWithSpaceSigns);
     });
     it("should return my age is _(36)", function () {
-        expect(iterateVigenereString(encryptedTxtWithSpaceSigns, key, decrypt)).toBe(textWithSpacesAndSigns);
+        expect(encryption.iterateVigenereString(encryptedTxtWithSpaceSigns, key, decrypt)).toBe(textWithSpacesAndSigns);
     });
 
 });
@@ -60,7 +59,7 @@ describe("Converts text to numbers", function () {
     let userKey = "abc";
 
     it("should return 1 2 3", function () {
-        expect(convertKeyToNumbers(userKey)).toEqual([0, 1, 2]);
+        expect(encryption.convertKeyToNumbers(userKey)).toEqual([0, 1, 2]);
     });
 });
 
@@ -74,19 +73,19 @@ describe("Checks shift, return userinput or default shift (13)", function () {
     let tooBigShift = 26;
 
     it("should return 4(1)", function () {
-        expect(checkShift(correctShift)).toBe(4)
+        expect(encryption.checkShift(correctShift)).toBe(4)
     });
     it("should return 4(2)", function () {
-        expect(checkShift(correctShiftString)).toBe(4);
+        expect(encryption.checkShift(correctShiftString)).toBe(4);
     });
     it("should return 13(3)", function () {
-        expect(checkShift(letterShift)).toBe(13);
+        expect(encryption.checkShift(letterShift)).toBe(13);
     });
     it("should return 13(4)", function () {
-        expect(checkShift(tooLowShift)).toBe(13);
+        expect(encryption.checkShift(tooLowShift)).toBe(13);
     });
     it("should return 13(5)", function () {
-        expect(checkShift(tooBigShift)).toBe(13);
+        expect(encryption.checkShift(tooBigShift)).toBe(13);
     });
 });
 
@@ -100,19 +99,19 @@ describe("Checks key, returns userinput or default key (thisisthekey)", function
     let keyWithSymbols = "#%__%HJ(YR)";
 
     it("should return mykey", function () {
-        expect(checkUserKey(userKey)).toBe("mykey");
+        expect(encryption.checkUserKey(userKey)).toBe("mykey");
     });
     it("should return test", function () {
-        expect(checkUserKey(keyWithUpper)).toBe("test");
+        expect(encryption.checkUserKey(keyWithUpper)).toBe("test");
     });
     it("should return thisisthekey", function () {
-        expect(checkUserKey(keyWithNum)).toBe("thisisthekey");
+        expect(encryption.checkUserKey(keyWithNum)).toBe("thisisthekey");
     });
     it("should return thisisthekey", function () {
-        expect(checkUserKey(keyWithSpace)).toBe("thisisthekey");
+        expect(encryption.checkUserKey(keyWithSpace)).toBe("thisisthekey");
     });
     it("should return thisisthekey", function () {
-        expect(checkUserKey(keyWithSymbols)).toBe("thisisthekey");
+        expect(encryption.checkUserKey(keyWithSymbols)).toBe("thisisthekey");
     });
 });
 
