@@ -55,13 +55,36 @@ working with the command line. The website uses a font from [Google Fonts'](http
 
 ## Features
 
-The website is divided into three main sections, all on the same page. The content is layed out in such a way that a user who has no experience with encryption can read through the learning section at the top, move on to the encryption forms and try it out for themselves, and finally test themself in a simple game where the goal is to decrypt as many words as possible.   
+The website is divided into three main sections, all on the same page. The content is layed out in such a way that a user who has no experience with encryption can read through the learning section at the top, move on to the encryption forms and try it out for themselves, and finally test themselves in a simple game where the goal is to decrypt as many words as possible.   
 
 ### Existing Features
 
+## Nav bar and jumbotron
 ![Navbar and jumbotron](assets/images/navjumbotron.PNG)
+
+The navbar is custom built with flexbox. It consists of four navigation links which takes the user to the desired sections of the site. All links turn white on hover.
+
+The jumbotron has two purposes. It displays the title of the website, and sumarizes its main features.
+
+## Learning section
 ![Learning section](assets/images/learningsection.PNG)
+
+This section is part of the meat and potatos of the website. It is key for users without any knowledge of encryption to read through this section in order to understand the other two sections of the website. However, the learning section works fine on its own, and she's/he's not required to try out the later sections.
+
+The learning section features two sub sections, one for each encryption method. Both sub sections have buttons that lets the user expand or collapse it. The main purpose for this is that these sections are relatively long, and being able to collapse them when a user has read through the content makes the website easier to navigate, and visually more tidied.
+
+Each subsection contains information on how encryption works when using Cesar cipher and Vigenere cipher. There are also figures present to aid the user in understanding the concepts. Both figures opens in a modal on click and displays even further explaining and examples. Modals close by either clicking on the close symbol (X) or by clicking anywhere in the window.
+
+## Explore section
 ![Explore section](assets/images/exploreforms.PNG)
+
+In this section the user can try out encrypting/decrypting text on their own. Both forms are built in a similar way. The user enters some text in the appropriate textfield, sets the shift or key, and then click encrypt or decrypt button. If the user don't enter any text in the textfield, or fails to meet the required format of the shift or key, an error message will be displayed over the current input element. This message briefly explains what the user must do to make it right.
+
+The Vigenere Cipher form also sports an option to generate a key. This functionality uses an API to retrieve a random word. The drawback of this functionality is that if you request many words repeatedly, you're timed out for a few seconds. If this happens, the user will also be notified in the same way as explained in the last paragraph. Optionally, in the mean time, the user can just enter their own key instead if they don't wish to wait.
+
+It is also worth mentioning that all input areas are hilighted with a green glow around the borders when focused. There are also "clear" buttons present to quickly clear all the text areas.
+
+## Game
 ![Game](assets/images/game.PNG)
 
 
