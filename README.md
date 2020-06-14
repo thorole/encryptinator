@@ -122,7 +122,7 @@ All of the features that was planned for on this website was executed. However, 
  
 ## Testing
 
-The testing of the website, both in development and as a finished product has been done through both manual testing and automated testing (jasmine). As the manual test documentation became very long, it can be viewed in [this document.]()
+The testing of the website, both in development and as a finished product has been done through both manual testing and automated testing (jasmine). As the manual test documentation became very long, it can be viewed in [this document](https://github.com/thorole/encryptinator/blob/master/TESTING.md).
 
 The automated testing tests the functionality of the encryption/decryption forms. All the test can be viewed in [this file](https://github.com/thorole/encryptinator/blob/master/testing/spec/functionSpecs.js). You can view the test results [here](https://thorole.github.io/encryptinator/testing/test.html).
 
