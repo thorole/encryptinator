@@ -1,25 +1,24 @@
 # Manual testing
 
 ## Navigation
- Item       | Event | Expected result            | Fail | Pass |
+| Item       | Event | Expected result            | Fail | Pass |
 |------------|-------|----------------------------|------|------|
-| Home link  | Click | Reload page                |      |      |
-| Learn link | Click | Go to top of learn section |      |      |
-| Forms link | Click | Go to top of forms section |      |      |
-| Play link  | Click | Go to top of game section  |      |      |
+| Home link  | Click | Reload page                |      | X    |
+| Learn link | Click | Go to top of learn section |      | X    |
+| Forms link | Click | Go to top of forms section |      | X    |
+| Play link  | Click | Go to top of game section  |      | X    |
 
 ## Learn section
- Item                        | Event          | Expected result                 | Fail | Pass |
+ | Item                        | Event          | Expected result                 | Fail | Pass |
 |-----------------------------|----------------|---------------------------------|------|------|
-| Read more button (cesar)    | Click          | Reaveals hidden part of section |      |      |
-| Read more button (vigenere) | Click          | Reveals hidden part of section  |      |      |
-| Modal (cesar)               | Click          | Opens modal                     |      |      |
-| Modal (vigenere)            | Click          | Opens modal                     |      |      |
-| Modal (cesar) visible       | Click anywhere | Closes modal                    |      |      |
-| Modal (vigenere) visible    | Click anywhere | Closes modal                    |      |      |
-| Read less button (cesar)    | Click          | Hides part of section           |      |      |
-| Read less button (vigenere) | Click          | Hides part of section           |      |      |
-
+| Read more button (cesar)    | Click          | Reaveals hidden part of section |      | X    |
+| Read more button (vigenere) | Click          | Reveals hidden part of section  |      | X    |
+| Modal (cesar)               | Click          | Opens modal                     |      | X    |
+| Modal (vigenere)            | Click          | Opens modal                     |      | X    |
+| Modal (cesar) visible       | Click anywhere | Closes modal                    |      | X    |
+| Modal (vigenere) visible    | Click anywhere | Closes modal                    |      | X    |
+| Read less button (cesar)    | Click          | Hides part of section           |      | X    |
+| Read less button (vigenere) | Click          | Hides part of section           |      | X    |
 ## Encryption/decryption forms
 Also see automated testing.
 
