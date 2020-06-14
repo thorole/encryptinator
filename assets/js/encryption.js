@@ -1,9 +1,9 @@
-"use strict";
 
 /*
 All code encapsulated in IEFE (revealing module pattern) to keep global scope clean.
 */
 let encryption = function () {
+    "use strict";
 
     /*
     Function which returns the alphabet.

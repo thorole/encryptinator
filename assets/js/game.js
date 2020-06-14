@@ -1,8 +1,8 @@
-"use strict";
 /*
 All code encapsulated in IEFE (revealing module pattern) to keep global scope clean.
 */
-let game = function () {
+(function () {
+    "use strict";
 
     $(document).ready(function () {
 
@@ -434,4 +434,4 @@ let game = function () {
             window.location.reload();
         });
     });
-}();
+})();
