@@ -99,29 +99,25 @@ Between each level, the game displays a success message and your current score. 
 **_Note to assessors and testers:_** There's a hidden feature at the end of the game. If the user fails to decrypt the final word, the website is encrypted and rendered unusable. If this happens, a "restore website" button appears fixed on screen, which refreshes the browser on click. If you wish to experience this feature without playing through the game, click repeatedly (up to 15 times) on the copyright symbol in the footer of the page. The cursor turns to crosshairs when you hover over the correct spot. This will take you directly to the last level. Please note that this only works when the game is not active and the blinking "start game" button is displayed. This is easiest achieved on a larger screen when using a mouse.
 
 ### Features Left to Implement
-- The artists behind Dragons's Den are also hosting workshops for people who want to learn to design
-their own art. In the feature there will be a page dedicated to a schedule of these workshops.
+All of the features that was planned for on this website was executed. However, there are a few ideas which could be implemented in the future.
 
-- The gallery will be divided into more sections: Characters, cities, maps etc.
+- Let the user encrypt a text, enter an email address and send the encrypted text to that email with a short explanation on how to decrypt the message, using the same website.
 
-- Fixed price packages. For instance: 4 character designs, 1 world map, 1 city map - 100$.
+- Build out the game so that it involves both decryption and encryption. In addition, the user could set difficulty before starting the game.
 
 ## Technologies Used
 
-- [Gitpod](https://gitpod.io/)
-- The project is written in [HTML5](https://www.w3.org/) and [CSS3](https://www.w3.org/)
-- [Fontawesome](https://fontawesome.com/)
-- [Bootstrap](https://www.getbootstrap.com) - The project uses bootstrap for large parts of the layout.
+- [VS Code](https://code.visualstudio.com/)
+- [HTML5](https://www.w3.org/) 
+- [CSS3](https://www.w3.org/)
+- [JavaScript](https://www.javascript.com/)
+- [jQuery](https://jquery.com/)
+- [Bootstrap](https://www.getbootstrap.com)
 - [Google Fonts](https://fonts.google.com/)
-- The project uses JavaScript from [w3schools](https://www.w3schools.com/howto/howto_css_modal_images.asp) in the gallery section to make
-images display in modal when clicked. Some of the script was modified by the author of Dragon's Den Designs
-to fit the project.
-- [Free Formatter](https://www.freeformatter.com/)
+- [Wordnik API](https://developer.wordnik.com/)
+- [Jasmine](https://jasmine.github.io/)
 
-  - ***Note:*** *During development, Gitpod's format function was buggy so the code had to be externally formatted
-and pasted back into gitpod. This resulted in poor indentation in the first two thirds of the commits.* 
-
-
+ 
 ## Testing
 
 In addition to the manual tests beneath, the site has also been tested by other users on Code Institute's Slack room. One 
