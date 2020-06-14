@@ -1,6 +1,6 @@
 # Encryptinator
 
-![readmehero](assets/images/encryptinator-responsive.PNG)
+![readmehero](documentation/images/encryptinator-responsive.PNG)
 [Live website](https://thorole.github.io/encryptinator)
 
 Encryptinator is a command line themed, educational website for people who want to learn basic encryption. Possible users can range
@@ -59,14 +59,14 @@ The website is divided into three main sections, all on the same page. The conte
 
 
 ### Nav bar and jumbotron
-![Navbar and jumbotron](assets/images/navjumbotron.PNG)
+![Navbar and jumbotron](documentation/images/navjumbotron.PNG)
 
 The navbar is custom built with flexbox. It consists of four navigation links which takes the user to the desired sections of the site. All links turn white on hover.
 
 The jumbotron has two purposes. It displays the title of the website, and sumarizes its main features.
 
 ### Learning section
-![Learning section](assets/images/learningsection.PNG)
+![Learning section](documentation/images/learningsection.PNG)
 
 This section is part of the meat and potatos of the website. It is key for users without any knowledge of encryption to read through this section in order to understand the other two sections of the website. However, the learning section works fine on its own, and she's/he's not required to try out the later sections.
 
@@ -75,7 +75,7 @@ The learning section features two sub sections, one for each encryption method. 
 Each subsection contains information on how encryption works when using Cesar cipher and Vigenere cipher. There are also figures present to aid the user in understanding the concepts. Both figures opens in a modal on click and displays even further explaining and examples. Modals close by either clicking on the close symbol (X) or by clicking anywhere in the window.
 
 ### Explore section
-![Explore section](assets/images/exploreforms.PNG)
+![Explore section](documentation/images/exploreforms.PNG)
 
 In this section the user can try out encrypting/decrypting text on their own. Both forms are built in a similar way. The user enters some text in the appropriate textfield, sets the shift or key, and then click encrypt or decrypt button. If the user don't enter any text in the textfield, or fails to meet the required format of the shift or key, an error message will be displayed over the current input element. This message briefly explains what the user must do to make it right.
 
@@ -84,7 +84,7 @@ The Vigenere Cipher form also sports an option to generate a key. This functiona
 It is also worth mentioning that all input areas are highlighted with a green glow around the borders when focused. There are also "clear" buttons present to quickly clear all the text areas.
 
 ### Game
-![Game](assets/images/game.PNG)
+![Game](documentation/images/game.PNG)
 
 The game is an additional feature of the website, and is meant to be a fun and quick way to test your own decryption skills. It has a very simple interface that displays a blinking start button, and on click starts the game. For each level there's a word displayed that the user must try to decrypt before the time runs out. The encryption is based on the Cesar cipher and both the shift and length of the current word changes as the user makes progress through the levels. 
 
@@ -114,37 +114,26 @@ All of the features that was planned for on this website was executed. However, 
 - [jQuery](https://jquery.com/)
 - [Bootstrap](https://www.getbootstrap.com)
 - [Google Fonts](https://fonts.google.com/)
-- [Wordnik API](https://developer.wordnik.com/)
+- [Wordnik API](https://developer.wordnik.com/) - Retrieves random word
 - [Jasmine](https://jasmine.github.io/)
-- [Node.js](https://nodejs.org/en/)
-- [npm-package: http-server](https://www.npmjs.com/package/http-server)
+- [Node.js](https://nodejs.org/en/) - In the early stages, node.js was used to run javascript on the cli.
+- [npm-package: http-server](https://www.npmjs.com/package/http-server) - Used to set up a server in development.
 
  
 ## Testing
 
-In addition to the manual tests beneath, the site has also been tested by other users on Code Institute's Slack room. One 
-bug was reported where the user was able to send text through the phone input on the contact page. This error has been fixed.
+The testing of the website, both in development and as a finished product has been done through both manual testing and automated testing (jasmine). As the manual test documentation became very long, it can be viewed in [this document.]()
 
-#### Landing-page
-- Clicked all links in navbar, including brand, to make sure the user is directed to the correct section/page: success
-- Clicked contact link at bottom of landing page to make sure user is directed to contact page: success
-- Clicked contact link at bottom of landing page to make sure user is directed to contact page: success
-- Clicked "back to top" link at bottom of landing page to make sure user is directed to top of landing page: success.
-- Clicked social media links to check if user is directed to correct social media network: success
-- Redused screen size to check that page displays in single column on smaller screens: success
+The automated testing tests the functionality of the encryption/decryption forms. All the test can be viewed in [this file](https://github.com/thorole/encryptinator/blob/master/testing/spec/functionSpecs.js). You can view the test results [here](https://thorole.github.io/encryptinator/testing/test.html).
 
-#### Gallery
-- Clicked all links in navbar, including brand, to make sure the user is directed to the correct section/page: success
-- Clicked all images to make sure they open in modal: success
-- Modal closes by clicking anywhere on modal: success
-- Redused screen size to make sure gallery displays in two columns instead of four columns on smaller screens: success
-- Clicked social media links to check if user is directed to correct social media network: success
+### Bug report
 
-#### Contact page
-- Clicked all links in navbar, including brand, to make sure the user is directed to the correct section/page: success
-- If you try to submit without a valid e-mail address and without input in required fields, there 
-    should pop up a message telling the user what's missing: success
-- Clicked social media links to check if user is directed to correct social media network: success
+Through out development, there has been a series of minor and more complex bugs. The most important tool for debuggin has been the browser console in chrome.
+
+
+
+
+
 
 
 ### Testing and Responsiveness across browsers and devices
