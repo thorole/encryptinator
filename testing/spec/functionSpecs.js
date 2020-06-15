@@ -2,7 +2,7 @@
 
 //Test cesar cipher function
 
-describe("Encrypts or decrypts text", function () {
+describe("This function should take what ever text it gets, but should only try to encrypt or decrypt letters from a-z.", function () {
     //Declared these variables to easilly pass values to the functions
     let shift = 3;
     let text = "correct";
@@ -22,14 +22,14 @@ describe("Encrypts or decrypts text", function () {
         expect(encryption.iterateString(textWithSpacesAndSigns, shift, encrypt)).toBe("jv xdb fp _(36)");
     });
     it("should return my age is _(36)", function () {
-        expect(encryption.iterateString(encryptedTxtWithSpaceSigns, shift, decrypt)).toBe(textWithSpacesAndSigns);
+        expect(encryption.iterateString(encryptedTxtWithSpaceSigns, shift, decrypt)).toBe("my age is _(36)");
     });
 
 });
 
 //Test Vigenere cipher encryption/decryption function
 
-describe("Encrypts or decrypts text", function () {
+describe("This function should take what ever text it gets, but should only try to encrypt or decrypt letters from a-z.", function () {
     //Declared these variables to easilly pass values to the functions
     let key = [1, 2, 3];
     let text = "correct";
@@ -38,6 +38,7 @@ describe("Encrypts or decrypts text", function () {
     let encryptedTxtWithSpaceSigns = "na dhg lt _(36)";
     let decrypt = true;
     let encrypt = false;
+
     it("should return dqusgfu", function () {
         expect(encryption.iterateVigenereString(text, key, encrypt)).toBe("dqusgfu");
     });
@@ -54,7 +55,7 @@ describe("Encrypts or decrypts text", function () {
 });
 
 //Test conversion of letters to numbers
-describe("Converts text to numbers", function () {
+describe("This function should take letters as input and return each letter's index.", function () {
 
     let userKey = "abc";
 
@@ -64,7 +65,7 @@ describe("Converts text to numbers", function () {
 });
 
 //Test users shift input
-describe("Checks shift, return userinput or default shift (13)", function () {
+describe("This function should sort out invalid shifts and return the default shift, 13.", function () {
 
     let correctShift = 4;
     let correctShiftString = "4";
@@ -72,25 +73,25 @@ describe("Checks shift, return userinput or default shift (13)", function () {
     let tooLowShift = 0;
     let tooBigShift = 26;
 
-    it("should return 4(1)", function () {
+    it("should return 4", function () {
         expect(encryption.checkShift(correctShift)).toBe(4)
     });
-    it("should return 4(2)", function () {
+    it("should return 4", function () {
         expect(encryption.checkShift(correctShiftString)).toBe(4);
     });
-    it("should return 13(3)", function () {
+    it("should return 13", function () {
         expect(encryption.checkShift(letterShift)).toBe(13);
     });
-    it("should return 13(4)", function () {
+    it("should return 13", function () {
         expect(encryption.checkShift(tooLowShift)).toBe(13);
     });
-    it("should return 13(5)", function () {
+    it("should return 13", function () {
         expect(encryption.checkShift(tooBigShift)).toBe(13);
     });
 });
 
-//Test that default key is returned when user input is of wrong format
-describe("Checks key, returns userinput or default key (thisisthekey)", function () {
+//Testing checking of user key input
+describe("This function should return the default key if user's key is invalid.", function () {
 
     let userKey = "mykey";
     let keyWithUpper = "TesT";
