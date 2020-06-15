@@ -24,18 +24,18 @@ Also see automated testing.
 
 | Item                                          | Event | Expected result                         | Fail | Pass |
 |-----------------------------------------------|-------|-----------------------------------------|------|------|
-| Encrypt (cesar) button (empty input field)    | Click | Display "Please insert text"            |      |      |
-| Encrypt (vigenere) button (empty input field) | Click | Display "Please insert text"            |      |      |
-| Decrypt (vigenere) button (empty input field) | Click | Display "Please insert text"            |      |      |
-| Decrypt (cesar) button (empty input field)    | Click | Display "Please insert text"            |      |      |
-| Encrypt (vigenere) button (empty key field)   | Click | Display "Letters only, no spaces"       |      |      |
-| Encrypt (cesar) button (empty shift field)    | Click | Display "Number must be integer, 1-25." |      |      |
-| Decrypt (vigenere) button (empty key field)   | Click | Display "Letters only, no spaces"       |      |      |
-| Decrypt (cesar) button (empty input field)    | Click | Display "Number must be integer, 1-25." |      |      |
-| Clear (cesar encrypt) button                  | Click | Clears this section of the form.        |      |      |
-| Clear (vigenere encrypt) button               | Click | Clears this section of the form.        |      |      |
-| Clear (cesar decrypt) button                  | Click | Clears this section of the form.        |      |      |
-| Clear (vigenere decrypt) button               | Click | Clears this section of the form.        |      |      |	
+| Encrypt (cesar) button (empty input field)    | Click | Display "Please insert text"            |      |X     |
+| Encrypt (vigenere) button (empty input field) | Click | Display "Please insert text"            |      |X     |
+| Decrypt (vigenere) button (empty input field) | Click | Display "Please insert text"            |      |X     |
+| Decrypt (cesar) button (empty input field)    | Click | Display "Please insert text"            |      |X     |
+| Encrypt (vigenere) button (empty key field)   | Click | Display "Letters only, no spaces"       |      |X     |
+| Encrypt (cesar) button (empty shift field)    | Click | Display "Number must be integer, 1-25." |      |X     |
+| Decrypt (vigenere) button (empty key field)   | Click | Display "Letters only, no spaces"       |      |X     |
+| Decrypt (cesar) button (empty input field)    | Click | Display "Number must be integer, 1-25." |      |X     |
+| Clear (cesar encrypt) button                  | Click | Clears this section of the form.        |      |X     |
+| Clear (vigenere encrypt) button               | Click | Clears this section of the form.        |      |X     |
+| Clear (cesar decrypt) button                  | Click | Clears this section of the form.        |      |X     |
+| Clear (vigenere decrypt) button               | Click | Clears this section of the form.        |      |X     |	
 
 ## Game
 | Item                                         | Event                      | Expected result                             | Fail | Pass |
