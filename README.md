@@ -47,7 +47,7 @@ working with the command line. The website uses a font from [Google Fonts'](http
 
 ### Wireframes
 
-The wireframes somewhat deviates from the finished website as some of the ideas and features came into existence after the planning process. Note that there is only wireframes for large and small screens. This is due to the simple structure of the website. There is only one breakpoint, so any screen under large (in bootstrap standards) will display the website in single columns.   
+The wireframes somewhat deviates from the finished website as some of the ideas and features came into existence after the planning process. Note that there is only wireframes for large and small screens. This is due to the simple structure of the website. There is only one breakpoint, so any screen under large (991px) will display the website in single columns.   
 
 - [Learn and explore section](https://github.com/thorole/encryptinator/tree/master/wireframes/learn_forms_section.pdf) | [mobile](https://github.com/thorole/encryptinator/tree/master/wireframes/small_screen.pdf)
 - [Game](https://github.com/thorole/encryptinator/tree/master/wireframes/game.pdf) | [mobile](wireframes/game_small_screen.pdf)
@@ -165,7 +165,7 @@ screen in the Chrome dev. tools to make sure it looked good and behaved as inten
 
 ## Deployment
 
-**I followed this procedure to deploy Dragon's Den**
+**This procedure was followed to deploy Encryptinator**
 
 1. Navigate to the [repository](https://github.com/thorole/encryptinator)
 2. Select [Branch: master]
