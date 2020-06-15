@@ -47,10 +47,10 @@ working with the command line. The website uses a font from [Google Fonts'](http
 
 ### Wireframes
 
-- [Landingpage top](attachments/wireframelandingtop.pdf) | [mobile](attachments/mobilewireframelandingtop.pdf)
-- [Landingpage bottom](attachments/wireframelandingbottom.pdf) | [mobile](attachments/mobilewireframelandingbottom.pdf)
-- [Gallery](attachments/wireframegallery.pdf) | [mobile](attachments/mobilewireframegallery.pdf)
-- [Contact](attachments/wireframecontact.pdf) | [mobile](attachments/mobilewireframecontact.pdf)
+- [Learn and explore section](wireframes/learn_forms_sction.pdf) | [mobile](wireframes/small_screen.pdf)
+- [Game](wireframes/game.pdf) | [mobile](wireframes/game_small_screen.pdf)
+- [Learn section expanded and modal](wireframes/dropdown_expanded.pdf)
+
 
 
 ## Features
