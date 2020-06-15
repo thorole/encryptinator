@@ -1,6 +1,6 @@
 # Encryptinator
 
-![readmehero](documentation/images/encryptinator-responsive.PNG)
+![readmehero](documentation/encryptinator-responsive.PNG)
 [Live website](https://thorole.github.io/encryptinator)
 
 Encryptinator is a command line themed, educational website for people who want to learn basic encryption. Possible users can range
@@ -61,14 +61,14 @@ The website is divided into three main sections, all on the same page. The conte
 
 
 ### Nav bar and jumbotron
-![Navbar and jumbotron](documentation/images/navjumbotron.PNG)
+![Navbar and jumbotron](documentation/navjumbotron.PNG)
 
 The navbar is custom built with flexbox. It consists of four navigation links which takes the user to the desired sections of the site. All links turn white on hover.
 
 The jumbotron has two purposes. It displays the title of the website, and sumarizes its main features.
 
 ### Learning section
-![Learning section](documentation/images/learningsection.PNG)
+![Learning section](documentation/learningsection.PNG)
 
 This section is part of the meat and potatos of the website. It is key for users without any knowledge of encryption to read through this section in order to understand the other two sections of the website. However, the learning section works fine on its own, and she's/he's not required to try out the later sections.
 
@@ -77,7 +77,7 @@ The learning section features two sub sections, one for each encryption method. 
 Each subsection contains information on how encryption works when using Cesar cipher and Vigenere cipher. There are also figures present to aid the user in understanding the concepts. Both figures opens in a modal on click and displays even further explaining and examples. Modals close by either clicking on the close symbol (X) or by clicking anywhere in the window.
 
 ### Explore section
-![Explore section](documentation/images/exploreforms.PNG)
+![Explore section](documentation/exploreforms.PNG)
 
 In this section the user can try out encrypting/decrypting text on their own. Both forms are built in a similar way. The user enters some text in the appropriate textfield, sets the shift or key, and then click encrypt or decrypt button. If the user don't enter any text in the textfield, or fails to meet the required format of the shift or key, an error message will be displayed over the current input element. This message briefly explains what the user must do to make it right.
 
@@ -86,7 +86,7 @@ The Vigenere Cipher form also sports an option to generate a key. This functiona
 It is also worth mentioning that all input areas are highlighted with a green glow around the borders when focused. There are also "clear" buttons present to quickly clear all the text areas.
 
 ### Game
-![Game](documentation/images/game.PNG)
+![Game](documentation/game.PNG)
 
 The game is an additional feature of the website, and is meant to be a fun and quick way to test your own decryption skills. It has a very simple interface that displays a blinking start button, and on click starts the game. For each level there's a word displayed that the user must try to decrypt before the time runs out. The encryption is based on the Cesar cipher and both the shift and length of the current word changes as the user makes progress through the levels. 
 
