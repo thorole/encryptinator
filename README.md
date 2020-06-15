@@ -47,9 +47,9 @@ working with the command line. The website uses a font from [Google Fonts'](http
 
 ### Wireframes
 
-- [Learn and explore section](wireframes/learn_forms_sction.pdf) | [mobile](wireframes/small_screen.pdf)
-- [Game](wireframes/game.pdf) | [mobile](wireframes/game_small_screen.pdf)
-- [Learn section expanded and modal](wireframes/dropdown_expanded.pdf)
+- [Learn and explore section](https://github.com/thorole/encryptinator/tree/master/wireframes/learn_forms_sction.pdf) | [mobile](https://github.com/thorole/encryptinator/tree/master/wireframes/small_screen.pdf)
+- [Game](https://github.com/thorole/encryptinator/tree/master/wireframes/game.pdf) | [mobile](wireframes/game_small_screen.pdf)
+- [Learn section expanded and modal](https://github.com/thorole/encryptinator/tree/master/wireframes/dropdown_expanded.pdf)
 
 
 
