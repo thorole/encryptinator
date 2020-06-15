@@ -56,17 +56,21 @@ describe("This function should take what ever text it gets, but should only try 
 
 //Test conversion of letters to numbers
 describe("This function should take letters as input and return each letter's index.", function () {
-
+    //Declared these variables to easilly pass values to the functions
     let userKey = "abc";
+    let userKeyTwo = "zyx"
 
     it("should return 1 2 3", function () {
         expect(encryption.convertKeyToNumbers(userKey)).toEqual([0, 1, 2]);
+    });
+    it("should return 25 24 23", function () {
+        expect(encryption.convertKeyToNumbers(userKeyTwo)).toEqual([25, 24, 23]);
     });
 });
 
 //Test users shift input
 describe("This function should sort out invalid shifts and return the default shift, 13.", function () {
-
+    //Declared these variables to easilly pass values to the functions
     let correctShift = 4;
     let correctShiftString = "4";
     let letterShift = "test";
@@ -92,7 +96,7 @@ describe("This function should sort out invalid shifts and return the default sh
 
 //Testing checking of user key input
 describe("This function should return the default key if user's key is invalid.", function () {
-
+    //Declared these variables to easilly pass values to the functions
     let userKey = "mykey";
     let keyWithUpper = "TesT";
     let keyWithNum = "34";
