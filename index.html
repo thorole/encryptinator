@@ -85,7 +85,7 @@
           <div id="cesar-modal" class="modal">
             <!-- Modal content -->
             <div class="modal-contents">
-              <span aria-label="Close modal" class="close">x</span>
+              <span class="close">x</span>
               <p>This image displays encrypting a letter in the plaintext with a shift of 3. When we encrypt with Cesar
                 Cipher we go <em>down</em> the alphabet, and <em>up</em> the alphabet when we decrypt.</p>
               <figure>
@@ -142,7 +142,7 @@
           <div id="vigenere-modal" class="modal">
             <!-- Modal content -->
             <div class="modal-contents">
-              <span aria-label="Close modal" class="close">x</span>
+              <span class="close">x</span>
               <p>The image below displays the indexing of the letters in the alphabet. If we let the key be "CAB", we
                 have a shift of 2, 0, 1. These numbers are aplied to the plaintext letter by letter. When encrypting a
                 plaintext we
@@ -261,15 +261,15 @@
 
           <!-- In-game elements -->
           <div id="game-content" class="game-elements hidden">
-            <div aria-label="Quit game" id="exit-game" class="exit">X</div>
+            <div id="exit-game" class="exit">X</div>
             <div class="flex-container">
               <div id="current-score" class="score game-element"></div>
               <div id="shift-value" class="shift game-element"></div>
             </div>
-            <div aria-label="Timer" id="timer" class="time-remaining game-element"></div>
+            <div id="timer" class="time-remaining game-element"></div>
             <div id="game-word" class="game-word-box game-element"></div>
             <label for="user-word" class="hidden">Type word:</label>
-            <input aria-label="Enter decrypted word." id="user-word" class="game-user-input input-element game-element"
+            <input id="user-word" class="game-user-input input-element game-element"
               type="text">
             <div id="result" class="check-result game-element"></div>
             <button id="check-result-btn" class="check-button game-element">Check</button>
