@@ -195,6 +195,7 @@ All code encapsulated in IEFE (revealing module pattern) to keep global scope cl
             score = 0;
             gameShift = 3;
             disableDecryptFields();
+            $("#user-word").val("");
             $("#current-score").text("Score: 0");
             $("#shift-value").text("Shift: " + gameShift);
             $("#result").text("");
