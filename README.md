@@ -195,7 +195,7 @@ on github.
 
 ### Acknowledgements
 
-This template was used as a _visual reference_ to create a command line themed website. None of the actual code behind the template was used.
+This template heavilly inspired the website and was used as a _visual reference_ to create a command line themed website. None of the actual code behind the template was used.
 https://brobin.github.io/hacker-bootstrap/
 
 Thanks to my mentor [Jonathan Munz](https://github.com/jpmunz) for guidance on the project and for providing online litterature.
