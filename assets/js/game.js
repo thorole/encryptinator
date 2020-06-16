@@ -72,7 +72,7 @@ All code encapsulated in IEFE (revealing module pattern) to keep global scope cl
         });
 
         /*
-        Press enter to check word
+        Press enter to check word - partially copied from w3schools.com.
         */
         $("#user-word").keypress(function (e) {
             var key = e.which;
