@@ -49,7 +49,7 @@ working with the command line. The website uses a font from [Google Fonts'](http
 
 The wireframes somewhat deviates from the finished website as some of the ideas and features came into existence after the planning process. Note that there is only wireframes for large and small screens. This is due to the simple structure of the website. There is only one breakpoint, so any screen under large (991px) will display the website in single columns.   
 
-- [Learn and explore section](https://github.com/thorole/encryptinator/tree/master/wireframes/learn_forms_section.pdf) | [mobile](https://github.com/thorole/encryptinator/tree/master/wireframes/small_screen.pdf)
+- [Learn and explore section](https://github.com/thorole/encryptinator/tree/master/wireframes/learn_forms_sections.pdf) | [mobile](https://github.com/thorole/encryptinator/tree/master/wireframes/small_screen.pdf)
 - [Game](https://github.com/thorole/encryptinator/tree/master/wireframes/game.pdf) | [mobile](wireframes/game_small_screen.pdf)
 - [Learn section expanded and modal](https://github.com/thorole/encryptinator/tree/master/wireframes/dropdown_expanded.pdf)
 
