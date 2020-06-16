@@ -58,7 +58,7 @@ describe("This function should take what ever text it gets, but should only try 
 describe("This function should take letters as input and return each letter's index.", function () {
     //Declared these variables to easilly pass values to the functions
     let userKey = "abc";
-    let userKeyTwo = "zyx"
+    let userKeyTwo = "zyx";
 
     it("should return 1 2 3", function () {
         expect(encryption.convertKeyToNumbers(userKey)).toEqual([0, 1, 2]);
@@ -78,7 +78,7 @@ describe("This function should sort out invalid shifts and return the default sh
     let tooBigShift = 26;
 
     it("should return 4", function () {
-        expect(encryption.checkShift(correctShift)).toBe(4)
+        expect(encryption.checkShift(correctShift)).toBe(4);
     });
     it("should return 4", function () {
         expect(encryption.checkShift(correctShiftString)).toBe(4);
