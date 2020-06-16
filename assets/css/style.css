@@ -395,6 +395,10 @@ textarea {
     padding: 1rem;
 }
 
+.next-lvl {
+    margin-top: 2.5rem;
+}
+
 .message-box-wide {
     top: 1rem;
     width: 90%;
