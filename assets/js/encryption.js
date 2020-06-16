@@ -223,13 +223,13 @@ let encryption = function () {
     */
     function encryptVigenereText() {
         $("#invalid-input, #invalid-text").addClass("hidden");
-        if (checkField("vigenere-input") === false) {
+        if (!checkField("vigenere-input")) {
             $("#invalid-text").removeClass("hidden").text("Please insert text");
         }
-        if (checkField("vigenere-key") === false) {
+        if (!checkField("vigenere-key")) {
             $("#invalid-input").removeClass("hidden").text("Letters only, no spaces.");
         }
-        else if (checkField("vigenere-input") === true && checkField("vigenere-key") === true) {
+        else if (checkField("vigenere-input") && checkField("vigenere-key")) {
             $("#invalid-input, #invalid-text").addClass("hidden");
             let userText = getUserText("vigenere-input");
             let key = getShift("vigenere-key");
@@ -250,13 +250,13 @@ let encryption = function () {
     */
     function decryptVigenereText() {
         $("#invalid-decrypt-text, #invalid-decrypt-key").addClass("hidden");
-        if (checkField("vigenere-to-decrypt") === false) {
+        if (!checkField("vigenere-to-decrypt")) {
             $("#invalid-decrypt-text").removeClass("hidden").text("Please insert text");
         }
-        if (checkField("vigenere-key-decrypt") === false) {
+        if (!checkField("vigenere-key-decrypt")) {
             $("#invalid-decrypt-key").removeClass("hidden").text("Letters only, no spaces.");
         }
-        else if (checkField("vigenere-to-decrypt") === true && checkField("vigenere-key-decrypt") === true) {
+        else if (checkField("vigenere-to-decrypt") && checkField("vigenere-key-decrypt")) {
             $("#invalid-decrypt-text, #invalid-decrypt-key").addClass("hidden");
             let userText = getUserText("vigenere-to-decrypt");
             let key = getShift("vigenere-key-decrypt");
@@ -275,13 +275,13 @@ let encryption = function () {
     */
     function encryptCesarText() {
         $("#error-cesar-encrypt, #error-shift").addClass("hidden");
-        if (checkField("input-text") === false) {
+        if (!checkField("input-text")) {
             $("#error-cesar-encrypt").removeClass("hidden").text("Please insert text");
         }
-        if (checkField("input-shift") === false) {
+        if (!checkField("input-shift")) {
             $("#error-shift").removeClass("hidden").text("Number must be integer, 1-25");
         }
-        else if (checkField("input-text") === true && checkField("input-shift") === true) {
+        else if (checkField("input-text") && checkField("input-shift")) {
             let userText = getUserText("input-text");
             let shift = getShift("input-shift");
             shift = checkShift(shift);
@@ -298,13 +298,13 @@ let encryption = function () {
     */
     function decryptCesarText() {
         $("#error-cesar-decrypt, #error-decrypt-shift").addClass("hidden");
-        if (checkField("text-to-decrypt") === false) {
+        if (!checkField("text-to-decrypt")) {
             $("#error-cesar-decrypt").removeClass("hidden").text("Please insert text");
         }
-        if (checkField("output-shift") === false) {
+        if (!checkField("output-shift")) {
             $("#error-decrypt-shift").removeClass("hidden").text("Number must be integer, 1-25");
         }
-        else if (checkField("text-to-decrypt") === true && checkField("output-shift") === true) {
+        else if (checkField("text-to-decrypt") && checkField("output-shift")) {
             let userText = getUserText("text-to-decrypt");
             let shift = getShift("output-shift");
             shift = checkShift(shift);
