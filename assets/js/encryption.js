@@ -217,8 +217,7 @@ let encryption = function () {
     }
 
     /*
-    The following four functions needs refactoring as they do much the same thing, but with the current 
-    timeframe for this project, it will have to wait.
+    Checks all the fields.
     */
     function checkAllFields(errorText, errorShift, text, shift) {
         $(errorText).addClass("hidden");
@@ -233,6 +232,11 @@ let encryption = function () {
             return true;
         }
     }
+    /*
+    The following four functions needs some refactoring as they do much the same thing, but with the current 
+    timeframe for this project, it will have to wait.
+    */
+    
     /*
     Collection of the vigenere decryption functions in correct order. First it runs checks on 
     correct input, via the checkField function.Then each function sets variables that are used as arguments 
