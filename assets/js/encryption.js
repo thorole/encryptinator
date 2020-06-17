@@ -211,8 +211,9 @@ let encryption = function () {
     Checks if the value entered is valid.
     */
     function checkField(input) {
-        let inputField = document.getElementById(input);
-        let isValid = inputField.checkValidity();
+        let inputField = $(input);
+        console.log(inputField[0].checkValidity());
+        let isValid = inputField[0].checkValidity();
         return isValid;
     }
 
@@ -220,22 +221,27 @@ let encryption = function () {
     The following four functions needs refactoring as they do much the same thing, but with the current 
     timeframe for this project, it will have to wait.
     */
-
+    function checkAllFields(errorText, errorShift, text, shift) {
+        $(errorText).addClass("hidden");
+        $(errorShift).addClass("hidden");
+        if (!checkField(text)) {
+            $(errorText).removeClass("hidden").text("Please insert text");
+        }
+        if (!checkField(shift)) {
+            $(errorShift).removeClass("hidden").text("Letters only, no spaces.");
+        }
+        else if (checkField(text) && checkField(shift)) {
+            return true;
+        }
+    }
     /*
     Collection of the vigenere decryption functions in correct order. First it runs checks on 
     correct input, via the checkField function.Then each function sets variables that are used as arguments 
     in the proceeding functions.
     */
     function encryptVigenereText() {
-        $("#invalid-input, #invalid-text").addClass("hidden");
-        if (!checkField("vigenere-input")) {
-            $("#invalid-text").removeClass("hidden").text("Please insert text");
-        }
-        if (!checkField("vigenere-key")) {
-            $("#invalid-input").removeClass("hidden").text("Letters only, no spaces.");
-        }
-        else if (checkField("vigenere-input") && checkField("vigenere-key")) {
-            $("#invalid-input, #invalid-text").addClass("hidden");
+        let allFieldsGood = checkAllFields("#invalid-text", "#invalid-input", "#vigenere-input", "#vigenere-key")
+        if (allFieldsGood) {
             let userText = getUserText("vigenere-input");
             let key = getShift("vigenere-key");
             key = checkUserKey(key);
@@ -252,15 +258,8 @@ let encryption = function () {
     in the proceeding functions.
     */
     function decryptVigenereText() {
-        $("#invalid-decrypt-text, #invalid-decrypt-key").addClass("hidden");
-        if (!checkField("vigenere-to-decrypt")) {
-            $("#invalid-decrypt-text").removeClass("hidden").text("Please insert text");
-        }
-        if (!checkField("vigenere-key-decrypt")) {
-            $("#invalid-decrypt-key").removeClass("hidden").text("Letters only, no spaces.");
-        }
-        else if (checkField("vigenere-to-decrypt") && checkField("vigenere-key-decrypt")) {
-            $("#invalid-decrypt-text, #invalid-decrypt-key").addClass("hidden");
+        let allFieldsGood = checkAllFields("#invalid-decrypt-text", "#invalid-decrypt-key", "#vigenere-to-decrypt", "#vigenere-key-decrypt")
+        if (allFieldsGood) {
             let userText = getUserText("vigenere-to-decrypt");
             let key = getShift("vigenere-key-decrypt");
             key = checkUserKey(key);
@@ -271,20 +270,15 @@ let encryption = function () {
         }
     }
 
+
     /*
     Collection of the vigenere decryption functions in correct order. First it runs checks on 
     correct input, via the checkField function.Then each function sets variables that are used as arguments 
     in the proceeding functions.
     */
     function encryptCesarText() {
-        $("#error-cesar-encrypt, #error-shift").addClass("hidden");
-        if (!checkField("input-text")) {
-            $("#error-cesar-encrypt").removeClass("hidden").text("Please insert text");
-        }
-        if (!checkField("input-shift")) {
-            $("#error-shift").removeClass("hidden").text("Number must be integer, 1-25");
-        }
-        else if (checkField("input-text") && checkField("input-shift")) {
+        let allFieldsGood = checkAllFields("#error-cesar-encrypt", "#error-shift", "#input-text", "#input-shift")
+        if (allFieldsGood) {
             let userText = getUserText("input-text");
             let shift = getShift("input-shift");
             shift = checkShift(shift);
@@ -300,14 +294,8 @@ let encryption = function () {
     in the proceeding functions.
     */
     function decryptCesarText() {
-        $("#error-cesar-decrypt, #error-decrypt-shift").addClass("hidden");
-        if (!checkField("text-to-decrypt")) {
-            $("#error-cesar-decrypt").removeClass("hidden").text("Please insert text");
-        }
-        if (!checkField("output-shift")) {
-            $("#error-decrypt-shift").removeClass("hidden").text("Number must be integer, 1-25");
-        }
-        else if (checkField("text-to-decrypt") && checkField("output-shift")) {
+        let allFieldsGood = checkAllFields("#error-cesar-decrypt", "#error-decrypt-shift", "#text-to-decrypt", "#output-shift")
+        if (allFieldsGood) {
             let userText = getUserText("text-to-decrypt");
             let shift = getShift("output-shift");
             shift = checkShift(shift);
