@@ -212,7 +212,6 @@ let encryption = function () {
     */
     function checkField(input) {
         let inputField = $(input);
-        console.log(inputField[0].checkValidity());
         let isValid = inputField[0].checkValidity();
         return isValid;
     }
