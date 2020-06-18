@@ -171,22 +171,22 @@
                 <div class="bar"></div>
                 <!--Cesar encrypt fields-->
                 <label id="enter-cesar-text" for="input-text" class="input-info">Enter plain text:</label>
-                <p id="error-cesar-encrypt" class="hidden invalid-input"></p>
+                <p id="error-cesar-encrypt" class="hidden invalid-input">Please insert text.</p>
                 <textarea id="input-text" class="input-element" required></textarea>
                 <label id="enter-shift" for="input-shift" class="input-info">Enter shift: <span
                     class="hint">(1-25)</span></label>
-                <p id="error-shift" class="hidden invalid-input"></p>
+                <p id="error-shift" class="hidden invalid-input">Number must be an integer, 1-25.</p>
                 <input id="input-shift" class="input-element" type="number" step="1" min="1" max="25" required>
                 <button id="cesar-btn" class="encrypt-btn">Encrypt!</button>
                 <button id="clear-cesar-encrypt">Clear</button>
                 <p id="encrypted" class="output-field input-element"></p>
                 <!-- Cesar decryption fields -->
                 <label id="enter-cesar-decrypt" for="text-to-decrypt" class="input-info">Enter encrypted text:</label>
-                <p id="error-cesar-decrypt" class="hidden invalid-input"></p>
+                <p id="error-cesar-decrypt" class="hidden invalid-input">Please insert text.</p>
                 <textarea id="text-to-decrypt" class="input-element" required></textarea>
                 <label id="enter-shift-decrypt" for="output-shift" class="input-info">Enter shift: <span
                     class="hint">(1-25)</span></label>
-                <p id="error-decrypt-shift" class="hidden invalid-input"></p>
+                <p id="error-decrypt-shift" class="hidden invalid-input">Number must be an integer, 1-25.</p>
                 <input id="output-shift" class="input-element" type="number" step="1" min="1" max="25" required>
                 <button id="cesar-decipher-btn" class="encrypt-btn">Decrypt!</button>
                 <button id="clear-cesar-decrypt">Clear</button>
@@ -201,12 +201,12 @@
                 <div class="bar"></div>
                 <!--Vigenere encrypt fields-->
                 <label id="enter-vigenere-text" for="vigenere-input" class="input-info">Enter plain text:</label>
-                <p id="invalid-text" class="hidden invalid-input"></p>
+                <p id="invalid-text" class="hidden invalid-input">Please insert text.</p>
                 <textarea id="vigenere-input" class="input-element" required></textarea>
                 <label id="enter-key" for="vigenere-key" class="input-info">Enter key: <span class="hint">(letters only
                     - no
                     spaces)</span></label>
-                <p id="invalid-input" class="hidden invalid-input"></p>
+                <p id="invalid-input" class="hidden invalid-input">Key can only contain letters from a-z, no spacing.</p>
                 <input id="vigenere-key" class="input-element key" pattern="[a-zA-Z]+" type="text" required>
                 <p id="rndm-word" class="random-word">[Generate key]</p>
                 <button id="vigenere-btn" class="encrypt-btn">Encrypt!</button>
@@ -215,12 +215,12 @@
                 <!--Vigenere decrypt fields-->
                 <label id="enter-vigenere-decrypt" for="vigenere-to-decrypt" class="input-info">Enter encrypted
                   text:</label>
-                <p id="invalid-decrypt-text" class="hidden invalid-input"></p>
+                <p id="invalid-decrypt-text" class="hidden invalid-input">Please insert text.</p>
                 <textarea id="vigenere-to-decrypt" class="input-element" required></textarea>
                 <label id="enter-key-decrypt" for="vigenere-key-decrypt" class="input-info">Enter key: <span
                     class="hint">(letters only - no
                     spaces)</span></label>
-                <p id="invalid-decrypt-key" class="hidden invalid-input"></p>
+                <p id="invalid-decrypt-key" class="hidden invalid-input">Key can only contain letters from a-z, no spacing.</p>
                 <input id="vigenere-key-decrypt" class="input-element key" type="text" pattern="[A-Za-z]+" required>
                 <button id="vigenere-decrypt-btn" class="encrypt-btn">Decrypt!</button>
                 <button id="clear-vigenere-decrypt">Clear</button>
