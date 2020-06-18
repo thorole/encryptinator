@@ -238,12 +238,20 @@ input[type="number"] {
     width: 15%;
 }
 
+input:invalid {
+    box-shadow: none;
+}
+
 .hint {
     font-size: .75rem;
 }
 
 textarea {
     width: 100%;
+}
+
+textarea:invalid {
+    box-shadow: none;
 }
 
 .random-word {
