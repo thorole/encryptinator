@@ -223,10 +223,10 @@ let encryption = function () {
         $(errorText).addClass("hidden");
         $(errorShift).addClass("hidden");
         if (!checkField(text)) {
-            $(errorText).removeClass("hidden").text("Please insert text");
+            $(errorText).removeClass("hidden");
         }
         if (!checkField(shift)) {
-            $(errorShift).removeClass("hidden").text("Letters only, no spaces.");
+            $(errorShift).removeClass("hidden");
         }
         else if (checkField(text) && checkField(shift)) {
             return true;
