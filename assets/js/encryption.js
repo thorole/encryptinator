@@ -233,10 +233,10 @@ let encryption = function () {
         }
     }
     /*
-    The following four functions needs some refactoring as they do much the same thing, but with the current 
-    timeframe for this project, it will have to wait.
+    The following four functions needs some refactoring as they do much the same thing, but with the current
+    html structure and timeframe for this project, it will have to wait.
     */
-    
+
     /*
     Collection of the vigenere decryption functions in correct order. First it runs checks on 
     correct input, via the checkField function.Then each function sets variables that are used as arguments 
@@ -338,12 +338,12 @@ let encryption = function () {
         /*
         Clear forms button handler.
         */
-       $(".clear").click(function () {
-        let userText = this.getAttribute("data-field-one");
-        let userShift = this.getAttribute("data-field-two");
-        let resultText = this.getAttribute("data-field-three");
-        clearForm(userText, userShift, resultText);
-       });
+        $(".clear").click(function () {
+            let userText = this.getAttribute("data-field-one");
+            let userShift = this.getAttribute("data-field-two");
+            let resultText = this.getAttribute("data-field-three");
+            clearForm(userText, userShift, resultText);
+        });
 
     });
 
