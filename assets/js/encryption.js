@@ -190,7 +190,7 @@ let encryption = function () {
             }
         }
         else if (this.status == 429) {
-            $("#invalid-input").removeClass("hidden").text("Too many requests. Try again in a few seconds.");
+            $("#api-error").removeClass("hidden");
         }
     };
     function requestRandomWord() {
@@ -217,9 +217,10 @@ let encryption = function () {
     }
 
     /*
-    Checks all the fields.
+    Checks all the fields. 
     */
     function checkAllFields(errorText, errorShift, text, shift) {
+        $("#api-error").addClass("hidden");
         $(errorText).addClass("hidden");
         $(errorShift).addClass("hidden");
         if (!checkField(text)) {
