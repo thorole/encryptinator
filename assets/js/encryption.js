@@ -244,7 +244,7 @@ let encryption = function () {
     in the proceeding functions.
     */
     function encryptVigenereText() {
-        let allFieldsValid = checkAllFields("#invalid-text", "#invalid-input", "#vigenere-input", "#vigenere-key")
+        let allFieldsValid = checkAllFields("#invalid-text", "#invalid-input", "#vigenere-input", "#vigenere-key");
         if (allFieldsValid) {
             let userText = getUserText("vigenere-input");
             let key = getShift("vigenere-key");
@@ -262,7 +262,7 @@ let encryption = function () {
     in the proceeding functions.
     */
     function decryptVigenereText() {
-        let allFieldsValid = checkAllFields("#invalid-decrypt-text", "#invalid-decrypt-key", "#vigenere-to-decrypt", "#vigenere-key-decrypt")
+        let allFieldsValid = checkAllFields("#invalid-decrypt-text", "#invalid-decrypt-key", "#vigenere-to-decrypt", "#vigenere-key-decrypt");
         if (allFieldsValid) {
             let userText = getUserText("vigenere-to-decrypt");
             let key = getShift("vigenere-key-decrypt");
@@ -281,7 +281,7 @@ let encryption = function () {
     in the proceeding functions.
     */
     function encryptCesarText() {
-        let allFieldsValid = checkAllFields("#error-cesar-encrypt", "#error-shift", "#input-text", "#input-shift")
+        let allFieldsValid = checkAllFields("#error-cesar-encrypt", "#error-shift", "#input-text", "#input-shift");
         if (allFieldsValid) {
             let userText = getUserText("input-text");
             let shift = getShift("input-shift");
@@ -298,7 +298,7 @@ let encryption = function () {
     in the proceeding functions.
     */
     function decryptCesarText() {
-        let allFieldsValid = checkAllFields("#error-cesar-decrypt", "#error-decrypt-shift", "#text-to-decrypt", "#output-shift")
+        let allFieldsValid = checkAllFields("#error-cesar-decrypt", "#error-decrypt-shift", "#text-to-decrypt", "#output-shift");
         if (allFieldsValid) {
             let userText = getUserText("text-to-decrypt");
             let shift = getShift("output-shift");
