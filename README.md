@@ -21,6 +21,8 @@ can be used to encrypt/decrypt messages.
 The font used for this website was carefully chosen, as it is very important that the font supports the feeling of 
 working with the command line. The website uses a font from [Google Fonts'](https://fonts.google.com/) library called [Fira Code](https://fonts.google.com/specimen/Fira+Code?selection.family=Fira+Code&sidebar.open&query=fira+code). This is font that has very much in common with your typical command line font, and most importantly, it's a monotype font. This is the only font used throughout the website, in order to enhance the feeling of a command line interface.
 
+All text, except the game, is left-aligned to replicate the appearance of a CLI.  
+
  ### Colors
  The color theme of the website is very simplistic. All text is green, while backgrounds alternate between black and dark grey. Black and grey is very important to provide some variation against the green text. It also serves the purpose of separating the three main parts of the website.
 
@@ -64,7 +66,7 @@ The website is divided into three main sections, all on the same page. The conte
 ### Nav bar and jumbotron
 ![Navbar and jumbotron](documentation/navjumbotron.PNG)
 
-The navbar is custom built with flexbox. It consists of four navigation links which takes the user to the desired sections of the site. All links turn white on hover.
+The navbar is custom built with flexbox. It consists of four navigation links which takes the user to the desired sections of the site. All links turn white on hover. The navbar does not collapse into a button on small screens, like you would usually see in webdesign these days. The reason for this is to maintain the illusion of a toolbar.
 
 The jumbotron has two purposes. It displays the title of the website, and sumarizes its main features.
 
@@ -190,7 +192,7 @@ on github.
 ## Credits
 
 ### Content
-- The figure image in the cesar cipher learn section was taken from [Wikipedia](https://no.wikipedia.org/wiki/C%C3%A6sarchiffer). Most of the facts in the learn section was also taken from the same Wikipedia page.
+The figure image in the cesar cipher learn section was taken from [Wikipedia](https://no.wikipedia.org/wiki/C%C3%A6sarchiffer). Most of the facts in the learn section was also taken from the same Wikipedia page.
 
 
 ### Acknowledgements
